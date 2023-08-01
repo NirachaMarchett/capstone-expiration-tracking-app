@@ -1,59 +1,19 @@
-const groceries = [
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-  {
-    name: "apple",
-    amount: 6,
-    category: "vegetable",
-    purchasedDate: "31-07-2023",
-    expirationDate: "07-08-2023",
-  },
-];
+import GroceriesList from "@/component/GroceriesList";
+import { groceries } from "@/resources/groceries";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
-  );
+  const [daysRemaining, setDaysRemaining] = useState(null);
+
+  useEffect(() => {
+    const calculateDaysRemaining = () => {
+      const boughtDate = new Date(groceries.purchasedDate);
+      const expireDate = new Date(groceries.expirationDate);
+      const timeDifference = Math.abs(expireDate - boughtDate);
+      const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+      setDaysRemaining(daysRemaining);
+    };
+    calculateDaysRemaining();
+  }, []);
+  return <GroceriesList />;
 }

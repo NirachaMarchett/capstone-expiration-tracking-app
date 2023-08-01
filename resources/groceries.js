@@ -1,4 +1,4 @@
-const gorceries = [
+export const groceries = [
   {
     id: 1,
     emoji: "🍎",
