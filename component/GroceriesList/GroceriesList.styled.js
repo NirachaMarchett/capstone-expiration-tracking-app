@@ -1,20 +1,50 @@
 import { styled } from "styled-components";
 
-export const StyledList = styled.ul`
-  list-style-type: none;
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  padding: 0;
+export const StyledSection = styled.section`
+  padding: 0.5rem;
+  gap: 5px;
+  margin: 20px;
 `;
 
-export const ItemContainer = styled.section`
-  align-item: center;
-  gap: 5px;
-  padding: 1rem;
-  width: 317px;
-  height: 69px;
-  flex-shrink: 0;
-  border-radius: 5px;
-  background: green;
+export const StyledList = styled.li`
+  list-style-type: none;
+  background-color: grey;
+  border-radius: 15px;
+  border: 0px;
+  display: grid;
+  margin-top: 25px;
+  padding: 5px;
+  position: relative;
+`;
+
+export const StyledHeading = styled.h2`
+  font-size: 3rem;
+  margin: 30px 10px 40px 10px;
+  background: white;
+  border: 2px solid #293241;
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+`;
+
+export const StyledRemainingDays = styled.p`
+  font-size: 1rem;
+  margin: 30px 10px 40px 10px;
+  background: white;
+  border: 2px solid #293241;
+  border-radius: 20px;
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  justify-item: center;
+  position: absolute;
+  right: 0%;
+  top: -25%;
+`;
+
+export const StyledDetailSection = styled.section`
+  position: absolute;
+  right: 10%;
+  top: 10%;
 `;
