@@ -9,8 +9,6 @@ export const StyledList = styled.ul`
 `;
 
 export const ItemContainer = styled.section`
-  display: flex;
-  fixed-direction: column;
   align-item: center;
   gap: 5px;
   padding: 1rem;
@@ -18,5 +16,5 @@ export const ItemContainer = styled.section`
   height: 69px;
   flex-shrink: 0;
   border-radius: 5px;
-  background: rgba(243, 246, 248, 0.87);
+  background: green;
 `;
