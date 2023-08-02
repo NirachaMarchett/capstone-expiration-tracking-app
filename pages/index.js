@@ -1,7 +1,8 @@
+import GroceriesList from "@/component/GroceriesList";
+import { groceries } from "@/resources/groceries";
+import { useState, useEffect } from "react";
+import React from "react";
+
 export default function HomePage() {
-  return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
-  );
+  return <GroceriesList />;
 }
