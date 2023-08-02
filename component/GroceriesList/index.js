@@ -3,9 +3,8 @@ import {
   StyledDetailSection,
   StyledHeading,
   StyledList,
-  StyledParagraphName,
+  StyledListContainer,
   StyledRemainingDays,
-  StyledSection,
 } from "./GroceriesList.styled.js";
 
 export default function GroceriesList() {
@@ -20,11 +19,11 @@ export default function GroceriesList() {
   };
 
   return (
-    <StyledSection>
+    <StyledList>
       {groceries.map((grocery) => {
         return (
           <>
-            <StyledList key={grocery.id}>
+            <StyledListContainer key={grocery.id}>
               <StyledHeading className="itemEmoji">
                 {grocery.emoji}
               </StyledHeading>
@@ -42,10 +41,10 @@ export default function GroceriesList() {
               <StyledRemainingDays className="remainingDays">
                 Expire in: {calculateDaysRemaining(grocery.expirationDate)} days
               </StyledRemainingDays>
-            </StyledList>
+            </StyledListContainer>
           </>
         );
       })}
-    </StyledSection>
+    </StyledList>
   );
 }

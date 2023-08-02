@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledList = styled.section`
   padding: 0.5rem;
   gap: 5px;
   margin: 20px;
 `;
 
-export const StyledList = styled.li`
+export const StyledListContainer = styled.li`
   list-style-type: none;
   background-color: grey;
   border-radius: 15px;
@@ -30,7 +30,6 @@ export const StyledHeading = styled.h2`
 
 export const StyledRemainingDays = styled.p`
   font-size: 1rem;
-  margin: 30px 10px 40px 10px;
   background: white;
   border: 2px solid #293241;
   border-radius: 20px;
@@ -39,8 +38,8 @@ export const StyledRemainingDays = styled.p`
   text-align: center;
   justify-item: center;
   position: absolute;
-  right: 0%;
-  top: -25%;
+  right: 2%;
+  top: -18%;
 `;
 
 export const StyledDetailSection = styled.section`
