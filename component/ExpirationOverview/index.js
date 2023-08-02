@@ -45,7 +45,7 @@ const GroceryCountByExpiration = () => {
   );
 };
 
-export function ExpirationOverview() {
+export default function ExpirationOverview() {
   return (
     <StyledOverviewSection>
       <StyledHeading>Items expiring soon. Eat me!</StyledHeading>
