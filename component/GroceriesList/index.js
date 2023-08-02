@@ -8,30 +8,51 @@ import {
 } from "./GroceriesList.styled.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
 
-export default function GroceriesList() {
+export default function GroceriesList({ filterValue }) {
+  const filteredGroceriesList = groceries.filter((item) => {
+    const currentDate = new Date();
+    const expirationDate = new Date(item.expirationDate);
+    const remainingDays = Math.ceil(
+      (expirationDate - currentDate) / (1000 * 60 * 60 * 24)
+    );
+
+    if (filterValue === 8) {
+      return remainingDays > 7;
+    } else if (filterValue === -1) {
+      return remainingDays;
+    } else {
+      return remainingDays === filterValue;
+    }
+  });
+
+  if (filteredGroceriesList.length === 0) {
+    return <p>None</p>;
+  }
   return (
     <StyledList>
-      {groceries.map(({ id, emoji, name, purchasedDate, expirationDate }) => {
-        return (
-          <StyledListContainer key={id}>
-            <StyledHeading className="itemEmoji">{emoji}</StyledHeading>
+      {filteredGroceriesList.map(
+        ({ id, emoji, name, purchasedDate, expirationDate }) => {
+          return (
+            <StyledListContainer key={id}>
+              <StyledHeading className="itemEmoji">{emoji}</StyledHeading>
 
-            <StyledDetailSection>
-              <p className="itemName">Name: {name}</p>
-              <p className="itemPurchasedDate">
-                Purchased Date: {purchasedDate}
-              </p>
-              <p className="itemExpirationDate">
-                Expiration Date: {expirationDate}
-              </p>
-            </StyledDetailSection>
+              <StyledDetailSection>
+                <p className="itemName">Name: {name}</p>
+                <p className="itemPurchasedDate">
+                  Purchased Date: {purchasedDate}
+                </p>
+                <p className="itemExpirationDate">
+                  Expiration Date: {expirationDate}
+                </p>
+              </StyledDetailSection>
 
-            <StyledRemainingDays className="remainingDays">
-              Expire in: {calculateDaysRemaining(expirationDate)} days
-            </StyledRemainingDays>
-          </StyledListContainer>
-        );
-      })}
+              <StyledRemainingDays className="remainingDays">
+                Expire in: {calculateDaysRemaining(expirationDate)} days
+              </StyledRemainingDays>
+            </StyledListContainer>
+          );
+        }
+      )}
     </StyledList>
   );
 }
