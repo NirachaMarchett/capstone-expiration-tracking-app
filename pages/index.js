@@ -1,8 +1,12 @@
-import GroceriesList from "@/component/GroceriesList";
-import { groceries } from "@/resources/groceries";
-import { useState, useEffect } from "react";
 import React from "react";
+import GroceriesList from "@/component/GroceriesList";
+import ExpirationOverview from "@/component/ExpirationOverview";
 
 export default function HomePage() {
-  return <GroceriesList />;
+  return (
+    <>
+      <ExpirationOverview />
+      <GroceriesList />
+    </>
+  );
 }
