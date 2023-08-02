@@ -11,23 +11,23 @@ import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
 export default function GroceriesList() {
   return (
     <StyledList>
-      {groceries.map((grocery) => {
+      {groceries.map(({ id, emoji, name, purchasedDate, expirationDate }) => {
         return (
-          <StyledListContainer key={grocery.id}>
-            <StyledHeading className="itemEmoji">{grocery.emoji}</StyledHeading>
+          <StyledListContainer key={id}>
+            <StyledHeading className="itemEmoji">{emoji}</StyledHeading>
 
             <StyledDetailSection>
-              <p className="itemName">Name: {grocery.name}</p>
+              <p className="itemName">Name: {name}</p>
               <p className="itemPurchasedDate">
-                Purchased Date: {grocery.purchasedDate}
+                Purchased Date: {purchasedDate}
               </p>
               <p className="itemExpirationDate">
-                Expiration Date: {grocery.expirationDate}
+                Expiration Date: {expirationDate}
               </p>
             </StyledDetailSection>
 
             <StyledRemainingDays className="remainingDays">
-              Expire in: {calculateDaysRemaining(grocery.expirationDate)} days
+              Expire in: {calculateDaysRemaining(expirationDate)} days
             </StyledRemainingDays>
           </StyledListContainer>
         );
