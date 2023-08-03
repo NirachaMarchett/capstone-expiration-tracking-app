@@ -5,7 +5,7 @@ export default function HomePage({ groceries }) {
   return (
     <>
       <ExpirationOverview />
-      <FilterButton />
+      <FilterButton groceries={groceries} />
     </>
   );
 }

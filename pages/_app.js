@@ -1,7 +1,5 @@
 import { useState } from "react";
 import GlobalStyle from "../styles";
-import HomePage from ".";
-import AddItemPage from "./add";
 
 export default function App({ Component, pageProps }) {
   // const [groceries, setGroceries] = useState([]);
@@ -12,8 +10,6 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Component {...pageProps} />
-      {/* <HomePage groceries={groceries} />
-      <AddItemPage onAddItem={handleAddItem} /> */}
     </>
   );
 }
