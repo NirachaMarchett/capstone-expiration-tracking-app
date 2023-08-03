@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { groceries } from "@/resources/groceries";
+
 import GroceriesList from "../GroceriesList";
 import { StyledDiv, StyledParagraph } from "./FilterButoon.styled";
 
@@ -15,7 +15,7 @@ export default function FilterButton() {
         <StyledParagraph>All grocery items</StyledParagraph>
         <select value={filterValue} onChange={handleFilterChange}>
           <option value={-1}>All</option>
-          <option value={0}>0 Remaining Day</option>
+          <option value={9}>0 Remaining Day/Today</option>
           <option value={1}>1 Remaining Day</option>
           <option value={2}>2 Remaining Days</option>
           <option value={3}>3 Remaining Days</option>
