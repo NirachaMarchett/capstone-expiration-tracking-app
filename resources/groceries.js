@@ -6,7 +6,7 @@ export const groceries = [
     amount: 6,
     category: "fruit",
     purchasedDate: "2023-07-31",
-    expirationDate: "2023-08-07",
+    expirationDate: "2023-08-09",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const groceries = [
     amount: 1,
     category: "vegetable",
     purchasedDate: "2023-07-31",
-    expirationDate: "2023-08-05",
+    expirationDate: "2023-08-11",
   },
   {
     id: 5,
@@ -105,7 +105,7 @@ export const groceries = [
     amount: 4,
     category: "vegetable",
     purchasedDate: "2023-07-31",
-    expirationDate: "2023-08-07",
+    expirationDate: "2023-08-08",
   },
   {
     id: 13,
