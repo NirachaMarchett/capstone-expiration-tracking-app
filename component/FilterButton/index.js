@@ -30,5 +30,3 @@ export default function FilterButton({ groceriesList }) {
     </>
   );
 }
-
-// groceriesList={groceriesList}

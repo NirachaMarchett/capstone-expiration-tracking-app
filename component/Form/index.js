@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   StyledButton,
   StyledEmojiInput,
@@ -21,6 +22,7 @@ export default function AddGroceryItemForm({ onAddItem }) {
   }
   return (
     <>
+      <Link href="/">Back to Add Homepage</Link>
       <form onSubmit={handleSubmit}>
         <StyledFormField>
           <StyledHeading>Add Emoji</StyledHeading>
