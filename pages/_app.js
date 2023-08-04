@@ -1,15 +1,20 @@
 import { useState } from "react";
 import GlobalStyle from "../styles";
+import { groceries } from "@/resources/groceries";
 
 export default function App({ Component, pageProps }) {
-  // const [groceries, setGroceries] = useState([]);
-  // const handleAddItem = (newItem) => {
-  //   setGroceries((prevGroceries) => [...prevGroceries, newItem]);
-  // };
+  const [groceriesList, setGroceriesList] = useState([groceries]);
+  const handleAddItem = (newItem) => {
+    setGroceriesList([...groceriesList, newItem]);
+  };
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component
+        {...pageProps}
+        onAddItem={handleAddItem}
+        groceriesList={groceriesList}
+      />
     </>
   );
 }

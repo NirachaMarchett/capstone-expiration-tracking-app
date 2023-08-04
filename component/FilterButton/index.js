@@ -3,7 +3,7 @@ import { useState } from "react";
 import GroceriesList from "../GroceriesList";
 import { StyledDiv, StyledParagraph } from "./FilterButoon.styled";
 
-export default function FilterButton() {
+export default function FilterButton({ groceriesList }) {
   const [filterValue, setFilterValue] = useState();
 
   const handleFilterChange = (event) => {
@@ -26,7 +26,9 @@ export default function FilterButton() {
           <option value={8}>More than 1 Week Remaining</option>
         </select>
       </StyledDiv>
-      <GroceriesList filterValue={filterValue} />
+      <GroceriesList filterValue={filterValue} groceriesList={groceriesList} />
     </>
   );
 }
+
+// groceriesList={groceriesList}

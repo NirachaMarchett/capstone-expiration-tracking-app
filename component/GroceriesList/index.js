@@ -8,7 +8,7 @@ import {
 } from "./GroceriesList.styled.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
 
-export default function GroceriesList({ filterValue }) {
+export default function GroceriesList({ filterValue, groceriesList }) {
   if (!filterValue || filterValue === -1) {
     return (
       <StyledList>
