@@ -34,6 +34,7 @@ export default function AddGroceryItemForm({ onAddItem }) {
               type="text"
               name="emoji"
               placeholder="➕"
+              defaultValue="➕"
             />
           </StyledHeading>
           <datalist id="emojis">
