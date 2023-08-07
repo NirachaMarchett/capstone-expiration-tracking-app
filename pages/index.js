@@ -1,5 +1,6 @@
 import ExpirationOverview from "@/component/ExpirationOverview";
 import FilterButton from "@/component/FilterButton";
+import Navigation from "@/component/Navigation";
 import SearchBar from "@/component/SearchBar";
 import Link from "next/link";
 import { useState } from "react";
@@ -30,7 +31,7 @@ export default function HomePage({ groceriesList }) {
       <ExpirationOverview />
       <SearchBar onSearch={handleSearch} />
       <FilterButton groceriesList={filteredGroceriesList} />
-      <Link href="/add">Go to Add Item Page</Link>
+      <Navigation />
     </>
   );
 }
