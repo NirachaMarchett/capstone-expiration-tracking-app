@@ -9,15 +9,22 @@ export default function HomePage({ groceriesList }) {
     useState(groceriesList);
 
   const handleSearch = (searchTerm) => {
-    if (searchTerm.trim() === "") {
+    // convert search term to lowercase before (for better readability)
+    const term = searchTerm.trim().toLowerCase();
+
+    //since if (searchTerm.trim() === "" should check if the search bar is empty, can just check truthy falsy value
+    if (!term) {
       setFilteredGroceriesList(groceriesList);
-    } else {
-      const filteredList = groceriesList.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredGroceriesList(filteredList);
+      return;
     }
+    // List filteredList
+    const filteredList = groceriesList.filter((item) =>
+      item.name.toLowerCase().includes(term)
+    );
+
+    setFilteredGroceriesList(filteredList);
   };
+
   return (
     <>
       <ExpirationOverview />
@@ -27,3 +34,15 @@ export default function HomePage({ groceriesList }) {
     </>
   );
 }
+
+//Old solution
+// const handleSearch = (searchTerm) => {
+//   if (searchTerm.trim() === "") {
+//     setFilteredGroceriesList(groceriesList);
+//   } else {
+//     const filteredList = groceriesList.filter((item) =>
+//       item.name.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+//     setFilteredGroceriesList(filteredList);
+//   }
+// };
