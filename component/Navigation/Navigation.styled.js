@@ -16,15 +16,7 @@ export const StyledNavList = styled.ul`
 `;
 
 export const StyledLink = styled(Link)`
-  border: solid white;
-  width: 50%;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-
-  &:hover {
-    background-color: pink;
-  }
 `;
 
 export const StyledNavIcon = styled.span`
@@ -38,4 +30,16 @@ export const StyledNavText = styled.p`
   margin-top: 0px;
   margin-bottom: 0px;
   text-align: center;
+`;
+
+export const StyledList = styled.li`
+  border: solid white;
+  width: 50%;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background-color: pink;
+  }
 `;

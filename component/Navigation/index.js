@@ -1,5 +1,6 @@
 import {
   StyledLink,
+  StyledList,
   StyledNavIcon,
   StyledNavList,
   StyledNavText,
@@ -9,14 +10,18 @@ export default function Navigation() {
   return (
     <nav>
       <StyledNavList>
-        <StyledLink href="/">
-          <StyledNavIcon>🏠</StyledNavIcon>
-          <StyledNavText>Home</StyledNavText>
-        </StyledLink>
-        <StyledLink href="/add">
-          <StyledNavIcon>➕</StyledNavIcon>
-          <StyledNavText>Add</StyledNavText>
-        </StyledLink>
+        <StyledList>
+          <StyledLink href="/">
+            <StyledNavIcon>🏠</StyledNavIcon>
+            <StyledNavText>Home</StyledNavText>
+          </StyledLink>
+        </StyledList>
+        <StyledList>
+          <StyledLink href="/add">
+            <StyledNavIcon>➕</StyledNavIcon>
+            <StyledNavText>Add</StyledNavText>
+          </StyledLink>
+        </StyledList>
       </StyledNavList>
     </nav>
   );
