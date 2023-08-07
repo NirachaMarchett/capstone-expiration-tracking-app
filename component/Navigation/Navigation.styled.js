@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import css from "styled-jsx/css";
 
 export const StyledNavList = styled.ul`
   list-style-type: none;
@@ -16,27 +15,27 @@ export const StyledNavList = styled.ul`
   z-index: 999;
 `;
 
-export const StyledNavLinkAchor = styled(Link)`
-  font-size: 2em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-`;
-
-export const StyledNavLinkText = styled(Link)`
-  font-size: 1em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-`;
-
-export const StyledLink = styled.li`
+export const StyledLink = styled(Link)`
   border: solid white;
   width: 50%;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     background-color: pink;
   }
+`;
+
+export const StyledNavIcon = styled.span`
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+`;
+
+export const StyledNavText = styled.p`
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
 `;

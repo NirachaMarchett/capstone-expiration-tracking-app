@@ -1,22 +1,21 @@
-import Link from "next/link";
 import {
   StyledLink,
-  StyledNavLinkAchor,
-  StyledNavLinkText,
+  StyledNavIcon,
   StyledNavList,
+  StyledNavText,
 } from "./Navigation.styled";
 
 export default function Navigation() {
   return (
     <nav>
       <StyledNavList>
-        <StyledLink>
-          <StyledNavLinkAchor href="/">🏠</StyledNavLinkAchor>
-          <StyledNavLinkText href="/">Home</StyledNavLinkText>
+        <StyledLink href="/">
+          <StyledNavIcon>🏠</StyledNavIcon>
+          <StyledNavText>Home</StyledNavText>
         </StyledLink>
-        <StyledLink>
-          <StyledNavLinkAchor href="/add">➕</StyledNavLinkAchor>
-          <StyledNavLinkText href="/add">Add</StyledNavLinkText>
+        <StyledLink href="/add">
+          <StyledNavIcon>➕</StyledNavIcon>
+          <StyledNavText>Add</StyledNavText>
         </StyledLink>
       </StyledNavList>
     </nav>
