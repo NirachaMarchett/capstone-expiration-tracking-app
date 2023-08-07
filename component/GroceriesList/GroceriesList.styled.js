@@ -1,12 +1,14 @@
 import styled from "styled-components";
+import Link from "next/link";
 
-export const StyledList = styled.section`
+export const StyledList = styled.ul`
+  list-style-type: none;
   padding: 0.5rem;
   gap: 5px;
   margin: 20px 20px 100px 20px;
 `;
 
-export const StyledListContainer = styled.li`
+export const StyledListContainer = styled(Link)`
   list-style-type: none;
   background-color: grey;
   border-radius: 15px;
@@ -15,6 +17,8 @@ export const StyledListContainer = styled.li`
   margin-top: 25px;
   padding: 5px;
   position: relative;
+  text-decoration: none;
+  color: black;
 `;
 
 export const StyledHeading = styled.h2`

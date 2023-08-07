@@ -1,6 +1,6 @@
 export const groceries = [
   {
-    id: 1,
+    id: "1",
     emoji: "🍎",
     name: "apple",
     amount: 6,
@@ -9,7 +9,7 @@ export const groceries = [
     expirationDate: "2023-08-09",
   },
   {
-    id: 2,
+    id: "2",
     emoji: "🍌",
     name: "banana",
     amount: 3,
@@ -18,7 +18,7 @@ export const groceries = [
     expirationDate: "2023-08-03",
   },
   {
-    id: 3,
+    id: "3",
     emoji: "🥑",
     name: "avocado",
     amount: 4,
@@ -27,7 +27,7 @@ export const groceries = [
     expirationDate: "2023-08-05",
   },
   {
-    id: 4,
+    id: "4",
     emoji: "🥦",
     name: "broccoli",
     amount: 1,
@@ -36,7 +36,7 @@ export const groceries = [
     expirationDate: "2023-08-11",
   },
   {
-    id: 5,
+    id: "5",
     emoji: "🥩",
     name: "beef",
     amount: 1,
@@ -45,7 +45,7 @@ export const groceries = [
     expirationDate: "2023-08-04",
   },
   {
-    id: 6,
+    id: "6",
     emoji: "🍗",
     name: "chicken wings",
     amount: 1,
@@ -54,7 +54,7 @@ export const groceries = [
     expirationDate: "2023-08-04",
   },
   {
-    id: 7,
+    id: "7",
     emoji: "🍩",
     name: "donut",
     amount: 6,
@@ -63,7 +63,7 @@ export const groceries = [
     expirationDate: "2023-08-05",
   },
   {
-    id: 8,
+    id: "8",
     emoji: "🥒",
     name: "cucumber",
     amount: 1,
@@ -72,7 +72,7 @@ export const groceries = [
     expirationDate: "2023-08-05",
   },
   {
-    id: 9,
+    id: "9",
     emoji: "🍉",
     name: "watermelon",
     amount: 1,
@@ -81,7 +81,7 @@ export const groceries = [
     expirationDate: "2023-08-04",
   },
   {
-    id: 10,
+    id: "10",
     emoji: "🥚",
     name: "egg",
     amount: 1,
@@ -90,7 +90,7 @@ export const groceries = [
     expirationDate: "2023-08-05",
   },
   {
-    id: 11,
+    id: "11",
     emoji: "🥓",
     name: "bacon",
     amount: 3,
@@ -99,7 +99,7 @@ export const groceries = [
     expirationDate: "2023-08-06",
   },
   {
-    id: 12,
+    id: "12",
     emoji: "🫑",
     name: "praprika",
     amount: 4,
@@ -108,7 +108,7 @@ export const groceries = [
     expirationDate: "2023-08-08",
   },
   {
-    id: 13,
+    id: "13",
     emoji: "🍓",
     name: "strawberries",
     amount: 1,
@@ -117,7 +117,7 @@ export const groceries = [
     expirationDate: "2023-08-03",
   },
   {
-    id: 14,
+    id: "14",
     emoji: "🍅",
     name: "tomato",
     amount: 6,
@@ -126,7 +126,7 @@ export const groceries = [
     expirationDate: "2023-08-07",
   },
   {
-    id: 15,
+    id: "15",
     emoji: "🍱",
     name: "sushi box",
     amount: 1,
