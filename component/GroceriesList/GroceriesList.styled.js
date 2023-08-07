@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledList = styled.section`
   padding: 0.5rem;
   gap: 5px;
-  margin: 20px;
+  margin: 20px 20px 100px 20px;
 `;
 
 export const StyledListContainer = styled.li`
