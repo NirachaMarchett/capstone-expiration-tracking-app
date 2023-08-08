@@ -4,7 +4,6 @@ import Link from "next/link";
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  gap: 5px;
   margin: 20px 20px 100px 20px;
 `;
 

@@ -8,9 +8,5 @@ export default function ItemDetailsPage() {
   if (!id) {
     return null;
   }
-  return (
-    <>
-      <Item id={id} />
-    </>
-  );
+  return <Item id={id} />;
 }

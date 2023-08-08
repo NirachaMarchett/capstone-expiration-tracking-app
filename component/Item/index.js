@@ -13,14 +13,14 @@ import { styled } from "styled-components";
 
 export default function Item({ id }) {
   const grocerySelectedItem = groceries.find((item) => item.id === id);
-  console.log(id);
+
   return (
     <>
-      <StyledButton>
+      <StyledLinkContainer>
         <StyledButtonLink href="/">⬅️ Back</StyledButtonLink>
-      </StyledButton>
+      </StyledLinkContainer>
       <StyledList>
-        <StyledListContainer key={id} href={`/${id}`}>
+        <StyledListContainer href={`/${id}`}>
           <StyledHeading>{grocerySelectedItem.emoji}</StyledHeading>
 
           <StyledDetailSection>
@@ -44,10 +44,6 @@ const StyledButtonLink = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 1rem;
-`;
-
-const StyledButton = styled.button`
-  margin: 100px 0px 0px 20px;
   background-color: white;
   border: none;
   padding: 0.5rem;
@@ -55,4 +51,8 @@ const StyledButton = styled.button`
   &:hover {
     background-color: pink;
   }
+`;
+
+const StyledLinkContainer = styled.div`
+  margin: 100px 0px 0px 20px;
 `;
