@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { groceryEmojis } from "@/resources/emojis";
 import {
   StyledButton,

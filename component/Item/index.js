@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   StyledDetailSection,
   StyledHeading,
@@ -9,7 +8,9 @@ import {
 import { groceries } from "@/resources/groceries.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
-import { styled } from "styled-components";
+
+import { StyledButtonLink, StyledLinkContainer } from "./Item.styled";
+import UpdateForm from "../UpdateForm";
 
 export default function Item({ id }) {
   const grocerySelectedItem = groceries.find((item) => item.id === id);
@@ -35,24 +36,8 @@ export default function Item({ id }) {
           </StyledRemainingDays>
         </StyledListContainer>
       </StyledList>
+      <UpdateForm defaultValues={grocerySelectedItem} />
       <Navigation />
     </>
   );
 }
-
-const StyledButtonLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-  background-color: white;
-  border: none;
-  padding: 0.5rem;
-
-  &:hover {
-    background-color: pink;
-  }
-`;
-
-const StyledLinkContainer = styled.div`
-  margin: 100px 0px 0px 20px;
-`;
