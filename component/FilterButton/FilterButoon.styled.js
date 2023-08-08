@@ -11,7 +11,7 @@ export const StyledDiv = styled.div`
   border-radius: 10px;
   display: flex;
   gap: 100px;
-  margin: 30px 10px 15px 10px;
+  margin: 20px 10px 15px 10px;
   position: relative;
   buttom: 20px;
 `;

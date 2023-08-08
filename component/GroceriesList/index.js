@@ -14,17 +14,19 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       <StyledList>
         {groceriesList.map(
           ({ id, emoji, name, purchasedDate, expirationDate }) => (
-            <StyledListContainer key={id}>
-              <StyledHeading>{emoji}</StyledHeading>
-              <StyledDetailSection>
-                <p>Name: {name}</p>
-                <p>Purchased Date: {purchasedDate}</p>
-                <p>Expiration Date: {expirationDate}</p>
-              </StyledDetailSection>
-              <StyledRemainingDays>
-                Expire in: {calculateDaysRemaining(expirationDate)} days
-              </StyledRemainingDays>
-            </StyledListContainer>
+            <li key={id}>
+              <StyledListContainer href={`/${id}`}>
+                <StyledHeading>{emoji}</StyledHeading>
+                <StyledDetailSection>
+                  <p>Name: {name}</p>
+                  <p>Purchased Date: {purchasedDate}</p>
+                  <p>Expiration Date: {expirationDate}</p>
+                </StyledDetailSection>
+                <StyledRemainingDays>
+                  Expire in: {calculateDaysRemaining(expirationDate)} days
+                </StyledRemainingDays>
+              </StyledListContainer>
+            </li>
           )
         )}
       </StyledList>
@@ -36,6 +38,11 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     const remainingDays = Math.ceil(
       (expirationDate - currentDate) / (1000 * 60 * 60 * 24)
     );
+
+    //If use code below, search bar will not work as intended
+    // if (!filterValue || filterValue === -1) {
+    //   return true;
+    // }
 
     if (filterValue === 8) {
       return remainingDays > 7;
@@ -54,19 +61,21 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       {filteredGroceriesList.map(
         ({ id, emoji, name, purchasedDate, expirationDate }) => {
           return (
-            <StyledListContainer key={id}>
-              <StyledHeading>{emoji}</StyledHeading>
+            <li key={id}>
+              <StyledListContainer href={`/${id}`}>
+                <StyledHeading>{emoji}</StyledHeading>
 
-              <StyledDetailSection>
-                <p>Name: {name}</p>
-                <p>Purchased Date: {purchasedDate}</p>
-                <p>Expiration Date: {expirationDate}</p>
-              </StyledDetailSection>
+                <StyledDetailSection>
+                  <p>Name: {name}</p>
+                  <p>Purchased Date: {purchasedDate}</p>
+                  <p>Expiration Date: {expirationDate}</p>
+                </StyledDetailSection>
 
-              <StyledRemainingDays>
-                Expire in: {calculateDaysRemaining(expirationDate)} days
-              </StyledRemainingDays>
-            </StyledListContainer>
+                <StyledRemainingDays>
+                  Expire in: {calculateDaysRemaining(expirationDate)} days
+                </StyledRemainingDays>
+              </StyledListContainer>
+            </li>
           );
         }
       )}

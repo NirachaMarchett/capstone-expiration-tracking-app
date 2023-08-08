@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { styled } from "styled-components";
 
 export default function SearchBar({ onSearch }) {
   const [searchBarValue, setSearchBarValue] = useState("");
@@ -15,7 +16,7 @@ export default function SearchBar({ onSearch }) {
 
   return (
     <>
-      <form>
+      <StyledForm>
         <label htmlFor="searchTerm">Item Name:</label>
         <input
           name="searchTerm"
@@ -24,8 +25,20 @@ export default function SearchBar({ onSearch }) {
           onChange={handleInputChange}
           placeholder="What are you looking for?"
         />
-      </form>
-      <button onClick={handleCancel}>Cancel</button>
+      </StyledForm>
+      <StyledButton onClick={handleCancel}>Cancel</StyledButton>
     </>
   );
 }
+
+const StyledForm = styled.form`
+  margin: 0px 0px 0px 20px;
+  position: relative;
+`;
+
+const StyledButton = styled.button`
+  position: relative;
+  position: absolute;
+  right: 25px;
+  top: 241px;
+`;
