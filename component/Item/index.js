@@ -10,6 +10,7 @@ import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
 
 import { StyledButtonLink, StyledLinkContainer } from "./Item.styled";
+import UpdateForm from "../UpdateForm";
 
 export default function Item({ id }) {
   const grocerySelectedItem = groceries.find((item) => item.id === id);
@@ -35,6 +36,7 @@ export default function Item({ id }) {
           </StyledRemainingDays>
         </StyledListContainer>
       </StyledList>
+      <UpdateForm />
       <Navigation />
     </>
   );

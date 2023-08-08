@@ -1,6 +1,5 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
-  StyledButton,
   StyledEmojiInput,
   StyledFormField,
   StyledHeading,
@@ -8,23 +7,14 @@ import {
   StyledInputField,
   StyledInputSection,
   StyledLabel,
-} from "./Form.styled";
+} from "./UpdateForm.styled";
 
-export default function AddGroceryItemForm({ onAddItem }) {
-  function handleSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-
-    onAddItem(data);
-    event.target.reset();
-    event.target.elements.name.focus();
-  }
+export default function UpdateForm() {
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <StyledFormField>
-          <StyledHeading>Add Emoji</StyledHeading>
+          <StyledHeading>Update Item Detail</StyledHeading>
           <StyledHeading>
             <StyledEmojiInput
               list="emojis"
@@ -55,6 +45,7 @@ export default function AddGroceryItemForm({ onAddItem }) {
                 required
               />
             </StyledInputField>
+
             <StyledInputField>
               <StyledLabel htmlFor="expirationDate">
                 Expiration Date:
@@ -66,8 +57,22 @@ export default function AddGroceryItemForm({ onAddItem }) {
                 required
               />
             </StyledInputField>
+
+            <StyledInputField>
+              <StyledLabel htmlFor="amount">Amount:</StyledLabel>
+              <StyledInput id="amount" type="text" name="amount" />
+            </StyledInputField>
+
+            <StyledInputField>
+              <StyledLabel htmlFor="category">Category:</StyledLabel>
+              <StyledInput id="category" type="select" name="category">
+                {/* <select>
+                  <option>Fruit</option>
+                  <option>Vegetable</option>
+                </select> */}
+              </StyledInput>
+            </StyledInputField>
           </StyledInputSection>
-          <StyledButton type="submit">Add Item</StyledButton>
         </StyledFormField>
       </form>
     </>
