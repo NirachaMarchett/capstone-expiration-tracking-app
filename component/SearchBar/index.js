@@ -25,12 +25,20 @@ export default function SearchBar({ onSearch }) {
           onChange={handleInputChange}
           placeholder="What are you looking for?"
         />
-        <button onClick={handleCancel}>Cancel</button>
       </StyledForm>
+      <StyledButton onClick={handleCancel}>Cancel</StyledButton>
     </>
   );
 }
 
 const StyledForm = styled.form`
   margin: 0px 0px 0px 20px;
+  position: relative;
+`;
+
+const StyledButton = styled.button`
+  position: relative;
+  position: absolute;
+  right: 25px;
+  top: 241px;
 `;
