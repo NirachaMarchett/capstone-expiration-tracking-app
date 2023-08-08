@@ -66,14 +66,19 @@ export default function UpdateForm({ defaultValues }) {
 
           <StyledInputField>
             <StyledLabel htmlFor="amount">Amount:</StyledLabel>
-            <StyledInput id="amount" type="number" name="amount" />
+            <StyledInput
+              id="amount"
+              type="number"
+              name="amount"
+              defaultValue={defaultValues.amount}
+            />
           </StyledInputField>
 
           <StyledInputField>
             <StyledLabel htmlFor="category">Category:</StyledLabel>
             <StyledSelectField>
               <StyledSelect name="category" id="category">
-                <option value="">--Select Category--</option>
+                <option value="">{defaultValues.category}</option>
                 <option value="fruit">Fruit</option>
                 <option value="vegetable">Vegetable</option>
                 <option value="food">Food</option>
@@ -87,6 +92,7 @@ export default function UpdateForm({ defaultValues }) {
             </StyledSelectField>
           </StyledInputField>
         </StyledInputSection>
+        <button type="submit">Save</button>
       </StyledFormField>
     </form>
   );

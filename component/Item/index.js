@@ -2,14 +2,17 @@ import {
   StyledDetailSection,
   StyledHeading,
   StyledList,
-  StyledListContainer,
   StyledRemainingDays,
 } from "../GroceriesList/GroceriesList.styled";
 import { groceries } from "@/resources/groceries.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
 
-import { StyledButtonLink, StyledLinkContainer } from "./Item.styled";
+import {
+  StyledButtonLink,
+  StyledLinkContainer,
+  StyledListContainer,
+} from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
 export default function Item({ id }) {
@@ -28,6 +31,8 @@ export default function Item({ id }) {
             <p>Name: {grocerySelectedItem.name}</p>
             <p>Purchased Date: {grocerySelectedItem.purchasedDate}</p>
             <p>Expiration Date: {grocerySelectedItem.expirationDate}</p>
+            <p>Amount: {grocerySelectedItem.amount}</p>
+            <p>Category: {grocerySelectedItem.category}</p>
           </StyledDetailSection>
 
           <StyledRemainingDays>
