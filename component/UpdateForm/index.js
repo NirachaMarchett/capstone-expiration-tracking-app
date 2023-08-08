@@ -10,8 +10,6 @@ import {
   StyledSelect,
   StyledSelectField,
 } from "./UpdateForm.styled";
-import { groceries } from "@/resources/groceries";
-import { useState } from "react";
 
 export default function UpdateForm({ defaultValues }) {
   return (
