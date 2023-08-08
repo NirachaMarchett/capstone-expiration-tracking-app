@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledOverviewSection = styled.section`
-  background-color: lightblue;
+  background-color: #293241;
   border-radius: 15px;
   display: grid;
   padding: 0.5rem;
@@ -12,6 +12,7 @@ export const StyledOverviewSection = styled.section`
 
 export const StyledHeading = styled.h2`
   font-size: 1.5rem;
+  color: white;
   text-align: center;
 `;
 

@@ -10,7 +10,7 @@ export const StyledList = styled.ul`
 
 export const StyledListContainer = styled(Link)`
   list-style-type: none;
-  background-color: grey;
+  background-color: #f3f6f8;
   border-radius: 15px;
   border: 0px;
   display: grid;
@@ -35,7 +35,7 @@ export const StyledHeading = styled.h2`
 export const StyledRemainingDays = styled.p`
   font-size: 1rem;
   background: white;
-  border: 2px solid #293241;
+  border: 2px solid #003b4a;
   border-radius: 20px;
   height: 30px;
   width: 150px;
@@ -48,6 +48,7 @@ export const StyledRemainingDays = styled.p`
 
 export const StyledDetailSection = styled.section`
   position: absolute;
+  color: ;
   right: 10%;
   top: 10%;
 `;
