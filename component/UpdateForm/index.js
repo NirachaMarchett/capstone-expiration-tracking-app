@@ -7,9 +7,13 @@ import {
   StyledInputField,
   StyledInputSection,
   StyledLabel,
+  StyledSelect,
+  StyledSelectField,
 } from "./UpdateForm.styled";
+import { groceries } from "@/resources/groceries";
+import { useState } from "react";
 
-export default function UpdateForm() {
+export default function UpdateForm({ defaultValues }) {
   return (
     <>
       <form>
@@ -21,8 +25,7 @@ export default function UpdateForm() {
               id="emoji"
               type="text"
               name="emoji"
-              placeholder="➕"
-              defaultValue="➕"
+              defaultValue={defaultValues.emoji}
             />
           </StyledHeading>
           <datalist id="emojis">
@@ -33,7 +36,13 @@ export default function UpdateForm() {
           <StyledInputSection>
             <StyledInputField>
               <StyledLabel htmlFor="name">Item Name:</StyledLabel>
-              <StyledInput id="name" type="text" name="name" required />
+              <StyledInput
+                id="name"
+                type="text"
+                name="name"
+                defaultValue={defaultValues.name}
+                required
+              />
             </StyledInputField>
 
             <StyledInputField>
@@ -42,6 +51,7 @@ export default function UpdateForm() {
                 id="purchasedDate"
                 type="date"
                 name="purchasedDate"
+                defaultValue={defaultValues.purchasedDate}
                 required
               />
             </StyledInputField>
@@ -54,27 +64,39 @@ export default function UpdateForm() {
                 id="expirationDate"
                 type="date"
                 name="expirationDate"
+                defaultValue={defaultValues.expirationDate}
                 required
               />
             </StyledInputField>
 
             <StyledInputField>
               <StyledLabel htmlFor="amount">Amount:</StyledLabel>
-              <StyledInput id="amount" type="text" name="amount" />
+              <StyledInput id="amount" type="number" name="amount" />
             </StyledInputField>
 
             <StyledInputField>
               <StyledLabel htmlFor="category">Category:</StyledLabel>
-              <StyledInput id="category" type="select" name="category">
-                {/* <select>
-                  <option>Fruit</option>
-                  <option>Vegetable</option>
-                </select> */}
-              </StyledInput>
+              <StyledSelectField>
+                <StyledSelect name="category" id="category">
+                  <option value="">--Select Category--</option>
+                  <option value="fruit">Fruit</option>
+                  <option value="vegetable">Vegetable</option>
+                  <option value="food">Food</option>
+                  <option value="meat">Meat</option>
+                  <option value="protein">Protein Food</option>
+                  <option value="Dairy">Dairy</option>
+                  <option value="pastry">Pastry</option>
+                  <option value="beverages">Beverages</option>
+                  <option value="beverages">Others</option>
+                </StyledSelect>
+              </StyledSelectField>
             </StyledInputField>
           </StyledInputSection>
         </StyledFormField>
       </form>
     </>
   );
+}
+
+{
 }

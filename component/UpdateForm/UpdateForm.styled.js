@@ -7,7 +7,7 @@ export const StyledFormField = styled.div`
   align-item: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  margin: 0px 20px 100px 20px;
+  margin: 0px 20px 150px 20px;
 `;
 export const StyledEmojiInput = styled.input`
   font-size: 3rem;
@@ -54,4 +54,19 @@ export const StyledHeading = styled.h2`
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
+`;
+
+export const StyledSelectField = styled.div`
+  display: flex;
+  padding-inline: 20px;
+  padding-block: 10px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid;
+  flex-direction: column;
+`;
+
+export const StyledSelect = styled.select`
+  border: none;
+  background-color: white;
 `;

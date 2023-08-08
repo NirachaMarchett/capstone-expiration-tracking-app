@@ -36,7 +36,7 @@ export default function Item({ id }) {
           </StyledRemainingDays>
         </StyledListContainer>
       </StyledList>
-      <UpdateForm />
+      <UpdateForm defaultValues={grocerySelectedItem} />
       <Navigation />
     </>
   );
