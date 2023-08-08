@@ -47,7 +47,6 @@ export const StyledRemainingDays = styled.p`
 
 export const StyledDetailSection = styled.section`
   position: absolute;
-  color: ;
   right: 10%;
   top: 10%;
 `;
