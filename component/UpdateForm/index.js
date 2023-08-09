@@ -1,5 +1,6 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
+  StyledButton,
   StyledEmojiInput,
   StyledFormField,
   StyledHeading,
@@ -11,9 +12,18 @@ import {
   StyledSelectField,
 } from "./UpdateForm.styled";
 
-export default function UpdateForm({ defaultValues }) {
+export default function UpdateForm({ defaultValues, onChange }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    data.id = defaultValues.id;
+
+    onChange(data);
+    event.target.elements.name.focus();
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <StyledFormField>
         <StyledHeading>Update Item Detail</StyledHeading>
         <StyledHeading>
@@ -92,7 +102,7 @@ export default function UpdateForm({ defaultValues }) {
             </StyledSelectField>
           </StyledInputField>
         </StyledInputSection>
-        <button type="submit">Save</button>
+        <StyledButton type="submit">Save</StyledButton>
       </StyledFormField>
     </form>
   );

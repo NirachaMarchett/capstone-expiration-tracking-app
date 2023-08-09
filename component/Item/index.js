@@ -4,10 +4,8 @@ import {
   StyledList,
   StyledRemainingDays,
 } from "../GroceriesList/GroceriesList.styled";
-import { groceries } from "@/resources/groceries.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
-
 import {
   StyledButtonLink,
   StyledLinkContainer,
@@ -15,8 +13,8 @@ import {
 } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
-export default function Item({ id }) {
-  const grocerySelectedItem = groceries.find((item) => item.id === id);
+export default function Item({ id, onChange, groceriesList }) {
+  const grocerySelectedItem = groceriesList.find((item) => item.id === id);
 
   return (
     <>
@@ -36,12 +34,12 @@ export default function Item({ id }) {
           </StyledDetailSection>
 
           <StyledRemainingDays>
-            Expire in:
+            Expires in:
             {calculateDaysRemaining(grocerySelectedItem.expirationDate)} days
           </StyledRemainingDays>
         </StyledListContainer>
       </StyledList>
-      <UpdateForm defaultValues={grocerySelectedItem} />
+      <UpdateForm defaultValues={grocerySelectedItem} onChange={onChange} />
       <Navigation />
     </>
   );
