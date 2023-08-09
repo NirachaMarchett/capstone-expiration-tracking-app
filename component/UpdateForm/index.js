@@ -1,6 +1,7 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
-  StyledButton,
+  StyledAddButton,
+  StyledDeleteButton,
   StyledEmojiInput,
   StyledFormField,
   StyledHeading,
@@ -11,8 +12,12 @@ import {
   StyledSelect,
   StyledSelectField,
 } from "./UpdateForm.styled";
+import { styled } from "styled-components";
+import { useRouter } from "next/router";
 
-export default function UpdateForm({ defaultValues, onChange }) {
+export default function UpdateForm({ defaultValues, onChange, onDelete }) {
+  const router = useRouter();
+
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -22,6 +27,12 @@ export default function UpdateForm({ defaultValues, onChange }) {
     onChange(data);
     event.target.elements.name.focus();
   }
+
+  const handleDelete = () => {
+    onDelete(defaultValues.id);
+    router.push("/");
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <StyledFormField>
@@ -102,7 +113,12 @@ export default function UpdateForm({ defaultValues, onChange }) {
             </StyledSelectField>
           </StyledInputField>
         </StyledInputSection>
-        <StyledButton type="submit">Save</StyledButton>
+        <StyledDiv>
+          <StyledAddButton type="submit">Save</StyledAddButton>
+          <StyledDeleteButton type="button" onClick={handleDelete}>
+            Delete
+          </StyledDeleteButton>
+        </StyledDiv>
       </StyledFormField>
     </form>
   );
@@ -110,3 +126,10 @@ export default function UpdateForm({ defaultValues, onChange }) {
 
 {
 }
+
+const StyledDiv = styled.div`
+  border: solid white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+`;

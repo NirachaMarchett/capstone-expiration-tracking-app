@@ -18,9 +18,13 @@ export default function App({ Component, pageProps }) {
       //If use line17, any attribute might be accidentlly removed
       // item.id === updatedDetail.id ? updatedDetail : item
     );
-
     setGroceriesList(updatedList);
   };
+
+  const handleDeleteItem = (id) => {
+    setGroceriesList((items) => items.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -29,6 +33,7 @@ export default function App({ Component, pageProps }) {
         onAddItem={handleAddItem}
         groceriesList={groceriesList}
         onChange={handleItemUpdate}
+        onDelete={handleDeleteItem}
       />
     </>
   );

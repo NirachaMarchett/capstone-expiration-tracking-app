@@ -9,7 +9,6 @@ export const StyledNavList = styled.ul`
   justify-content: space-around;
   background-color: white;
   padding: 1rem;
-  padding: 1rem;
   position: fixed;
   bottom: 0;
   z-index: 999;
