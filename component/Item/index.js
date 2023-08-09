@@ -10,9 +10,6 @@ import { StyledButtonLink, StyledContainer, StyledDiv } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
 export default function Item({ onChange, grocerySelectedItem }) {
-  //Another approach
-  // const grocerySelectedItem = groceriesList.find((item) => item.id === id);
-
   return (
     <>
       <StyledDiv>

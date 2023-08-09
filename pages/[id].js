@@ -12,7 +12,6 @@ export default function ItemDetailsPage({ onChange, groceriesList }) {
     <Item
       id={id}
       onChange={onChange}
-      //Another approach groceriesList={groceriesList}
       grocerySelectedItem={groceriesList.find((item) => item.id === id)}
     />
   );
