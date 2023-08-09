@@ -11,8 +11,12 @@ export default function App({ Component, pageProps }) {
 
   const handleItemUpdate = (updatedDetail) => {
     // Update the groceries list with the updated detail
-    const updatedList = groceriesList.map((item) =>
-      item.id === updatedDetail.id ? updatedDetail : item
+    const updatedList = groceriesList.map(
+      (item) =>
+        //To make sure any attributes are not being removed by accident, spread them first. The second spread (...updatedDetail) will overwrite any attributes that has the change
+        item.id === updatedDetail.id ? { ...item, ...updatedDetail } : item
+      //If use line17, any attribute might be accidentlly removed
+      // item.id === updatedDetail.id ? updatedDetail : item
     );
 
     setGroceriesList(updatedList);

@@ -8,5 +8,12 @@ export default function ItemDetailsPage({ onChange, groceriesList }) {
   if (!id) {
     return null;
   }
-  return <Item id={id} onChange={onChange} groceriesList={groceriesList} />;
+  return (
+    <Item
+      id={id}
+      onChange={onChange}
+      //Another approach groceriesList={groceriesList}
+      grocerySelectedItem={groceriesList.find((item) => item.id === id)}
+    />
+  );
 }

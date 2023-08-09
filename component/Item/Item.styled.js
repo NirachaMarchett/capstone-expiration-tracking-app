@@ -14,11 +14,11 @@ export const StyledButtonLink = styled(Link)`
   }
 `;
 
-export const StyledLinkContainer = styled.div`
+export const StyledDiv = styled.div`
   margin: 100px 0px 0px 20px;
 `;
 
-export const StyledListContainer = styled(Link)`
+export const StyledContainer = styled.div`
   list-style-type: none;
   background-color: #f3f6f8;
   height: 250px;

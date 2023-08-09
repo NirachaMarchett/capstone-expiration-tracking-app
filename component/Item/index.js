@@ -6,23 +6,20 @@ import {
 } from "../GroceriesList/GroceriesList.styled";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
-import {
-  StyledButtonLink,
-  StyledLinkContainer,
-  StyledListContainer,
-} from "./Item.styled";
+import { StyledButtonLink, StyledContainer, StyledDiv } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
-export default function Item({ id, onChange, groceriesList }) {
-  const grocerySelectedItem = groceriesList.find((item) => item.id === id);
+export default function Item({ onChange, grocerySelectedItem }) {
+  //Another approach
+  // const grocerySelectedItem = groceriesList.find((item) => item.id === id);
 
   return (
     <>
-      <StyledLinkContainer>
+      <StyledDiv>
         <StyledButtonLink href="/">⬅️ Back</StyledButtonLink>
-      </StyledLinkContainer>
+      </StyledDiv>
       <StyledList>
-        <StyledListContainer href={`/${id}`}>
+        <StyledContainer>
           <StyledHeading>{grocerySelectedItem.emoji}</StyledHeading>
 
           <StyledDetailSection>
@@ -37,7 +34,7 @@ export default function Item({ id, onChange, groceriesList }) {
             Expires in:
             {calculateDaysRemaining(grocerySelectedItem.expirationDate)} days
           </StyledRemainingDays>
-        </StyledListContainer>
+        </StyledContainer>
       </StyledList>
       <UpdateForm defaultValues={grocerySelectedItem} onChange={onChange} />
       <Navigation />
