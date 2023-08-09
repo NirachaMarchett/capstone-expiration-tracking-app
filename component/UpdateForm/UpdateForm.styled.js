@@ -70,3 +70,11 @@ export const StyledSelect = styled.select`
   border: none;
   background-color: white;
 `;
+
+export const StyledButton = styled.button`
+  background-color: #98c1d9;
+
+  &:hover {
+    background-color: pink;
+  
+`;

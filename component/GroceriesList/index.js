@@ -23,7 +23,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                   <p>Expiration Date: {expirationDate}</p>
                 </StyledDetailSection>
                 <StyledRemainingDays>
-                  Expire in: {calculateDaysRemaining(expirationDate)} days
+                  Expires in: {calculateDaysRemaining(expirationDate)} days
                 </StyledRemainingDays>
               </StyledListContainer>
             </li>

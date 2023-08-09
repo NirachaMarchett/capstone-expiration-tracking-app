@@ -4,14 +4,22 @@ import { groceries } from "@/resources/groceries";
 
 export default function App({ Component, pageProps }) {
   const [groceriesList, setGroceriesList] = useState(groceries);
-  // const [searchTerm, setSearchTerm] = useState("");
 
   const handleAddItem = (newItem) => {
     setGroceriesList([...groceriesList, newItem]);
+  };
 
-    // const handleSearch = (term) => {
-    //   setSearchTerm(term);
-    // };
+  const handleItemUpdate = (updatedDetail) => {
+    // Update the groceries list with the updated detail
+    const updatedList = groceriesList.map(
+      (item) =>
+        //To make sure any attributes are not being removed by accident, spread them first. The second spread (...updatedDetail) will overwrite any attributes that has the change
+        item.id === updatedDetail.id ? { ...item, ...updatedDetail } : item
+      //If use line17, any attribute might be accidentlly removed
+      // item.id === updatedDetail.id ? updatedDetail : item
+    );
+
+    setGroceriesList(updatedList);
   };
   return (
     <>
@@ -20,8 +28,7 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         onAddItem={handleAddItem}
         groceriesList={groceriesList}
-        // onSearch={handleSearch}
-        // searchTerm={searchTerm}
+        onChange={handleItemUpdate}
       />
     </>
   );
