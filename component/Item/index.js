@@ -1,15 +1,23 @@
 import {
   StyledDetailSection,
   StyledHeading,
-  StyledList,
   StyledRemainingDays,
 } from "../GroceriesList/GroceriesList.styled";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
-import { StyledButtonLink, StyledContainer, StyledDiv } from "./Item.styled";
+import {
+  StyledButtonLink,
+  StyledContainer,
+  StyledDiv,
+  StyledList,
+} from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
-export default function Item({ onChange, grocerySelectedItem }) {
+export default function Item({ onChange, grocerySelectedItem, onDelete }) {
+  // Check if grocerySelectedItem is undefined
+  if (!grocerySelectedItem) {
+    return;
+  }
   return (
     <>
       <StyledDiv>
@@ -33,7 +41,11 @@ export default function Item({ onChange, grocerySelectedItem }) {
           </StyledRemainingDays>
         </StyledContainer>
       </StyledList>
-      <UpdateForm defaultValues={grocerySelectedItem} onChange={onChange} />
+      <UpdateForm
+        defaultValues={grocerySelectedItem}
+        onChange={onChange}
+        onDelete={onDelete}
+      />
       <Navigation />
     </>
   );

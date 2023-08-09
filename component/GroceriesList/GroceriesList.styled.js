@@ -4,7 +4,7 @@ import Link from "next/link";
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 100px 20px;
 `;
 
 export const StyledListContainer = styled(Link)`

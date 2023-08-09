@@ -32,3 +32,9 @@ export const StyledContainer = styled.div`
   text-decoration: none;
   color: black;
 `;
+
+export const StyledList = styled.ul`
+  list-style-type: none;
+  padding: 0.5rem;
+  margin: 20px 20px 20px 20px;
+`;
