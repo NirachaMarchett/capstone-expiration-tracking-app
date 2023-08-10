@@ -1,12 +1,20 @@
-import { useState } from "react";
 import GlobalStyle from "../styles";
 import { groceries } from "@/resources/groceries";
+import useLocalStorageState from "use-local-storage-state";
+import { v4 as uuidv4 } from "uuid";
 
 export default function App({ Component, pageProps }) {
-  const [groceriesList, setGroceriesList] = useState(groceries);
+  // const [groceriesList, setGroceriesList] = useState(groceries);
+  const [groceriesList, setGroceriesList] = useLocalStorageState(
+    "groceriesList",
+    { defaultValue: groceries }
+  );
 
   const handleAddItem = (newItem) => {
-    setGroceriesList([...groceriesList, newItem]);
+    setGroceriesList([
+      ...groceriesList,
+      { ...newItem, id: uuidv4().slice(0, 8) },
+    ]);
   };
 
   const handleItemUpdate = (updatedDetail) => {
@@ -24,6 +32,7 @@ export default function App({ Component, pageProps }) {
   const handleDeleteItem = (id) => {
     setGroceriesList((items) => items.filter((item) => item.id !== id));
   };
+  console.log(groceriesList);
 
   return (
     <>
