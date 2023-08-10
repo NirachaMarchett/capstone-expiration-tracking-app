@@ -1,4 +1,3 @@
-import { groceries } from "@/resources/groceries.js";
 import {
   StyledDetailSection,
   StyledHeading,
@@ -60,6 +59,8 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     <StyledList>
       {filteredGroceriesList.map(
         ({ id, emoji, name, purchasedDate, expirationDate }) => {
+          const daysRemaining = calculateDaysRemaining(expirationDate);
+          const day = daysRemaining === 1 ? "day" : "days";
           return (
             <li key={id}>
               <StyledListContainer href={`/${id}`}>
@@ -72,7 +73,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                 </StyledDetailSection>
 
                 <StyledRemainingDays>
-                  Expire in: {calculateDaysRemaining(expirationDate)} days
+                  Expires in: {calculateDaysRemaining(expirationDate)} {day}
                 </StyledRemainingDays>
               </StyledListContainer>
             </li>
