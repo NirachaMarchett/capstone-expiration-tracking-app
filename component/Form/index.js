@@ -1,5 +1,6 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
+  StyleDiv,
   StyledButton,
   StyledEmojiInput,
   StyledFormField,
@@ -67,7 +68,9 @@ export default function AddGroceryItemForm({ onAddItem }) {
               />
             </StyledInputField>
           </StyledInputSection>
-          <StyledButton type="submit">Add Item</StyledButton>
+          <StyleDiv>
+            <StyledButton type="submit">Add Item</StyledButton>
+          </StyleDiv>
         </StyledFormField>
       </form>
     </>

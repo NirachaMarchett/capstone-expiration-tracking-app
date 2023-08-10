@@ -38,8 +38,9 @@ export const StyledRemainingDays = styled.p`
   border-radius: 20px;
   height: 30px;
   width: 150px;
-  text-align: center;
-  justify-item: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 2%;
   top: -18%;

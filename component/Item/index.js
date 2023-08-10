@@ -1,7 +1,6 @@
 import {
   StyledDetailSection,
   StyledHeading,
-  StyledRemainingDays,
 } from "../GroceriesList/GroceriesList.styled";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import Navigation from "../Navigation";
@@ -10,6 +9,7 @@ import {
   StyledContainer,
   StyledDiv,
   StyledList,
+  StyledRemainingDays,
 } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 
