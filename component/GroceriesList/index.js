@@ -12,21 +12,25 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     return (
       <StyledList>
         {groceriesList.map(
-          ({ id, emoji, name, purchasedDate, expirationDate }) => (
-            <li key={id}>
-              <StyledListContainer href={`/${id}`}>
-                <StyledHeading>{emoji}</StyledHeading>
-                <StyledDetailSection>
-                  <p>Name: {name}</p>
-                  <p>Purchased Date: {purchasedDate}</p>
-                  <p>Expiration Date: {expirationDate}</p>
-                </StyledDetailSection>
-                <StyledRemainingDays>
-                  Expires in: {calculateDaysRemaining(expirationDate)} days
-                </StyledRemainingDays>
-              </StyledListContainer>
-            </li>
-          )
+          ({ id, emoji, name, purchasedDate, expirationDate }) => {
+            const daysRemaining = calculateDaysRemaining(expirationDate);
+            const day = daysRemaining === 1 ? "day" : "days";
+            return (
+              <li key={id}>
+                <StyledListContainer href={`/${id}`}>
+                  <StyledHeading>{emoji}</StyledHeading>
+                  <StyledDetailSection>
+                    <p>Name: {name}</p>
+                    <p>Purchased Date: {purchasedDate}</p>
+                    <p>Expiration Date: {expirationDate}</p>
+                  </StyledDetailSection>
+                  <StyledRemainingDays>
+                    Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                  </StyledRemainingDays>
+                </StyledListContainer>
+              </li>
+            );
+          }
         )}
       </StyledList>
     );
