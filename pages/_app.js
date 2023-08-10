@@ -4,7 +4,6 @@ import useLocalStorageState from "use-local-storage-state";
 import { v4 as uuidv4 } from "uuid";
 
 export default function App({ Component, pageProps }) {
-  // const [groceriesList, setGroceriesList] = useState(groceries);
   const [groceriesList, setGroceriesList] = useLocalStorageState(
     "groceriesList",
     { defaultValue: groceries }
