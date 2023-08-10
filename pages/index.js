@@ -33,7 +33,7 @@ export default function HomePage({ groceriesList }) {
 
   return (
     <>
-      <ExpirationOverview />
+      <ExpirationOverview groceriesList={filteredGroceriesList} />
       <SearchBar onSearch={handleSearch} />
       <FilterButton groceriesList={filteredGroceriesList} />
       <Navigation />

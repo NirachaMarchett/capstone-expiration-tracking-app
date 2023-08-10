@@ -32,7 +32,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       </StyledList>
     );
   }
-  const filteredGroceriesList = groceries.filter((item) => {
+  const filteredGroceriesList = groceriesList.filter((item) => {
     const currentDate = new Date();
     const expirationDate = new Date(item.expirationDate);
     const remainingDays = Math.ceil(
