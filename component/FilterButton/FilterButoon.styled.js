@@ -9,7 +9,7 @@ export const StyledParagraph = styled.p`
 `;
 
 export const StyledDiv = styled.div`
-  background: white;
+  background: none;
   display: flex;
   justify-content: space-between;
   margin: 20px 20px 20px 20px;

@@ -42,7 +42,7 @@ export const StyledInputSection = styled.div`
   padding: 0.5rem;
   gap: 5px;
   margin-top: 10px;
-  background: white;
+  background: none;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -71,9 +71,10 @@ export const StyledSelect = styled.select`
   background-color: white;
 `;
 
-export const StyledAddButton = styled.button`
+export const StyledSaveButton = styled.button`
   background-color: #98c1d9;
   border-radius: 5px;
+  border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 115px;
   height: 34px;
@@ -87,6 +88,7 @@ export const StyledAddButton = styled.button`
 export const StyledDeleteButton = styled.button`
   background-color: ##F4F5FC;
   border-radius: 5px;
+  border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 115px;
   height: 34px;

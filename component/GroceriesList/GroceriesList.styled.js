@@ -18,6 +18,8 @@ export const StyledListContainer = styled(Link)`
   position: relative;
   text-decoration: none;
   color: black;
+
+  }
 `;
 
 export const StyledHeading = styled.h2`

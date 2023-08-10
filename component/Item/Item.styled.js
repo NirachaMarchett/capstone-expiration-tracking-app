@@ -5,12 +5,12 @@ export const StyledButtonLink = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 1rem;
-  background-color: white;
+  background-color: none;
   border: none;
   padding: 0.5rem;
 
   &:hover {
-    background-color: pink;
+    background-color: #f3f6f8;
   }
 `;
 

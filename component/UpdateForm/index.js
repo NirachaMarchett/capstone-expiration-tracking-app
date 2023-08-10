@@ -1,6 +1,6 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
-  StyledAddButton,
+  StyledSaveButton,
   StyledDeleteButton,
   StyledEmojiInput,
   StyledFormField,
@@ -114,7 +114,7 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
           </StyledInputField>
         </StyledInputSection>
         <StyledDiv>
-          <StyledAddButton type="submit">Save</StyledAddButton>
+          <StyledSaveButton type="submit">Save</StyledSaveButton>
           <StyledDeleteButton type="button" onClick={handleDelete}>
             Delete
           </StyledDeleteButton>
@@ -128,7 +128,8 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
 }
 
 const StyledDiv = styled.div`
-  border: solid white;
+  border: none;
+  margin-top: 10px;
   text-decoration: none;
   display: flex;
   justify-content: space-around;
