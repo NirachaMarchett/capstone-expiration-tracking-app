@@ -40,6 +40,6 @@ export const StyledList = styled.li`
   flex-direction: column;
 
   &:hover {
-    background-color: pink;
+    background-color: #f3f6f8;
   }
 `;
