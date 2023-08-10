@@ -18,7 +18,7 @@ export default function SearchBar({ onSearch }) {
     <>
       <StyleDiv>
         <form>
-          <label htmlFor="searchTerm">Item Name: </label>
+          <StyledLabel htmlFor="searchTerm">Item Name: </StyledLabel>
           <StyledInput
             name="searchTerm"
             id="searchTerm"
@@ -38,7 +38,7 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 5px;
   padding: 0px;
-
+  color: var(--font-color-bright-background);
   &:hover {
     color: #f31102;
   }
@@ -57,4 +57,8 @@ const StyledInput = styled.input`
   width: 200px;
   border-radius: 5px;
   padding: 5px;
+`;
+
+const StyledLabel = styled.label`
+  color: var(--font-color-bright-background);
 `;

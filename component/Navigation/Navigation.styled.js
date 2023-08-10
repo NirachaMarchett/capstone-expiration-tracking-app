@@ -16,7 +16,7 @@ export const StyledNavList = styled.ul`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: var(--font-color-bright-background);
 `;
 
 export const StyledNavIcon = styled.span`

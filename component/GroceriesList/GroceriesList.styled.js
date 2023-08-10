@@ -17,7 +17,7 @@ export const StyledListContainer = styled(Link)`
   padding: 5px;
   position: relative;
   text-decoration: none;
-  color: black;
+  color: var(--font-color-bright-background);
 
   }
 `;
@@ -46,6 +46,7 @@ export const StyledRemainingDays = styled.p`
   position: absolute;
   right: 2%;
   top: -18%;
+  color: var(--font-color-bright-background);
 `;
 
 export const StyledDetailSection = styled.section`

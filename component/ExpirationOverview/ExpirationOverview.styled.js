@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledOverviewSection = styled.section`
   margin: var(--header-height) 20px 20px 20px;
-  background-color: var(--primary-background-color);
+  background-color: #293241;
   border-radius: 15px;
   display: grid;
   padding: 0.5rem;

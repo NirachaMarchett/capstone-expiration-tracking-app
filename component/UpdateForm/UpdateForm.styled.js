@@ -54,6 +54,7 @@ export const StyledHeading = styled.h2`
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
+  color: var(--font-color-bright-background);
 `;
 
 export const StyledSelectField = styled.div`

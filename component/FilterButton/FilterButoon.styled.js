@@ -23,4 +23,5 @@ export const StyledSelect = styled.select`
   width: 80px;
   border-radius: 5px;
   padding: 5px;
+  color: var(--font-color-bright-background);
 `;

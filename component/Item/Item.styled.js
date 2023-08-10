@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 export const StyledButtonLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: var(--font-color-bright-background);
   font-size: 1rem;
   background-color: none;
   border: none;
@@ -30,7 +30,7 @@ export const StyledContainer = styled.div`
   padding: 5px;
   position: relative;
   text-decoration: none;
-  color: black;
+  color: var(--font-color-bright-background);
 `;
 
 export const StyledList = styled.ul`
