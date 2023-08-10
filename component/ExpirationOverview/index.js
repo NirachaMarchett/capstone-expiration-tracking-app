@@ -1,5 +1,5 @@
 import React from "react";
-import { groceries } from "@/resources/groceries";
+// import { groceries } from "@/resources/groceries";
 import {
   StyledDiv,
   StyledHeading,
@@ -7,11 +7,11 @@ import {
   StyledRemainingCount,
 } from "./ExpirationOverview.styled";
 
-const filterByExpirationDate = (groceries, daysRemaining) => {
+const filterByExpirationDate = (groceriesList, daysRemaining) => {
   const currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
 
-  return groceries.filter((groceryItem) => {
+  return groceriesList.filter((groceryItem) => {
     const expirationDate = new Date(groceryItem.expirationDate);
     expirationDate.setHours(0, 0, 0, 0);
 
@@ -22,10 +22,10 @@ const filterByExpirationDate = (groceries, daysRemaining) => {
   });
 };
 
-const GroceryCountByExpiration = () => {
-  const todayCount = filterByExpirationDate(groceries, 0).length;
-  const oneDayCount = filterByExpirationDate(groceries, 1).length;
-  const twoDaysCount = filterByExpirationDate(groceries, 2).length;
+const GroceryCountByExpiration = ({ groceriesList }) => {
+  const todayCount = filterByExpirationDate(groceriesList, 0).length;
+  const oneDayCount = filterByExpirationDate(groceriesList, 1).length;
+  const twoDaysCount = filterByExpirationDate(groceriesList, 2).length;
 
   return (
     <StyledDiv>
@@ -45,11 +45,11 @@ const GroceryCountByExpiration = () => {
   );
 };
 
-export default function ExpirationOverview() {
+export default function ExpirationOverview({ groceriesList }) {
   return (
     <StyledOverviewSection>
       <StyledHeading>Items expiring soon. Eat me!</StyledHeading>
-      <GroceryCountByExpiration />
+      <GroceryCountByExpiration groceriesList={groceriesList} />
     </StyledOverviewSection>
   );
 }

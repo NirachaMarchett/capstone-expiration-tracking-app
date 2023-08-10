@@ -1,4 +1,3 @@
-import { groceries } from "@/resources/groceries.js";
 import {
   StyledDetailSection,
   StyledHeading,
@@ -13,26 +12,30 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     return (
       <StyledList>
         {groceriesList.map(
-          ({ id, emoji, name, purchasedDate, expirationDate }) => (
-            <li key={id}>
-              <StyledListContainer href={`/${id}`}>
-                <StyledHeading>{emoji}</StyledHeading>
-                <StyledDetailSection>
-                  <p>Name: {name}</p>
-                  <p>Purchased Date: {purchasedDate}</p>
-                  <p>Expiration Date: {expirationDate}</p>
-                </StyledDetailSection>
-                <StyledRemainingDays>
-                  Expires in: {calculateDaysRemaining(expirationDate)} days
-                </StyledRemainingDays>
-              </StyledListContainer>
-            </li>
-          )
+          ({ id, emoji, name, purchasedDate, expirationDate }) => {
+            const daysRemaining = calculateDaysRemaining(expirationDate);
+            const day = daysRemaining === 1 ? "day" : "days";
+            return (
+              <li key={id}>
+                <StyledListContainer href={`/${id}`}>
+                  <StyledHeading>{emoji}</StyledHeading>
+                  <StyledDetailSection>
+                    <p>Name: {name}</p>
+                    <p>Purchased Date: {purchasedDate}</p>
+                    <p>Expiration Date: {expirationDate}</p>
+                  </StyledDetailSection>
+                  <StyledRemainingDays>
+                    Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                  </StyledRemainingDays>
+                </StyledListContainer>
+              </li>
+            );
+          }
         )}
       </StyledList>
     );
   }
-  const filteredGroceriesList = groceries.filter((item) => {
+  const filteredGroceriesList = groceriesList.filter((item) => {
     const currentDate = new Date();
     const expirationDate = new Date(item.expirationDate);
     const remainingDays = Math.ceil(
@@ -60,6 +63,8 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     <StyledList>
       {filteredGroceriesList.map(
         ({ id, emoji, name, purchasedDate, expirationDate }) => {
+          const daysRemaining = calculateDaysRemaining(expirationDate);
+          const day = daysRemaining === 1 ? "day" : "days";
           return (
             <li key={id}>
               <StyledListContainer href={`/${id}`}>
@@ -72,7 +77,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                 </StyledDetailSection>
 
                 <StyledRemainingDays>
-                  Expire in: {calculateDaysRemaining(expirationDate)} days
+                  Expires in: {calculateDaysRemaining(expirationDate)} {day}
                 </StyledRemainingDays>
               </StyledListContainer>
             </li>
