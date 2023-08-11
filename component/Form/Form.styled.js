@@ -23,7 +23,7 @@ export const StyledEmojiInput = styled.input`
 
 export const StyledLabel = styled.label`
   font-size: 1rem;
-  color: var(--font-color-dark-background);
+  color: var(--font-color-darkmode);
 `;
 
 export const StyledInput = styled.input`
@@ -78,5 +78,5 @@ export const StyleDiv = styled.div`
 export const StyledHeading = styled.h2`
   text-align: center;
   margin: 10px 0px 0px 0px;
-  color: var(--font-color-dark-background);
+  color: var(--font-color-darkmode);
 `;

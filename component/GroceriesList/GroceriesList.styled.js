@@ -9,7 +9,7 @@ export const StyledList = styled.ul`
 
 export const StyledListContainer = styled(Link)`
   list-style-type: none;
-  background-color: #f3f6f8;
+  background-color: var(--seconary-background-color);
   border-radius: 15px;
   border: 0px;
   display: grid;

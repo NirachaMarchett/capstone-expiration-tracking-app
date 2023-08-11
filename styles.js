@@ -10,7 +10,8 @@ export default createGlobalStyle`
 --seconary-background-color:#f3f6f8;
 
 //Dark Mode
---font-color-dark-background: white;
+--font-color-darkmode: white;
+--background-color-darkmode: rgba(41, 50, 65, 0.90);
 }
   *,
   *::before,

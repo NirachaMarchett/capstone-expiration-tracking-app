@@ -30,7 +30,7 @@ export const StyledList = styled.li`
 export const StyledHeading = styled.h2`
   font-size: 1.5rem;
   margin: 20px 20px 20px 20px;
-  color: var(--font-color-dark-background);
+  color: var(--font-color-darkmode);
   text-align: center;
 `;
 

@@ -20,7 +20,7 @@ export const StyledDiv = styled.div`
 
 export const StyledContainer = styled.div`
   list-style-type: none;
-  background-color: #f3f6f8;
+  background-color: var(--seconary-background-color);
   height: 250px;
   border-radius: 15px;
   border: 0px;
