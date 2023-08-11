@@ -5,6 +5,7 @@ import Navigation from "@/component/Navigation";
 import SearchBar from "@/component/SearchBar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 export default function HomePage({ groceriesList }) {
   const [filteredGroceriesList, setFilteredGroceriesList] =
@@ -33,16 +34,19 @@ export default function HomePage({ groceriesList }) {
   };
 
   return (
-    <>
-      <Header />
+    <StyledBody>
       <ExpirationOverview groceriesList={filteredGroceriesList} />
       <SearchBar onSearch={handleSearch} />
       <FilterButton groceriesList={filteredGroceriesList} />
-      <Navigation />
-    </>
+    </StyledBody>
   );
 }
 
+const StyledBody = styled.div`
+  overflow: auto;
+  height: 100%;
+  background-color: ${(props) => props.theme.body};
+`;
 //Old solution
 // const handleSearch = (searchTerm) => {
 //   if (searchTerm.trim() === "") {

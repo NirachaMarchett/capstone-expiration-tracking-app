@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch }) {
             id="searchTerm"
             value={searchBarValue}
             onChange={handleInputChange}
-            placeholder=" What are you looking for?"
+            placeholder=" 🔍 What are you looking for?"
           />
         </form>
         <StyledButton onClick={handleCancel}>Cancel</StyledButton>
@@ -34,11 +34,10 @@ export default function SearchBar({ onSearch }) {
 }
 
 const StyledButton = styled.button`
-  background-color: white;
-  border: none;
   border-radius: 5px;
-  padding: 0px;
-  color: var(--font-color-bright-background);
+  border: none;
+  background-color: ${(props) => props.theme.cancelColor};
+  color: ${(props) => props.theme.fontColor};
   &:hover {
     color: #f31102;
   }
@@ -60,5 +59,5 @@ const StyledInput = styled.input`
 `;
 
 const StyledLabel = styled.label`
-  color: var(--font-color-bright-background);
+  color: ${(props) => props.theme.fontColor};
 `;

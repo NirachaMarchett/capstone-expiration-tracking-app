@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 :root {
---header-height: 150px;
+--header-height: 120px;
 
 // light Mode
 --font-color-bright-background: black;
@@ -18,10 +18,15 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
   }
+  
+
 
   body {
     margin: 0;
-    background-color: white;
+    padding: 0;
+    background-color: ${(props) => props.theme.body};
     font-family: system-ui;
+
+  }
   }
 `;

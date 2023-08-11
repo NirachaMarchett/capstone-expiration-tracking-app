@@ -1,10 +1,16 @@
+import Header from "@/component/Header";
 import GlobalStyle from "../styles";
 import { groceries } from "@/resources/groceries";
+import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { v4 as uuidv4 } from "uuid";
+import Navigation from "@/component/Navigation";
+import { ThemeProvider } from "styled-components";
+import styled from "styled-components";
+import { lightTheme, darkTheme } from "./../resources/themes.js";
 
 export default function App({ Component, pageProps }) {
-  // const [groceriesList, setGroceriesList] = useState(groceries);
+  const [theme, setTheme] = useState("light");
   const [groceriesList, setGroceriesList] = useLocalStorageState(
     "groceriesList",
     { defaultValue: groceries }
@@ -32,18 +38,30 @@ export default function App({ Component, pageProps }) {
   const handleDeleteItem = (id) => {
     setGroceriesList((items) => items.filter((item) => item.id !== id));
   };
-  console.log(groceriesList);
+
+  const handleToggle = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <>
-      <GlobalStyle />
-      <Component
-        {...pageProps}
-        onAddItem={handleAddItem}
-        groceriesList={groceriesList}
-        onChange={handleItemUpdate}
-        onDelete={handleDeleteItem}
-      />
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyle />
+        <Header onToggle={handleToggle} />
+        <Navigation />
+        <Component
+          {...pageProps}
+          onAddItem={handleAddItem}
+          groceriesList={groceriesList}
+          onChange={handleItemUpdate}
+          onDelete={handleDeleteItem}
+          onToggle={handleToggle}
+        />
+      </ThemeProvider>
     </>
   );
 }
+
+const StyledBody = styled.div`
+  background-color: ${(props) => props.theme.body};
+`;

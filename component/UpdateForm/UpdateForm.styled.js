@@ -22,6 +22,7 @@ export const StyledEmojiInput = styled.input`
 
 export const StyledLabel = styled.label`
   font-size: 1rem;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const StyledInput = styled.input`
@@ -54,7 +55,7 @@ export const StyledHeading = styled.h2`
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
-  color: var(--font-color-bright-background);
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const StyledSelectField = styled.div`
@@ -65,6 +66,7 @@ export const StyledSelectField = styled.div`
   border-radius: 4px;
   border: 1px solid;
   flex-direction: column;
+  background-color: white;
 `;
 
 export const StyledSelect = styled.select`
