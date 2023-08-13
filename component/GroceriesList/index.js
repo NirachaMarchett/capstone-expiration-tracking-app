@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {
   StyledDetailSection,
   StyledHeading,
@@ -10,29 +11,31 @@ import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
 export default function GroceriesList({ filterValue, groceriesList }) {
   if (!filterValue || filterValue === -1) {
     return (
-      <StyledList>
-        {groceriesList.map(
-          ({ id, emoji, name, purchasedDate, expirationDate }) => {
-            const daysRemaining = calculateDaysRemaining(expirationDate);
-            const day = daysRemaining === 1 ? "day" : "days";
-            return (
-              <li key={id}>
-                <StyledListContainer href={`/${id}`}>
-                  <StyledHeading>{emoji}</StyledHeading>
-                  <StyledDetailSection>
-                    <p>Name: {name}</p>
-                    <p>Purchased Date: {purchasedDate}</p>
-                    <p>Expiration Date: {expirationDate}</p>
-                  </StyledDetailSection>
-                  <StyledRemainingDays>
-                    Expires in: {calculateDaysRemaining(expirationDate)} {day}
-                  </StyledRemainingDays>
-                </StyledListContainer>
-              </li>
-            );
-          }
-        )}
-      </StyledList>
+      <StyledBody>
+        <StyledList>
+          {groceriesList.map(
+            ({ id, emoji, name, purchasedDate, expirationDate }) => {
+              const daysRemaining = calculateDaysRemaining(expirationDate);
+              const day = daysRemaining === 1 ? "day" : "days";
+              return (
+                <li key={id}>
+                  <StyledListContainer href={`/${id}`}>
+                    <StyledHeading>{emoji}</StyledHeading>
+                    <StyledDetailSection>
+                      <p>Name: {name}</p>
+                      <p>Purchased Date: {purchasedDate}</p>
+                      <p>Expiration Date: {expirationDate}</p>
+                    </StyledDetailSection>
+                    <StyledRemainingDays>
+                      Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                    </StyledRemainingDays>
+                  </StyledListContainer>
+                </li>
+              );
+            }
+          )}
+        </StyledList>
+      </StyledBody>
     );
   }
   const filteredGroceriesList = groceriesList.filter((item) => {
@@ -57,33 +60,53 @@ export default function GroceriesList({ filterValue, groceriesList }) {
   });
 
   if (filteredGroceriesList.length === 0) {
-    return <p>None</p>;
+    return (
+      <StyledBody>
+        <StyledMessage>None</StyledMessage>
+      </StyledBody>
+    );
   }
   return (
-    <StyledList>
-      {filteredGroceriesList.map(
-        ({ id, emoji, name, purchasedDate, expirationDate }) => {
-          const daysRemaining = calculateDaysRemaining(expirationDate);
-          const day = daysRemaining === 1 ? "day" : "days";
-          return (
-            <li key={id}>
-              <StyledListContainer href={`/${id}`}>
-                <StyledHeading>{emoji}</StyledHeading>
+    <StyledBody>
+      <StyledList>
+        {filteredGroceriesList.map(
+          ({ id, emoji, name, purchasedDate, expirationDate }) => {
+            const daysRemaining = calculateDaysRemaining(expirationDate);
+            const day = daysRemaining === 1 ? "day" : "days";
+            return (
+              <li key={id}>
+                <StyledListContainer href={`/${id}`}>
+                  <StyledHeading>{emoji}</StyledHeading>
 
-                <StyledDetailSection>
-                  <p>Name: {name}</p>
-                  <p>Purchased Date: {purchasedDate}</p>
-                  <p>Expiration Date: {expirationDate}</p>
-                </StyledDetailSection>
+                  <StyledDetailSection>
+                    <p>Name: {name}</p>
+                    <p>Purchased Date: {purchasedDate}</p>
+                    <p>Expiration Date: {expirationDate}</p>
+                  </StyledDetailSection>
 
-                <StyledRemainingDays>
-                  Expires in: {calculateDaysRemaining(expirationDate)} {day}
-                </StyledRemainingDays>
-              </StyledListContainer>
-            </li>
-          );
-        }
-      )}
-    </StyledList>
+                  <StyledRemainingDays>
+                    Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                  </StyledRemainingDays>
+                </StyledListContainer>
+              </li>
+            );
+          }
+        )}
+      </StyledList>
+    </StyledBody>
   );
 }
+
+const StyledMessage = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
+`;
+const StyledBody = styled.div`
+  overflow: auto;
+  height: 100vw;
+  background-color: ${(props) => props.theme.body};
+`;

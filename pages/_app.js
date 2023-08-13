@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }) {
       ...groceriesList,
       { ...newItem, id: uuidv4().slice(0, 8) },
     ]);
+    alert("Item successfully added to the list ✅");
   };
 
   const handleItemUpdate = (updatedDetail) => {

@@ -80,8 +80,9 @@ export default function AddGroceryItemForm({ onAddItem }) {
 
 const StyledDiv = styled.div`
   border: none;
+  position: fixed;
   width: 100%;
-  height: 900px;
+  height: 100%;
   text-decoration: none;
   display: flex;
   justify-content: space-around;
