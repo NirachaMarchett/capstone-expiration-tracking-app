@@ -1,5 +1,4 @@
 import React from "react";
-// import { groceries } from "@/resources/groceries";
 import {
   StyledList,
   StyledHeading,
