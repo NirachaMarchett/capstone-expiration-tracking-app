@@ -1,9 +1,11 @@
 import React from "react";
 import {
-  StyledDiv,
+  StyledList,
   StyledHeading,
   StyledOverviewSection,
   StyledRemainingCount,
+  StyledUl,
+  StyledDiv,
 } from "./ExpirationOverview.styled";
 
 const filterByExpirationDate = (groceriesList, daysRemaining) => {
@@ -27,20 +29,22 @@ const GroceryCountByExpiration = ({ groceriesList }) => {
   const twoDaysCount = filterByExpirationDate(groceriesList, 2).length;
 
   return (
-    <StyledDiv>
-      <div>
-        <StyledRemainingCount>{todayCount}</StyledRemainingCount>
-        <p>Expiring Today</p>
-      </div>
-      <div>
-        <StyledRemainingCount>{oneDayCount}</StyledRemainingCount>
-        <p>Expiring in 1 day</p>
-      </div>
-      <div>
-        <StyledRemainingCount>{twoDaysCount}</StyledRemainingCount>
-        <p>Expiring in 2 days</p>
-      </div>
-    </StyledDiv>
+    <StyledUl>
+      <StyledList>
+        <StyledDiv>
+          <StyledRemainingCount>{todayCount}</StyledRemainingCount>
+          <p>Expiring Today</p>
+        </StyledDiv>
+        <StyledDiv>
+          <StyledRemainingCount>{oneDayCount}</StyledRemainingCount>
+          <p>Expiring in 1 day</p>
+        </StyledDiv>
+        <StyledDiv>
+          <StyledRemainingCount>{twoDaysCount}</StyledRemainingCount>
+          <p>Expiring in 2 days</p>
+        </StyledDiv>
+      </StyledList>
+    </StyledUl>
   );
 };
 

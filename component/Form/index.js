@@ -1,5 +1,6 @@
 import { groceryEmojis } from "@/resources/emojis";
 import {
+  StyleDiv,
   StyledButton,
   StyledEmojiInput,
   StyledFormField,
@@ -9,6 +10,7 @@ import {
   StyledInputSection,
   StyledLabel,
 } from "./Form.styled";
+import styled from "styled-components";
 
 export default function AddGroceryItemForm({ onAddItem }) {
   function handleSubmit(event) {
@@ -21,7 +23,7 @@ export default function AddGroceryItemForm({ onAddItem }) {
     event.target.elements.name.focus();
   }
   return (
-    <>
+    <StyledDiv>
       <form onSubmit={handleSubmit}>
         <StyledFormField>
           <StyledHeading>Add Emoji</StyledHeading>
@@ -67,9 +69,22 @@ export default function AddGroceryItemForm({ onAddItem }) {
               />
             </StyledInputField>
           </StyledInputSection>
-          <StyledButton type="submit">Add Item</StyledButton>
+          <StyleDiv>
+            <StyledButton type="submit">Add Item</StyledButton>
+          </StyleDiv>
         </StyledFormField>
       </form>
-    </>
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled.div`
+  border: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: ${(props) => props.theme.body};
+`;

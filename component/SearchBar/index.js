@@ -16,29 +16,48 @@ export default function SearchBar({ onSearch }) {
 
   return (
     <>
-      <StyledForm>
-        <label htmlFor="searchTerm">Item Name:</label>
-        <input
-          name="searchTerm"
-          id="searchTerm"
-          value={searchBarValue}
-          onChange={handleInputChange}
-          placeholder="What are you looking for?"
-        />
-      </StyledForm>
-      <StyledButton onClick={handleCancel}>Cancel</StyledButton>
+      <StyleDiv>
+        <form>
+          <StyledLabel htmlFor="searchTerm">Item Name: </StyledLabel>
+          <StyledInput
+            name="searchTerm"
+            id="searchTerm"
+            value={searchBarValue}
+            onChange={handleInputChange}
+            placeholder=" 🔍 What are you looking for?"
+          />
+        </form>
+        <StyledButton onClick={handleCancel}>Cancel</StyledButton>
+      </StyleDiv>
     </>
   );
 }
 
-const StyledForm = styled.form`
-  margin: 0px 0px 0px 20px;
-  position: relative;
+const StyledButton = styled.button`
+  border-radius: 5px;
+  border: none;
+  background-color: ${(props) => props.theme.cancelColor};
+  color: ${(props) => props.theme.fontColor};
+  &:hover {
+    color: #f31102;
+  }
 `;
 
-const StyledButton = styled.button`
-  position: relative;
-  position: absolute;
-  right: 25px;
-  top: 241px;
+const StyleDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 50px 20px 20px 20px;
+  gap: 5px;
+`;
+
+const StyledInput = styled.input`
+  border: solid 1px;
+  background-color: white;
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+`;
+
+const StyledLabel = styled.label`
+  color: ${(props) => props.theme.fontColor};
 `;

@@ -7,7 +7,7 @@ export const StyledNavList = styled.ul`
   margin: 0;
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: ${(props) => props.theme.background};
   padding: 1rem;
   position: fixed;
   bottom: 0;
@@ -16,7 +16,7 @@ export const StyledNavList = styled.ul`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const StyledNavIcon = styled.span`
@@ -33,13 +33,13 @@ export const StyledNavText = styled.p`
 `;
 
 export const StyledList = styled.li`
-  border: solid white;
   width: 50%;
   text-decoration: none;
   display: flex;
   flex-direction: column;
 
   &:hover {
-    background-color: pink;
+    background-color: ${(props) => props.theme.hoverColor};
+    border-radius: 5px;
   }
 `;

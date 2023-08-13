@@ -1,17 +1,17 @@
 import {
   StyledDetailSection,
   StyledHeading,
-  StyledRemainingDays,
 } from "../GroceriesList/GroceriesList.styled";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
-import Navigation from "../Navigation";
 import {
   StyledButtonLink,
   StyledContainer,
   StyledDiv,
   StyledList,
+  StyledRemainingDays,
 } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
+import { styled } from "styled-components";
 
 export default function Item({ onChange, grocerySelectedItem, onDelete }) {
   // Check if grocerySelectedItem is undefined
@@ -19,7 +19,7 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
     return;
   }
   return (
-    <>
+    <StyledBody>
       <StyledDiv>
         <StyledButtonLink href="/">⬅️ Back</StyledButtonLink>
       </StyledDiv>
@@ -46,7 +46,12 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
         onChange={onChange}
         onDelete={onDelete}
       />
-      <Navigation />
-    </>
+    </StyledBody>
   );
 }
+
+const StyledBody = styled.div`
+  overflow: auto;
+  height: 100%;
+  background-color: ${(props) => props.theme.body};
+`;

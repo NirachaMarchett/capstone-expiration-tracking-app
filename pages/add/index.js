@@ -7,7 +7,6 @@ export default function AddItemPage({ onAddItem }) {
   return (
     <>
       <AddGroceryItemForm onAddItem={onAddItem} />
-      <Navigation />
     </>
   );
 }

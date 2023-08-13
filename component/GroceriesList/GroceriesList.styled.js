@@ -4,12 +4,12 @@ import Link from "next/link";
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 100px 20px;
+  margin: 20px 20px 90px 20px;
 `;
 
 export const StyledListContainer = styled(Link)`
   list-style-type: none;
-  background-color: #f3f6f8;
+  background-color: ${(props) => props.theme.backgroundColor};
   border-radius: 15px;
   border: 0px;
   display: grid;
@@ -17,7 +17,9 @@ export const StyledListContainer = styled(Link)`
   padding: 5px;
   position: relative;
   text-decoration: none;
-  color: black;
+  color: ${(props) => props.theme.fontColor};
+
+  }
 `;
 
 export const StyledHeading = styled.h2`
@@ -38,11 +40,13 @@ export const StyledRemainingDays = styled.p`
   border-radius: 20px;
   height: 30px;
   width: 150px;
-  text-align: center;
-  justify-item: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 2%;
   top: -18%;
+  color: black;
 `;
 
 export const StyledDetailSection = styled.section`

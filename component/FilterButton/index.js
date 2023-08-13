@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 import GroceriesList from "../GroceriesList";
-import { StyledDiv, StyledParagraph } from "./FilterButoon.styled";
+import {
+  StyledDiv,
+  StyledParagraph,
+  StyledSelect,
+} from "./FilterButoon.styled";
 
 export default function FilterButton({ groceriesList }) {
   const [filterValue, setFilterValue] = useState();
@@ -27,7 +31,7 @@ export default function FilterButton({ groceriesList }) {
           <option value={6}>6 Remaining Days</option>
           <option value={7}>7 Remaining Days</option>
           <option value={8}>More than 1 Week Remaining</option>
-        </select>
+        </StyledSelect>
       </StyledDiv>
       <GroceriesList filterValue={filterValue} groceriesList={groceriesList} />
     </>
