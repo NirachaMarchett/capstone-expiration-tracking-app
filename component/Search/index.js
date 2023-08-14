@@ -7,6 +7,9 @@ import {
 } from "./Search.styled";
 
 export default function Search({ query, setQuery }) {
+  const handleCancelClick = () => {
+    setQuery("");
+  };
   return (
     <>
       <StyledFormField>
@@ -21,7 +24,9 @@ export default function Search({ query, setQuery }) {
             id="searchTerm"
             placeholder=" e.g. spinach, cheese, tomato,..."
           />
-          <StyledButton>Cancel</StyledButton>
+          <StyledButton type="button" onClick={handleCancelClick}>
+            Cancel
+          </StyledButton>
         </StyledDiv>
       </StyledFormField>
     </>

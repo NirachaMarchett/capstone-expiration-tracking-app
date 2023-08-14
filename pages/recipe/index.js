@@ -11,30 +11,30 @@ export default function RecipePage() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    getRescipes();
-  }, [query]);
+    const fetchRecipes = async () => {
+      const URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}&ingr=1-5&diet=balanced&calories=100-300`;
+      try {
+        const response = await fetch(URL);
 
-  const getRescipes = async () => {
-    const URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}&ingr=1-5&diet=balanced&calories=100-300`;
-    try {
-      const response = await fetch(URL);
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
+        }
 
-      if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
+        const data = await response.json();
+        setRescipes(data.hits);
+      } catch (error) {
+        console.error("Fetch error:", error);
       }
+    };
 
-      const data = await response.json();
-      setRescipes(data.hits);
-    } catch (error) {
-      console.error("Fetch error:", error);
+    if (query) {
+      fetchRecipes();
+    } else {
+      setRescipes([]); // Clear the recipes list when the query is empty
     }
-  };
-  console.log("getQuery", query);
-
-  // function filterRecipes(recipes, query) {
-  //   return recipes;
-  // }
-  // const results = filterRecipes(rescipes, query);
+  }, [query]);
 
   return (
     <>
