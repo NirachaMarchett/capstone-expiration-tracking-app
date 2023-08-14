@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const StyledParagraph = styled.p`
   margin: 0px 0px 0px 0px;
-  width: 150px;
+  width: 220px;
   font-size: 1rem;
   color: ${(props) => props.theme.fontColor};
   padding: 5px 5px 5px 0px;
+  font-weight: bold;
 `;
 
 export const StyledDiv = styled.div`
