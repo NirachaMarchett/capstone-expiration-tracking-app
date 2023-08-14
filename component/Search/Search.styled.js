@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledFormField = styled.form`
   margin: 120px 0px 0px 0px;
-  position: fixed;
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;

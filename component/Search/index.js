@@ -1,5 +1,3 @@
-import { useState } from "react";
-import styled from "styled-components";
 import {
   StyledButton,
   StyledDiv,
@@ -8,7 +6,7 @@ import {
   StyledInput,
 } from "./Search.styled";
 
-export default function Search() {
+export default function Search({ query, setQuery }) {
   return (
     <>
       <StyledFormField>
@@ -17,11 +15,13 @@ export default function Search() {
         </StyledLabel>
         <StyledDiv>
           <StyledInput
+            value={query}
+            onInput={(event) => setQuery(event.target.value)}
             name="searchTerm"
             id="searchTerm"
             placeholder=" e.g. spinach, cheese, tomato,..."
           />
-          <StyledButton>Search</StyledButton>
+          <StyledButton>Cancel</StyledButton>
         </StyledDiv>
       </StyledFormField>
     </>

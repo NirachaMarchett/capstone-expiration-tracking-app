@@ -8,6 +8,7 @@ import Navigation from "@/component/Navigation";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 import { lightTheme, darkTheme } from "./../resources/themes.js";
+import React from "react";
 
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
