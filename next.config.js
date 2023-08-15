@@ -13,6 +13,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ["edamam-product-images.s3.amazonaws.com"],
+  },
 };
 
 module.exports = nextConfig;

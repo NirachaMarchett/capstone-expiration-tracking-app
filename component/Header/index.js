@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   width: 100%;
   height: var(--header-height);
   position: fixed;
+  top: 0px;
 
   background-color: ${(props) => props.theme.background};
   z-index: 999;

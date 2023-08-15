@@ -1,9 +1,6 @@
 import ExpirationOverview from "@/component/ExpirationOverview";
 import FilterButton from "@/component/FilterButton";
-import Header from "@/component/Header";
-import Navigation from "@/component/Navigation";
 import SearchBar from "@/component/SearchBar";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 

@@ -22,6 +22,12 @@ export default function Navigation() {
             <StyledNavText>Add</StyledNavText>
           </StyledLink>
         </StyledList>
+        <StyledList>
+          <StyledLink href="/recipe">
+            <StyledNavIcon>🥘</StyledNavIcon>
+            <StyledNavText>Recipes</StyledNavText>
+          </StyledLink>
+        </StyledList>
       </StyledNavList>
     </nav>
   );
