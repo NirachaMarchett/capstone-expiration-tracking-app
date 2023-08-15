@@ -2,8 +2,6 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export default function Recipe({ recipe }) {
-  console.log(recipe);
-
   return (
     <StyledContainer>
       <StyledImage
@@ -22,19 +20,6 @@ export default function Recipe({ recipe }) {
     </StyledContainer>
   );
 }
-
-const StyledGrid = styled.div`
-margin-bottom: 100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(6, 1fr);
-`;
 
 const StyledContainer = styled.div`
   margin: 20px 15px 0px 15px;
