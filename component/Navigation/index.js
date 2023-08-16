@@ -28,6 +28,12 @@ export default function Navigation() {
             <StyledNavText>Recipes</StyledNavText>
           </StyledLink>
         </StyledList>
+        <StyledList>
+          <StyledLink href="/favorite">
+            <StyledNavIcon>🤍</StyledNavIcon>
+            <StyledNavText>Favorites</StyledNavText>
+          </StyledLink>
+        </StyledList>
       </StyledNavList>
     </nav>
   );

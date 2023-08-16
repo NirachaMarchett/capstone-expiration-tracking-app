@@ -8,7 +8,7 @@ const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
 export default function RecipePage() {
   const [recipes, setRescipes] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(" ");
 
   useEffect(() => {
     const fetchRecipes = async () => {

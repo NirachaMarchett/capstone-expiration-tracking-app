@@ -1,9 +1,37 @@
-import styled from "styled-components";
-import Image from "next/image";
+import HeartIcon from "../../assets/heart.svg";
+import {
+  StyledAnchor,
+  StyledContainer,
+  StyledHeading,
+  StyledImage,
+  StyledLine,
+  StyledParagraph,
+  StyledFavoriteButton,
+} from "./Recipe.styled";
+import { useState, useEffect } from "react";
 
 export default function Recipe({ recipe }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    // Load favorite status from local storage when component mounts
+    const storedIsFavorite = localStorage.getItem(`favorite_${recipe.label}`);
+    setIsFavorite(storedIsFavorite === "true");
+  }, [recipe.label]);
+
+  const toggleFavorite = () => {
+    const newIsFavorite = !isFavorite;
+    setIsFavorite(newIsFavorite);
+
+    // Store favorite status in local storage
+    localStorage.setItem(`favorite_${recipe.label}`, newIsFavorite);
+  };
+
   return (
     <StyledContainer>
+      <StyledFavoriteButton onClick={toggleFavorite}>
+        <HeartIcon height={30} fill={`${isFavorite ? "red" : "grey"}`} />
+      </StyledFavoriteButton>
       <StyledImage
         src={recipe.images.SMALL.url}
         width={recipe.images.SMALL.width}
@@ -20,49 +48,3 @@ export default function Recipe({ recipe }) {
     </StyledContainer>
   );
 }
-
-const StyledContainer = styled.div`
-  margin: 20px 15px 0px 15px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding: 10px;
-  background-color: ${(props) => props.theme.backgroundColor};
-`;
-
-const StyledImage = styled(Image)`
-  border-radius: 50%;
-  max-width: 100px;
-  max-height: 100px;
-`;
-
-const StyledHeading = styled.h1`
-  font-size: 1rem;
-  text-align: center;
-  color: ${(props) => props.theme.fontColor};
-`;
-
-const StyledLine = styled.hr`
-  width: 50%;
-  margin: 10px auto;
-  border: 2px dashed ${(props) => props.theme.fontColor};
-`;
-
-const StyledParagraph = styled.p`
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 0px;
-  color: ${(props) => props.theme.fontColor};
-`;
-
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
-  display: inline-block;
-  border: 1px solid ${(props) => props.theme.fontColor};
-  padding: 5px 10px;
-  background-color: ${(props) => props.theme.background};
-  border-radius: 5px;
-`;
