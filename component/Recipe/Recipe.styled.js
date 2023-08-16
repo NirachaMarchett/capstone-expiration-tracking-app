@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import HeartIcon from "../../assets/heart.svg";
 
 export const StyledContainer = styled.div`
   margin: 20px 15px 0px 15px;

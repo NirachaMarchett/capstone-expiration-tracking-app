@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import styled from "styled-components";
-import HeartIcon from "../../assets/heart.svg";
 import Image from "next/image";
 import { images } from "@/next.config";
 
@@ -30,8 +29,10 @@ export default function FavoritePage() {
   };
 
   return (
-    <>
-      <StyledHeading>Your Favorite Recipes</StyledHeading>
+    <StyledDiv>
+      <StyledHeading>
+        Your Favorite Recipes ({favoriteRecipes.length})
+      </StyledHeading>
       <StyledList>
         {favoriteRecipes.map((label, url, images, index) => (
           <li key={index}>
@@ -48,9 +49,13 @@ export default function FavoritePage() {
           </li>
         ))}
       </StyledList>
-    </>
+    </StyledDiv>
   );
 }
+const StyledDiv = styled.div`
+  overflow-x: hidden;
+  margin-bottom: 10px;
+`;
 
 const StyledList = styled.ul`
   list-style-type: none;

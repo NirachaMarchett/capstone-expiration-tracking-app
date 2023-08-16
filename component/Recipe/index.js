@@ -11,7 +11,7 @@ import {
 import { useState, useEffect } from "react";
 
 export default function Recipe({ recipe }) {
-  console.log(recipe);
+  // console.log(recipe);
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {

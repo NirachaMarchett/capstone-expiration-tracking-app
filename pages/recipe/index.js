@@ -48,7 +48,7 @@ export default function RecipePage() {
   }, [query]);
 
   return (
-    <>
+    <StyledDiv>
       <Search query={query} setQuery={setQuery} />
       <StyledHeading>Here are some ideas </StyledHeading>
       <StyledGrid>
@@ -66,12 +66,16 @@ export default function RecipePage() {
           <StyledMessage>No recipes found.</StyledMessage>
         )}
       </StyledGrid>
-    </>
+    </StyledDiv>
   );
 }
 
+const StyledDiv = styled.div`
+  overflow-x: hidden;
+`;
+
 const StyledGrid = styled.div`
-margin-bottom: 100px;
+margin-bottom: 110px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
