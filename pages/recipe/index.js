@@ -7,7 +7,7 @@ const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
 export default function RecipePage() {
-  const [rescipes, setRescipes] = useState([]);
+  const [recipes, setRescipes] = useState([]);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -41,9 +41,15 @@ export default function RecipePage() {
       <Search query={query} setQuery={setQuery} />
       <StyledHeading>Here are some ideas </StyledHeading>
       <StyledGrid>
-        {rescipes.map((recipe) => (
-          <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} />
-        ))}
+        {recipes.length > 0 ? (
+          recipes
+            .slice(0, 10)
+            .map((recipe) => (
+              <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} />
+            ))
+        ) : (
+          <StyledMessage>No recipes found.</StyledMessage>
+        )}
       </StyledGrid>
     </>
   );
@@ -66,5 +72,14 @@ const StyledHeading = styled.h2`
   margin: 0px 0px 0px 20px;
   width: 100%;
   background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.fontColor};
+`;
+
+const StyledMessage = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
   color: ${(props) => props.theme.fontColor};
 `;
