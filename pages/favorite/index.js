@@ -22,23 +22,41 @@ export default function FavoritePage() {
     setFavoriteRecipes(favoriteRecipeLabels);
   }, []);
 
+  const handleUnfavorite = (label) => {
+    localStorage.removeItem(`favorite_${label}`);
+    setFavoriteRecipes((prevFavorites) =>
+      prevFavorites.filter((favLabel) => favLabel !== label)
+    );
+  };
+
   return (
     <>
       <StyledHeading>Your Favorite Recipes</StyledHeading>
-      <ul>
-        {favoriteRecipes.map((label, index) => (
-          <StyledListContainer key={index}>
-            <StyledFavoriteButton>
-              <HeartIcon height={30} fill="red" />
-            </StyledFavoriteButton>
-            <StyledName>{label}</StyledName>
-          </StyledListContainer>
+      <StyledList>
+        {favoriteRecipes.map((label, url, images, index) => (
+          <li key={index}>
+            <StyledListContainer>
+              <StyledUnFavoriteButton onClick={() => handleUnfavorite(label)}>
+                <StyledSpan>✖️</StyledSpan>
+              </StyledUnFavoriteButton>
+              <div>
+                <Image alt="Small image" scr={images.SMALL} />
+              </div>
+              <StyledName>{label}</StyledName>
+              <StyledAnchor href={url}>Instruction</StyledAnchor>
+            </StyledListContainer>
+          </li>
         ))}
-      </ul>
+      </StyledList>
     </>
   );
 }
 
+const StyledList = styled.ul`
+  list-style-type: none;
+  padding: 0.5rem;
+  margin: 20px 20px 90px 20px;
+`;
 const StyledHeading = styled.h2`
   margin: 120px 0px 0px 20px;
   width: 100%;
@@ -46,20 +64,8 @@ const StyledHeading = styled.h2`
   color: ${(props) => props.theme.fontColor};
 `;
 
-const StyledFavoriteButton = styled.button`
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  padding: 10px 10px 5px 10px;
-  background-color: white;
-  border: 2px solid #293241;
-  position: absolute;
-  top: -5px;
-  right: 0px;
-`;
-
 const StyledListContainer = styled.li`
+  position: relative;
   margin: 20px 15px 0px 15px;
   border-radius: 10px;
   display: flex;
@@ -67,12 +73,39 @@ const StyledListContainer = styled.li`
   align-items: start;
   gap: 5px;
   padding: 10px;
-  position: relative;
   background-color: ${(props) => props.theme.backgroundColor};
+`;
+const StyledUnFavoriteButton = styled.button`
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #293241;
+  position: relative;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
+
+const StyledSpan = styled.span`
+  position: absolute;
+  top: -2px;
+  left: 0px;
 `;
 
 const StyledName = styled.p`
-  margin: 50px 10px 10px 200px;
+  margin: 10px 10px 10px 200px;
   color: ${(props) => props.theme.fontColor};
-  text-decoration: ;
+`;
+
+const StyledAnchor = styled.a`
+  margin: 10px 10px 10px 200px;
+  text-decoration: none;
+  color: ${(props) => props.theme.fontColor};
+  display: inline-block;
+  border: 1px solid ${(props) => props.theme.fontColor};
+  padding: 5px 10px;
+  background-color: ${(props) => props.theme.background};
+  border-radius: 5px;
 `;
