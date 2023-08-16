@@ -9,6 +9,17 @@ const app_key = "354397600a1db4ed480401dd1a84bc1e";
 export default function RecipePage() {
   const [recipes, setRescipes] = useState([]);
   const [query, setQuery] = useState(" ");
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+
+  useEffect(() => {
+    // Retrieve all items from local storage and filter favorite recipes
+    const allItems = Object.entries(localStorage);
+    const favoriteRecipeLabels = allItems
+      .filter(([key, value]) => key.startsWith("favorite_") && value === "true")
+      .map(([key]) => key.replace("favorite_", ""));
+
+    setFavoriteRecipes(favoriteRecipeLabels);
+  }, []);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -45,7 +56,11 @@ export default function RecipePage() {
           recipes
             .slice(0, 10)
             .map((recipe) => (
-              <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} />
+              <Recipe
+                key={recipe.recipe.uri}
+                recipe={recipe.recipe}
+                favoriteRecipes={favoriteRecipes}
+              />
             ))
         ) : (
           <StyledMessage>No recipes found.</StyledMessage>

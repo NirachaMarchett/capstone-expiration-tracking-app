@@ -24,7 +24,7 @@ export default function Recipe({ recipe }) {
     setIsFavorite(newIsFavorite);
 
     // Store favorite status in local storage
-    localStorage.setItem(`favorite_${recipe.label}`, newIsFavorite);
+    localStorage.setItem(`favorite_${recipe.label}`, newIsFavorite.toString());
   };
 
   return (

@@ -4,7 +4,7 @@ import HeartIcon from "../../assets/heart.svg";
 import Image from "next/image";
 import { images } from "@/next.config";
 
-export default function FavoritePage({ toggleFavorite, isFavorite }) {
+export default function FavoritePage() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
 
   useEffect(() => {
@@ -28,11 +28,10 @@ export default function FavoritePage({ toggleFavorite, isFavorite }) {
       <ul>
         {favoriteRecipes.map((label, index) => (
           <StyledListContainer key={index}>
-            <StyledFavoriteButton onClick={toggleFavorite}>
-              <HeartIcon height={30} fill={`${isFavorite ? "red" : "grey"}`} />
+            <StyledFavoriteButton>
+              <HeartIcon height={30} fill="red" />
             </StyledFavoriteButton>
             <StyledName>{label}</StyledName>
-            <Image alt="Small Recipe" src={images.SMALL} />
           </StyledListContainer>
         ))}
       </ul>
