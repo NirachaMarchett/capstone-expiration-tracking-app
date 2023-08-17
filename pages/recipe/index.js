@@ -6,7 +6,7 @@ import Recipe from "@/component/Recipe";
 const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
-export default function RecipePage({ favoriteRecipes }) {
+export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
   const [recipes, setRescipes] = useState([]);
   const [query, setQuery] = useState(" ");
 
@@ -45,15 +45,17 @@ export default function RecipePage({ favoriteRecipes }) {
       <StyledHeading>Here are some ideas </StyledHeading>
       <StyledGrid>
         {recipes.length > 0 ? (
-          recipes
-            .slice(0, 2)
-            .map((recipe) => (
-              <Recipe
-                key={recipe.recipe.uri}
-                recipe={recipe.recipe}
-                favoriteRecipes={favoriteRecipes}
-              />
-            ))
+          recipes.slice(0, 2).map((recipe) => (
+            <Recipe
+              key={recipe.recipe.uri}
+              recipe={recipe.recipe}
+              // favoriteRecipes={favoriteRecipes}
+              isFavorite={favoriteRecipes.find(
+                (x) => x.label === recipe.recipe.label
+              )}
+              onToggleFavorite={onToggleFavorite}
+            />
+          ))
         ) : (
           <StyledMessage>No recipes found.</StyledMessage>
         )}

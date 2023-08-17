@@ -1,50 +1,29 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { images } from "@/next.config";
-import Recipe from "@/component/Recipe";
 
-export default function FavoritePage({ recipe }) {
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-
-  useEffect(() => {
-    // Retrieve all items from local storage
-    const allItems = Object.entries(localStorage);
-    // Filter and get the favorite recipes
-    const favoriteRecipes = allItems.filter(
-      ([key, value]) => key.startsWith("favorite_") && value === "true"
-    );
-    // Extract the recipe labels from the keys
-    const favoriteRecipeLabels = favoriteRecipes.map(([key]) =>
-      key.replace("favorite_", "")
-    );
-
-    setFavoriteRecipes(favoriteRecipeLabels);
-  }, []);
-
-  const handleUnfavorite = (label) => {
-    localStorage.removeItem(`favorite_${label}`);
-    setFavoriteRecipes((prevFavorites) =>
-      prevFavorites.filter((favLabel) => favLabel !== label)
-    );
-  };
-
+export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
   return (
     <StyledDiv>
       <StyledHeading>
         Your Favorite Recipes ({favoriteRecipes.length})
       </StyledHeading>
       <StyledList>
-        {favoriteRecipes.map((label, index) => (
-          <li key={index}>
+        {favoriteRecipes.map((recipe) => (
+          <li key={recipe.label}>
             <StyledListContainer>
-              <StyledUnFavoriteButton onClick={() => handleUnfavorite(label)}>
+              <StyledUnFavoriteButton onClick={() => onToggleFavorite(recipe)}>
                 <StyledSpan>✖️</StyledSpan>
               </StyledUnFavoriteButton>
               <div>
-                <Image alt="Small image" src={recipe.images.SMALL.url} />
+                <StyledImage
+                  alt="Small image"
+                  src={recipe.images.SMALL.url}
+                  width={recipe.images.SMALL.width}
+                  height={recipe.images.SMALL.height}
+                />
               </div>
-              <StyledName>{label}</StyledName>
+              <StyledName>{recipe.label}</StyledName>
               <StyledAnchor href={recipe.url}>Instruction</StyledAnchor>
             </StyledListContainer>
           </li>
@@ -53,6 +32,7 @@ export default function FavoritePage({ recipe }) {
     </StyledDiv>
   );
 }
+
 const StyledDiv = styled.div`
   overflow-x: hidden;
   margin-bottom: 10px;
@@ -100,13 +80,22 @@ const StyledSpan = styled.span`
   left: 0px;
 `;
 
+const StyledImage = styled(Image)`
+  border-radius: 50%;
+  max-width: 80px;
+  max-height: 80px;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+`;
+
 const StyledName = styled.p`
-  margin: 10px 10px 10px 200px;
+  margin: 10px 10px 10px 150px;
   color: ${(props) => props.theme.fontColor};
 `;
 
 const StyledAnchor = styled.a`
-  margin: 10px 10px 10px 200px;
+  margin: 10px 10px 10px 150px;
   text-decoration: none;
   color: ${(props) => props.theme.fontColor};
   display: inline-block;
