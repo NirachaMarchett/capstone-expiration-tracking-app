@@ -4,36 +4,34 @@ import Image from "next/image";
 
 export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
   return (
-    <StyledDiv>
+    <StyledContainer>
       <StyledHeading>
         Your Favorite Recipes ({favoriteRecipes.length})
       </StyledHeading>
       <StyledList>
         {favoriteRecipes.map((recipe) => (
-          <li key={recipe.label}>
-            <StyledListContainer>
-              <StyledUnFavoriteButton onClick={() => onToggleFavorite(recipe)}>
-                <StyledSpan>✖️</StyledSpan>
-              </StyledUnFavoriteButton>
-              <div>
-                <StyledImage
-                  alt="Small image"
-                  src={recipe.images.SMALL.url}
-                  width={recipe.images.SMALL.width}
-                  height={recipe.images.SMALL.height}
-                />
-              </div>
-              <StyledName>{recipe.label}</StyledName>
-              <StyledAnchor href={recipe.url}>Instruction</StyledAnchor>
-            </StyledListContainer>
-          </li>
+          <StyledListContainer key={recipe.label}>
+            <StyledUnFavoriteButton onClick={() => onToggleFavorite(recipe)}>
+              <StyledSpan>✖️</StyledSpan>
+            </StyledUnFavoriteButton>
+            <div>
+              <StyledImage
+                alt="Small image"
+                src={recipe.images.SMALL.url}
+                width={recipe.images.SMALL.width}
+                height={recipe.images.SMALL.height}
+              />
+            </div>
+            <StyledName>{recipe.label}</StyledName>
+            <StyledAnchor href={recipe.url}>Instruction</StyledAnchor>
+          </StyledListContainer>
         ))}
       </StyledList>
-    </StyledDiv>
+    </StyledContainer>
   );
 }
 
-const StyledDiv = styled.div`
+const StyledContainer = styled.div`
   overflow-x: hidden;
   margin-bottom: 10px;
 `;
@@ -43,6 +41,7 @@ const StyledList = styled.ul`
   padding: 0.5rem;
   margin: 20px 20px 90px 20px;
 `;
+
 const StyledHeading = styled.h2`
   margin: 120px 0px 0px 20px;
   width: 100%;
@@ -70,14 +69,14 @@ const StyledUnFavoriteButton = styled.button`
   border: 2px solid #293241;
   position: relative;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -10px;
+  right: 0px;
 `;
 
 const StyledSpan = styled.span`
   position: absolute;
   top: -2px;
-  left: 0px;
+  left: -1px;
 `;
 
 const StyledImage = styled(Image)`

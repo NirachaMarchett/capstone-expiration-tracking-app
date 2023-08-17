@@ -40,31 +40,32 @@ export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
   }, [query]);
 
   return (
-    <StyledDiv>
+    <StyledContainer>
       <Search query={query} setQuery={setQuery} />
       <StyledHeading>Here are some ideas </StyledHeading>
       <StyledGrid>
         {recipes.length > 0 ? (
-          recipes.slice(0, 2).map((recipe) => (
-            <Recipe
-              key={recipe.recipe.uri}
-              recipe={recipe.recipe}
-              // favoriteRecipes={favoriteRecipes}
-              isFavorite={favoriteRecipes.find(
-                (x) => x.label === recipe.recipe.label
-              )}
-              onToggleFavorite={onToggleFavorite}
-            />
-          ))
+          recipes
+            .slice(0, 2)
+            .map((recipe) => (
+              <Recipe
+                key={recipe.recipe.uri}
+                recipe={recipe.recipe}
+                isFavorite={favoriteRecipes.find(
+                  (x) => x.label === recipe.recipe.label
+                )}
+                onToggleFavorite={onToggleFavorite}
+              />
+            ))
         ) : (
           <StyledMessage>No recipes found.</StyledMessage>
         )}
       </StyledGrid>
-    </StyledDiv>
+    </StyledContainer>
   );
 }
 
-const StyledDiv = styled.div`
+const StyledContainer = styled.div`
   overflow-x: hidden;
 `;
 
