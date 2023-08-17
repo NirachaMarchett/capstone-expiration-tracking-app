@@ -2,8 +2,9 @@ import { React, useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { images } from "@/next.config";
+import Recipe from "@/component/Recipe";
 
-export default function FavoritePage() {
+export default function FavoritePage({ recipe }) {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function FavoritePage() {
       ([key, value]) => key.startsWith("favorite_") && value === "true"
     );
     // Extract the recipe labels from the keys
-    const favoriteRecipeLabels = favoriteRecipes.map(([key, value]) =>
+    const favoriteRecipeLabels = favoriteRecipes.map(([key]) =>
       key.replace("favorite_", "")
     );
 
@@ -34,17 +35,17 @@ export default function FavoritePage() {
         Your Favorite Recipes ({favoriteRecipes.length})
       </StyledHeading>
       <StyledList>
-        {favoriteRecipes.map((label, url, images, index) => (
+        {favoriteRecipes.map((label, index) => (
           <li key={index}>
             <StyledListContainer>
               <StyledUnFavoriteButton onClick={() => handleUnfavorite(label)}>
                 <StyledSpan>✖️</StyledSpan>
               </StyledUnFavoriteButton>
               <div>
-                <Image alt="Small image" scr={images.SMALL} />
+                <Image alt="Small image" src={recipe.images.SMALL.url} />
               </div>
               <StyledName>{label}</StyledName>
-              <StyledAnchor href={url}>Instruction</StyledAnchor>
+              <StyledAnchor href={recipe.url}>Instruction</StyledAnchor>
             </StyledListContainer>
           </li>
         ))}

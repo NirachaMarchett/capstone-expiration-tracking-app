@@ -6,20 +6,9 @@ import Recipe from "@/component/Recipe";
 const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
-export default function RecipePage() {
+export default function RecipePage({ favoriteRecipes }) {
   const [recipes, setRescipes] = useState([]);
   const [query, setQuery] = useState(" ");
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-
-  useEffect(() => {
-    // Retrieve all items from local storage and filter favorite recipes
-    const allItems = Object.entries(localStorage);
-    const favoriteRecipeLabels = allItems
-      .filter(([key, value]) => key.startsWith("favorite_") && value === "true")
-      .map(([key]) => key.replace("favorite_", ""));
-
-    setFavoriteRecipes(favoriteRecipeLabels);
-  }, []);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -40,11 +29,14 @@ export default function RecipePage() {
       }
     };
 
+    let timerId;
+
     if (query) {
-      fetchRecipes();
+      timerId = setTimeout(fetchRecipes, 500);
     } else {
       setRescipes([]); // Clear the recipes list when the query is empty
     }
+    return () => clearTimeout(timerId);
   }, [query]);
 
   return (
@@ -54,7 +46,7 @@ export default function RecipePage() {
       <StyledGrid>
         {recipes.length > 0 ? (
           recipes
-            .slice(0, 10)
+            .slice(0, 2)
             .map((recipe) => (
               <Recipe
                 key={recipe.recipe.uri}
