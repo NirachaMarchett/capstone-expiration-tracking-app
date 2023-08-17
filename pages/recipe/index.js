@@ -6,9 +6,9 @@ import Recipe from "@/component/Recipe";
 const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
-export default function RecipePage() {
+export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
   const [recipes, setRescipes] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(" ");
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -29,34 +29,48 @@ export default function RecipePage() {
       }
     };
 
+    let timerId;
+
     if (query) {
-      fetchRecipes();
+      timerId = setTimeout(fetchRecipes, 500);
     } else {
       setRescipes([]); // Clear the recipes list when the query is empty
     }
+    return () => clearTimeout(timerId);
   }, [query]);
 
   return (
-    <>
+    <StyledContainer>
       <Search query={query} setQuery={setQuery} />
       <StyledHeading>Here are some ideas </StyledHeading>
       <StyledGrid>
         {recipes.length > 0 ? (
           recipes
-            .slice(0, 10)
+            .slice(0, 2)
             .map((recipe) => (
-              <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} />
+              <Recipe
+                key={recipe.recipe.uri}
+                recipe={recipe.recipe}
+                isFavorite={favoriteRecipes.find(
+                  (x) => x.label === recipe.recipe.label
+                )}
+                onToggleFavorite={onToggleFavorite}
+              />
             ))
         ) : (
           <StyledMessage>No recipes found.</StyledMessage>
         )}
       </StyledGrid>
-    </>
+    </StyledContainer>
   );
 }
 
+const StyledContainer = styled.div`
+  overflow-x: hidden;
+`;
+
 const StyledGrid = styled.div`
-margin-bottom: 100px;
+margin-bottom: 110px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 

@@ -16,6 +16,10 @@ export default function App({ Component, pageProps }) {
     "groceriesList",
     { defaultValue: groceries }
   );
+  const [favoriteRecipes, setFavoriteRecipes] = useLocalStorageState(
+    "favoriteRecipes",
+    { defaultValue: [] }
+  );
 
   const handleAddItem = (newItem) => {
     setGroceriesList([
@@ -45,6 +49,17 @@ export default function App({ Component, pageProps }) {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const handleToggleFavorite = (recipe) => {
+    const foundFavorite = favoriteRecipes.find((x) => x.label === recipe.label);
+    if (foundFavorite) {
+      setFavoriteRecipes((prev) =>
+        prev.filter((x) => x.label !== recipe.label)
+      );
+      return;
+    }
+    setFavoriteRecipes((prev) => [...prev, recipe]);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -58,6 +73,8 @@ export default function App({ Component, pageProps }) {
           onChange={handleItemUpdate}
           onDelete={handleDeleteItem}
           onToggle={handleToggle}
+          onToggleFavorite={handleToggleFavorite}
+          favoriteRecipes={favoriteRecipes}
         />
       </ThemeProvider>
     </>
