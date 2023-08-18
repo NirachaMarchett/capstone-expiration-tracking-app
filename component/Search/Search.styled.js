@@ -23,7 +23,7 @@ export const StyledLabel = styled.label`
   font-size: 1rem;
   display: flex;
   justify-content: center;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
 `;
 
 export const StyledInput = styled.input`
@@ -35,7 +35,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-background-color: #98c1d9;
+background-color: #88CCDE;
 border-radius: 5px;
 border: none;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);

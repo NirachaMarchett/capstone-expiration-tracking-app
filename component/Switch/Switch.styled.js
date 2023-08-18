@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  margin: 0px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 30px;
+  height: 25px;
   transition: 0.4s;
 `;
 
@@ -28,17 +28,17 @@ export const Slider = styled.span`
   right: 0;
   bottom: 0;
   border-radius: 50px;
-  background-color: grey;
+  background-color: white;
   transition: 0.4;
 
   &:before {
     position: absolute;
     content: "";
-    height: 23px;
-    width: 23px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 2px;
+    background-color: #cdcdcd;
     border-radius: 50%;
     transition: 0.4s;
   }

@@ -4,12 +4,12 @@ import Link from "next/link";
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 90px 20px;
+  margin: 0px 20px 50px 20px;
 `;
 
 export const StyledListContainer = styled(Link)`
   list-style-type: none;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.cardColor};
   border-radius: 15px;
   border: 0px;
   display: grid;

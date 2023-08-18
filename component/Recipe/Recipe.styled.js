@@ -10,7 +10,7 @@ export const StyledContainer = styled.div`
   gap: 5px;
   padding: 10px;
   position: relative;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.formColor};
 `;
 
 export const StyledImage = styled(Image)`
@@ -22,27 +22,27 @@ export const StyledImage = styled(Image)`
 export const StyledHeading = styled.h1`
   font-size: 1rem;
   text-align: center;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFont};
 `;
 
 export const StyledLine = styled.hr`
   width: 50%;
   margin: 10px auto;
-  border: 2px dashed ${(props) => props.theme.fontColor};
+  border: 2px dashed ${(props) => props.theme.cardFont};
 `;
 
 export const StyledParagraph = styled.p`
   font-size: 1rem;
   text-align: center;
   margin-top: 0px;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFont};
 `;
 
 export const StyledAnchor = styled.a`
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFont};
   display: inline-block;
-  border: 1px solid ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.cardFont};
   padding: 5px 10px;
   background-color: ${(props) => props.theme.background};
   border-radius: 5px;

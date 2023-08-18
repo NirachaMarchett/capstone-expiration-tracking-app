@@ -3,8 +3,9 @@ import { styled } from "styled-components";
 
 export const StyledButtonLink = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
   font-size: 1rem;
+  margin: 10px 10px 10px 10px;
 
   border: none;
   padding: 0.2rem;
@@ -16,13 +17,13 @@ export const StyledButtonLink = styled(Link)`
 `;
 
 export const StyledDiv = styled.div`
-  margin: 150px 20px 20px 20px;
+  margin: 120px 20px 20px 20px;
 `;
 
 export const StyledContainer = styled.div`
   list-style-type: none;
-  background-color: ${(props) => props.theme.backgroundColor};
-  height: 250px;
+  background-color: ${(props) => props.theme.cardColor};
+  height: 230px;
   border-radius: 15px;
   border: 0px;
   display: grid;

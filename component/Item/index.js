@@ -21,7 +21,7 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
   return (
     <StyledBody>
       <StyledDiv>
-        <StyledButtonLink href="/">⬅️ Back</StyledButtonLink>
+        <StyledButtonLink href="/">Back</StyledButtonLink>
       </StyledDiv>
       <StyledList>
         <StyledContainer>

@@ -32,8 +32,11 @@ export default function HomePage({ groceriesList }) {
 
   return (
     <StyledBody>
-      <ExpirationOverview groceriesList={filteredGroceriesList} />
-      <SearchBar onSearch={handleSearch} />
+      <ExpirationOverview
+        groceriesList={filteredGroceriesList}
+        handleSearch={handleSearch}
+      />
+      {/* <SearchBar onSearch={handleSearch} /> */}
       <FilterButton groceriesList={filteredGroceriesList} />
     </StyledBody>
   );

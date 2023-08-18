@@ -1,4 +1,3 @@
-import { React } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -33,20 +32,22 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
 
 const StyledContainer = styled.div`
   overflow-x: hidden;
-  margin-bottom: 10px;
+  height: 100%;
+  height: 900px;
+  background-color: ${(props) => props.theme.body};
 `;
 
 const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 90px 20px;
+  margin: 20px 20px 100px 20px;
 `;
 
 const StyledHeading = styled.h2`
   margin: 120px 0px 0px 20px;
   width: 100%;
-  background-color: ${(props) => props.theme.body};
-  color: ${(props) => props.theme.fontColor};
+  background-color: none;
+  color: ${(props) => props.theme.cardFont};
 `;
 
 const StyledListContainer = styled.li`
@@ -58,7 +59,7 @@ const StyledListContainer = styled.li`
   align-items: start;
   gap: 5px;
   padding: 10px;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.formColor};
 `;
 const StyledUnFavoriteButton = styled.button`
   width: 30px;
@@ -90,15 +91,15 @@ const StyledImage = styled(Image)`
 
 const StyledName = styled.p`
   margin: 10px 10px 10px 150px;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFont};
 `;
 
 const StyledAnchor = styled.a`
   margin: 10px 10px 10px 150px;
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFont};
   display: inline-block;
-  border: 1px solid ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.cardFont};
   padding: 5px 10px;
   background-color: ${(props) => props.theme.background};
   border-radius: 5px;

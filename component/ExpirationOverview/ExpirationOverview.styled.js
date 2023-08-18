@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 export const StyledOverviewSection = styled.section`
-  margin: var(--header-height) 20px 20px 20px;
-  background-color: #293241;
-  border-radius: 15px;
+  margin: var(--header-height) 0px 0px 0px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  border-radius: 0px;
   display: grid;
   padding: 0.5rem;
   gap: 5px;
   position: relative;
+  height: 250px;
 `;
 export const StyledUl = styled.ul`
   display: flex;
   justify-content: space-evenly;
   padding: 0px;
-  margin: 0px;
+  margin: 0px 0px 0px 0px;
 `;
 
 export const StyledList = styled.li`
   background: white;
   border-radius: 10px;
-  height: 130px;
+  height: 150px;
   margin: 20px 20px 20px 20px;
   text-align: center;
   display: flex;
@@ -28,9 +29,9 @@ export const StyledList = styled.li`
   position: relative;
 `;
 export const StyledHeading = styled.h2`
-  font-size: 1.5rem;
-  margin: 20px 20px 20px 20px;
-  color: var(--font-color-darkmode);
+  font-size: 1rem;
+  margin: 0px 0px 0px 0px;
+  color: ${(props) => props.theme.headerFont};
   text-align: center;
 `;
 

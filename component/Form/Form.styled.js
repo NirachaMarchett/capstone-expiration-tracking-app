@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledFormField = styled.div`
   margin: var(--header-height) 0px 0px 0px;
-  background-color: var(--primary-background-color);
+  background-color: ${(props) => props.theme.formColor};
   border-radius: 0px 0px 30px 30px;
   height: 470px;
   display: flex;
@@ -23,7 +23,7 @@ export const StyledEmojiInput = styled.input`
 
 export const StyledLabel = styled.label`
   font-size: 1rem;
-  color: var(--font-color-darkmode);
+  color: ${(props) => props.theme.navFont};
 `;
 
 export const StyledInput = styled.input`
@@ -62,8 +62,7 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid;
-  background: #98c1d9;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #88CCDE;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
   &:hover {
@@ -78,5 +77,5 @@ export const StyleDiv = styled.div`
 export const StyledHeading = styled.h2`
   text-align: center;
   margin: 10px 0px 0px 0px;
-  color: var(--font-color-darkmode);
+  color: ${(props) => props.theme.navFont};
 `;

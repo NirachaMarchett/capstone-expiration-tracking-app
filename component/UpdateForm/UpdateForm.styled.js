@@ -22,7 +22,7 @@ export const StyledEmojiInput = styled.input`
 
 export const StyledLabel = styled.label`
   font-size: 1rem;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
 `;
 
 export const StyledInput = styled.input`
@@ -55,7 +55,7 @@ export const StyledHeading = styled.h2`
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
 `;
 
 export const StyledSelectField = styled.div`
@@ -75,7 +75,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: #98c1d9;
+  background-color: #88CCDE;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -89,7 +89,7 @@ export const StyledSaveButton = styled.button`
 `;
 
 export const StyledDeleteButton = styled.button`
-  background-color: ##F4F5FC;
+  background-color: #F4F5FC;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

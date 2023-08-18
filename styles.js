@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 :root {
---header-height: 120px;
+--header-height: 100px;
 
 // light Mode
 --font-color-bright-background: black;
