@@ -68,12 +68,12 @@ export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
 const StyledContainer = styled.div`
   overflow-x: hidden;
   height: 100%;
-  height: 900px;
+  height: 1200px;
   background-color: ${(props) => props.theme.body};
 `;
 
 const StyledGrid = styled.div`
-margin-bottom: 250px;
+  margin-bottom:50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 

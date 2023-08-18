@@ -7,6 +7,7 @@ import {
   StyledRemainingDays,
 } from "./GroceriesList.styled.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
+import ArrowRightIcon from "../../assets/arrow-right.svg";
 
 export default function GroceriesList({ filterValue, groceriesList }) {
   if (!filterValue || filterValue === -1) {
@@ -29,6 +30,15 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                     <StyledRemainingDays>
                       Expires in: {calculateDaysRemaining(expirationDate)} {day}
                     </StyledRemainingDays>
+                    <ArrowRightIcon
+                      height={20}
+                      fill="#C32E68"
+                      style={{
+                        position: "absolute",
+                        bottom: "10px",
+                        right: "15px",
+                      }}
+                    />
                   </StyledListContainer>
                 </li>
               );
@@ -107,6 +117,6 @@ const StyledMessage = styled.p`
 `;
 const StyledBody = styled.div`
   overflow: auto;
-  height: 100vw;
+  height: 100%;
   background-color: ${(props) => props.theme.body};
 `;

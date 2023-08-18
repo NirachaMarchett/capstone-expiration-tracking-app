@@ -75,7 +75,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: #88CCDE;
+  background-color: rgba(136, 204, 222, 0.9);
   border-radius: 5px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -92,7 +92,7 @@ export const StyledDeleteButton = styled.button`
   background-color: #F4F5FC;
   border-radius: 5px;
   border: none;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   width: 115px;
   height: 34px;
   font-size: 1rem;

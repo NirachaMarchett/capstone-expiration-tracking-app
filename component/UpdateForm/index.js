@@ -95,6 +95,7 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
                 type="number"
                 name="amount"
                 defaultValue={defaultValues.amount}
+                required
               />
             </StyledInputField>
 
@@ -133,7 +134,8 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
 
 const StyledDiv = styled.div`
   border: none;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   text-decoration: none;
   display: flex;
   justify-content: space-around;

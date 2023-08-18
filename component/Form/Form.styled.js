@@ -62,7 +62,7 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid;
-  background: #88CCDE;
+  background: rgba(136, 204, 222, 0.5);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
   &:hover {

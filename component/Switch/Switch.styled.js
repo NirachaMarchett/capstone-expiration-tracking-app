@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  margin: 50px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   position: relative;
   display: inline-block;
   width: 60px;
@@ -22,6 +22,7 @@ export const StyledInput = styled.input`
 export const Slider = styled.span`
   position: absolute;
   cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 
   top: 0;
   left: 0;

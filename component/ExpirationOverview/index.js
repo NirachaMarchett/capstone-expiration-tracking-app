@@ -52,7 +52,7 @@ const GroceryCountByExpiration = ({ groceriesList }) => {
 export default function ExpirationOverview({ groceriesList, handleSearch }) {
   return (
     <StyledOverviewSection>
-      <StyledHeading>Items expiring soon. Eat me!</StyledHeading>
+      {/* <StyledHeading>Items expiring soon. Eat me!</StyledHeading> */}
       <GroceryCountByExpiration groceriesList={groceriesList} />
       <SearchBar onSearch={handleSearch} />
     </StyledOverviewSection>

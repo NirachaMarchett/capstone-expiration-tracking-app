@@ -12,8 +12,8 @@ export default function Navigation() {
       <StyledNavList>
         <StyledList>
           <StyledLink href="/">
-            <StyledNavIcon>🏠</StyledNavIcon>
-            <StyledNavText>Home</StyledNavText>
+            <StyledNavIcon>⏳</StyledNavIcon>
+            <StyledNavText>Items</StyledNavText>
           </StyledLink>
         </StyledList>
         <StyledList>
@@ -30,7 +30,7 @@ export default function Navigation() {
         </StyledList>
         <StyledList>
           <StyledLink href="/favorite">
-            <StyledNavIcon>🤍</StyledNavIcon>
+            <StyledNavIcon>❤️</StyledNavIcon>
             <StyledNavText>Favorites</StyledNavText>
           </StyledLink>
         </StyledList>

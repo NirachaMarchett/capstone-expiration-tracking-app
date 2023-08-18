@@ -12,6 +12,7 @@ import {
 } from "./Item.styled";
 import UpdateForm from "../UpdateForm";
 import { styled } from "styled-components";
+import ArrowLeftIcon from "../../assets/arrow-left.svg";
 
 export default function Item({ onChange, grocerySelectedItem, onDelete }) {
   // Check if grocerySelectedItem is undefined
@@ -21,7 +22,17 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
   return (
     <StyledBody>
       <StyledDiv>
-        <StyledButtonLink href="/">Back</StyledButtonLink>
+        <StyledButtonLink href="/">
+          <ArrowLeftIcon
+            height={25}
+            fill="#C32E68"
+            style={{
+              position: "absolute",
+              bottom: "0px",
+              left: "0px",
+            }}
+          />
+        </StyledButtonLink>
       </StyledDiv>
       <StyledList>
         <StyledContainer>

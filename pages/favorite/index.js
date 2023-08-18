@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Xcross from "../../assets/x-cross.svg";
 
 export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
   return (
@@ -11,7 +12,17 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
         {favoriteRecipes.map((recipe) => (
           <StyledListContainer key={recipe.label}>
             <StyledUnFavoriteButton onClick={() => onToggleFavorite(recipe)}>
-              <StyledSpan>✖️</StyledSpan>
+              <StyledSpan>
+                <Xcross
+                  height={25}
+                  fill="#C32E68"
+                  style={{
+                    position: "absolute",
+                    top: "2px",
+                    left: "5px",
+                  }}
+                />
+              </StyledSpan>
             </StyledUnFavoriteButton>
             <div>
               <StyledImage
@@ -47,7 +58,7 @@ const StyledHeading = styled.h2`
   margin: 120px 0px 0px 20px;
   width: 100%;
   background-color: none;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
 `;
 
 const StyledListContainer = styled.li`
@@ -59,7 +70,7 @@ const StyledListContainer = styled.li`
   align-items: start;
   gap: 5px;
   padding: 10px;
-  background-color: ${(props) => props.theme.formColor};
+  background-color: ${(props) => props.theme.recipeContainerColor};
 `;
 const StyledUnFavoriteButton = styled.button`
   width: 30px;
@@ -67,7 +78,7 @@ const StyledUnFavoriteButton = styled.button`
   font-size: 1.5rem;
   border-radius: 50%;
   background-color: white;
-  border: 2px solid #293241;
+  border: 2px solid #ffffff;
   position: relative;
   position: absolute;
   top: -10px;
@@ -91,16 +102,17 @@ const StyledImage = styled(Image)`
 
 const StyledName = styled.p`
   margin: 10px 10px 10px 150px;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
 `;
 
 const StyledAnchor = styled.a`
   margin: 10px 10px 10px 150px;
   text-decoration: none;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
   display: inline-block;
-  border: 1px solid ${(props) => props.theme.cardFont};
+  border: 1px solid ${(props) => props.theme.cardFontColor};
   padding: 5px 10px;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.body};
   border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 `;

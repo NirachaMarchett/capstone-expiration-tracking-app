@@ -5,6 +5,7 @@ export const StyledNavList = styled.ul`
   list-style-type: none;
   width: 100%;
   margin: 0;
+  height: 100px;
   border-radius: 30px 30px 0px 0px;
   display: flex;
   justify-content: space-around;

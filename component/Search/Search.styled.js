@@ -30,13 +30,18 @@ export const StyledInput = styled.input`
   font-size: 1rem;
   width: 300px;
   height: 40px;
-  background-color: white;
-  border-radius: 5px;
+  padding: 10px;
+  background-color: ${(props) => props.theme.searchBackground};
+  color: ${(props) => props.theme.searchInput};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: none;
 `;
 
 export const StyledButton = styled.button`
-background-color: #88CCDE;
-border-radius: 5px;
+background-color: ${(props) => props.theme.searchBackground};
+color: ${(props) => props.theme.searchInput};
+border-radius: 30px;
 border: none;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 width: 100px;

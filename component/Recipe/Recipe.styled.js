@@ -10,7 +10,7 @@ export const StyledContainer = styled.div`
   gap: 5px;
   padding: 10px;
   position: relative;
-  background-color: ${(props) => props.theme.formColor};
+  background-color: ${(props) => props.theme.recipeContainerColor};
 `;
 
 export const StyledImage = styled(Image)`
@@ -22,30 +22,31 @@ export const StyledImage = styled(Image)`
 export const StyledHeading = styled.h1`
   font-size: 1rem;
   text-align: center;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
 `;
 
 export const StyledLine = styled.hr`
   width: 50%;
   margin: 10px auto;
-  border: 2px dashed ${(props) => props.theme.cardFont};
+  border: 2px dashed ${(props) => props.theme.cardFontColor};
 `;
 
 export const StyledParagraph = styled.p`
   font-size: 1rem;
   text-align: center;
   margin-top: 0px;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
 `;
 
 export const StyledAnchor = styled.a`
   text-decoration: none;
-  color: ${(props) => props.theme.cardFont};
+  color: ${(props) => props.theme.cardFontColor};
   display: inline-block;
-  border: 1px solid ${(props) => props.theme.cardFont};
+  border: 1px solid ${(props) => props.theme.cardFontColor};
   padding: 5px 10px;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.body};
   border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 `;
 
 export const StyledFavoriteButton = styled.button`
@@ -55,8 +56,8 @@ export const StyledFavoriteButton = styled.button`
   border-radius: 50%;
   padding: 10px 10px 5px 10px;
   background-color: white;
-  border: 2px solid #293241;
+  border: 2px solid #ffffff;
   position: absolute;
   top: -5px;
-  right: 0px;
+  right: -5px;
 `;

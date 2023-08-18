@@ -5,15 +5,17 @@ export const lightTheme = {
   searchBackground: "white",
   searchInput: "#1F1D2A",
   hoverColor: "#f3f6f8",
-  cardColor: "white;",
-  backgroundColor: "#AFCADA",
+  cardItemColor: "rgba(248, 248, 248, 0.9)",
+  cardSelectedItemColor: "rgba(191, 205, 215, 0.50)",
+  backgroundColor: "#BFCDD7",
   filterFont: "#1F1D2A",
   navBackground: "white",
   navFont: "#1F1D2A",
   header: "#AFCADA",
   headerFont: "#1F1D2A",
-  formColor: "#AFCADA",
-  cardFont: "#1F1D2A",
+  formColor: "#BFCDD7",
+  cardFontColor: "#1F1D2A",
+  recipeContainerColor: "rgba(191, 204, 214, 0.50)",
 };
 
 //Dark Mode
@@ -29,7 +31,8 @@ export const darkTheme = {
   navBackground: "rgba(41, 50, 65, 1)",
   navFont: "white",
   header: "#F4DF97",
-  headerFont: "#1F1D2A",
+  headerFont: "white",
   formColor: "rgba(41, 50, 65, 1)",
-  cardFont: "white",
+  cardFontColor: "white",
+  recipeContainerColor: "",
 };
