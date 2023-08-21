@@ -12,7 +12,7 @@ export const StyledFormField = styled.div`
 export const StyledEmojiInput = styled.input`
   font-size: 3rem;
   background: white;
-  border: 2px solid #293241;
+  border: 2px solid #c32e68;
   border-radius: 100px;
   height: 70px;
   width: 70px;
@@ -31,6 +31,7 @@ export const StyledInput = styled.input`
   font-size: 1.2rem;
   border-radius: 4px;
   border: 1px solid;
+  color: #c32e68;
 `;
 
 export const StyledInputField = styled.div`
@@ -67,6 +68,7 @@ export const StyledSelectField = styled.div`
   border: 1px solid;
   flex-direction: column;
   background-color: white;
+  color: #c32e68;
 `;
 
 export const StyledSelect = styled.select`
@@ -75,7 +77,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: rgba(136, 204, 222, 0.9);
+  background-color: rgba(202, 233, 224, 0.8);
   border-radius: 5px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

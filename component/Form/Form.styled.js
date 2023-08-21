@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const StyledFormField = styled.div`
   margin: var(--header-height) 0px 0px 0px;
   background-color: ${(props) => props.theme.formColor};
+  border: solid 2px #eaeaeb;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   border-radius: 0px 0px 30px 30px;
   height: 470px;
   display: flex;
@@ -62,7 +64,7 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid;
-  background: rgba(136, 204, 222, 0.5);
+  background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
   &:hover {

@@ -27,7 +27,7 @@ export const StyledHeading = styled.h2`
   font-size: 3rem;
   margin: 30px 10px 40px 10px;
   background: white;
-  border: 2px solid #293241;
+  border: 2px solid #c8cec2;
   border-radius: 100px;
   height: 70px;
   width: 70px;

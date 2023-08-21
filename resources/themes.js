@@ -1,21 +1,21 @@
 //Light Mode
 export const lightTheme = {
-  body: "#F3F2F2",
+  body: "WHITE",
   fontColor: "#1F1D2A",
   searchBackground: "white",
   searchInput: "#1F1D2A",
   hoverColor: "#f3f6f8",
-  cardItemColor: "rgba(248, 248, 248, 0.9)",
-  cardSelectedItemColor: "rgba(191, 205, 215, 0.50)",
+  cardItemColor: "rgba(248, 248, 248, 0.2)",
+  cardSelectedItemColor: "rgba(202, 233, 224, 0.95)",
   backgroundColor: "#BFCDD7",
   filterFont: "#1F1D2A",
   navBackground: "white",
   navFont: "#1F1D2A",
   header: "#AFCADA",
   headerFont: "#1F1D2A",
-  formColor: "#BFCDD7",
+  formColor: "rgba(125, 200, 202, 0.75)",
   cardFontColor: "#1F1D2A",
-  recipeContainerColor: "rgba(191, 204, 214, 0.50)",
+  recipeContainerColor: "rgba(127, 154, 165, 0.50)",
 };
 
 //Dark Mode

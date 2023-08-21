@@ -5,7 +5,6 @@ export const StyledFormField = styled.form`
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
-  border: none;
   flex-direction: column;
   width: 100%;
   background-color: ${(props) => props.theme.body};
@@ -35,7 +34,7 @@ export const StyledInput = styled.input`
   color: ${(props) => props.theme.searchInput};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-  border: none;
+  border: solid 1px #d9d9d9;
 `;
 
 export const StyledButton = styled.button`
