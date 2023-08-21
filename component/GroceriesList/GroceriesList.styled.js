@@ -11,7 +11,7 @@ export const StyledListContainer = styled(Link)`
   list-style-type: none;
   background-color: ${(props) => props.theme.cardItemColor};
   border-radius: 15px;
-  border: solid 2px #eaeaeb ;
+  border: solid 2px ${(props) => props.theme.cardItemBorder};
   display: grid;
   margin-top: 25px;
   padding: 5px;

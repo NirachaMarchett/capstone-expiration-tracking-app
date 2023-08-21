@@ -77,7 +77,7 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: rgba(202, 233, 224, 0.8);
+  background-color: rgba(184, 219, 217, 1);
   border-radius: 5px;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

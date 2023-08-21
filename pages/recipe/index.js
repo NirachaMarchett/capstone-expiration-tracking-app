@@ -86,9 +86,10 @@ const StyledGrid = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-  margin: 200px 0px 0px 20px;
+  margin: 230px 0px 0px 20px;
   width: 100%;
-  background-color: none;
+
+  background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.filterFont};
 `;
 

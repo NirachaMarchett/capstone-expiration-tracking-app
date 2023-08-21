@@ -51,7 +51,7 @@ const StyledContainer = styled.div`
 const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 100px 20px;
+  margin: 20px 10px 100px 10px;
 `;
 
 const StyledHeading = styled.h2`

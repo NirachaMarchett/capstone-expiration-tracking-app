@@ -29,7 +29,7 @@ export const Slider = styled.span`
   right: 0;
   bottom: 0;
   border-radius: 50px;
-  background-color: white;
+  background-color: #f3f6f8;
   transition: 0.4;
 
   &:before {

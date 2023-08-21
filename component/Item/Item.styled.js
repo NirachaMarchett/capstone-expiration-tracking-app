@@ -24,7 +24,7 @@ export const StyledDiv = styled.div`
 export const StyledContainer = styled.div`
   list-style-type: none;
   background-color: ${(props) => props.theme.cardSelectedItemColor};
-  border: solid 2px #eaeaeb;
+  border: solid 2px ${(props) => props.theme.cardItemBorder};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   height: 230px;
   border-radius: 15px;

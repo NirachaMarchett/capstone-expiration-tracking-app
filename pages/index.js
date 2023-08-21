@@ -1,6 +1,6 @@
 import ExpirationOverview from "@/component/ExpirationOverview";
 import FilterButton from "@/component/FilterButton";
-import SearchBar from "@/component/SearchBar";
+
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
