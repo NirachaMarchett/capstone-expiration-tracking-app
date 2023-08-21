@@ -8,7 +8,7 @@ const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
 export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
   const [recipes, setRescipes] = useState([]);
-  const [query, setQuery] = useState(" ");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -86,7 +86,7 @@ const StyledGrid = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-  margin: 0px 0px 0px 20px;
+  margin: 200px 0px 0px 20px;
   width: 100%;
   background-color: none;
   color: ${(props) => props.theme.filterFont};
@@ -98,5 +98,5 @@ const StyledMessage = styled.p`
   padding: 0.5rem;
   border-radius: 5px;
   width: 100%;
-  color: ${(props) => props.theme.filterFont};
+  color: #c32e68;
 `;

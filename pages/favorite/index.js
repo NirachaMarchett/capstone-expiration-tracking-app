@@ -44,7 +44,7 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
 const StyledContainer = styled.div`
   overflow-x: hidden;
   height: 100%;
-  height: 900px;
+  height: 1200px;
   background-color: ${(props) => props.theme.body};
 `;
 
@@ -71,6 +71,7 @@ const StyledListContainer = styled.li`
   gap: 5px;
   padding: 10px;
   background-color: ${(props) => props.theme.recipeContainerColor};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 `;
 const StyledUnFavoriteButton = styled.button`
   width: 30px;

@@ -39,7 +39,7 @@ export const Slider = styled.span`
     width: 20px;
     left: 5px;
     bottom: 2px;
-    background-color: #cdcdcd;
+    background-color: rgba(127, 154, 165, 0.9);
     border-radius: 50%;
     transition: 0.4s;
   }

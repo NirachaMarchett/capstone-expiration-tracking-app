@@ -15,7 +15,8 @@ export const lightTheme = {
   headerFont: "#1F1D2A",
   formColor: "rgba(125, 200, 202, 0.75)",
   cardFontColor: "#1F1D2A",
-  recipeContainerColor: "rgba(127, 154, 165, 0.50)",
+  recipeContainerColor: "rgba(230, 240, 242, 1)",
+  recipeSearchFormColor: "rgba(114, 150, 164, 1)",
 };
 
 //Dark Mode

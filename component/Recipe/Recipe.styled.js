@@ -11,6 +11,7 @@ export const StyledContainer = styled.div`
   padding: 10px;
   position: relative;
   background-color: ${(props) => props.theme.recipeContainerColor};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 `;
 
 export const StyledImage = styled(Image)`

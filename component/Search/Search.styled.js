@@ -1,20 +1,24 @@
 import styled from "styled-components";
 
 export const StyledFormField = styled.form`
-  margin: 120px 0px 0px 0px;
+  margin: 100px 0px 0px 0px;
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
   flex-direction: column;
   width: 100%;
-  background-color: ${(props) => props.theme.body};
+  height: 50px;
+  background-color: ${(props) => props.theme.recipeSearchFormColor};
   color: ${(props) => props.theme.fontColor};
+  border-radius: 0px 0px 30px 30px;
+  position: fixed;
+  z-index: 999;
 `;
 
 export const StyledDiv = styled.div`
   margin: 0px 20px 20px 20px;
   display: flex;
-  gap: 10px;
+  gap: 5px;
   display: flex;
   justify-content: center;
 `;
@@ -27,22 +31,24 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   font-size: 1rem;
+  margin-top: 10px;
   width: 300px;
   height: 40px;
   padding: 10px;
   background-color: ${(props) => props.theme.searchBackground};
   color: ${(props) => props.theme.searchInput};
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   border-radius: 30px;
   border: solid 1px #d9d9d9;
 `;
 
 export const StyledButton = styled.button`
+margin-top: 10px;
 background-color: ${(props) => props.theme.searchBackground};
 color: ${(props) => props.theme.searchInput};
 border-radius: 30px;
 border: none;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 width: 100px;
 height: 40px;
 font-size: 1rem;
