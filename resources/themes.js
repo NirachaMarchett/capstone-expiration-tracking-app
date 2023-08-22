@@ -21,6 +21,8 @@ export const lightTheme = {
   updateFormBackgroundColor: "rgba(202, 233, 224, 1)",
   updateFormFontColor: "#325C60",
   formBoxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.5)",
+  submitMessageBGColor: "#eff4f8",
+  submitMessageFontColor: "#325C60",
 };
 
 //Dark Mode
@@ -46,4 +48,6 @@ export const darkTheme = {
   updateFormBackgroundColor: "rgba(47, 69, 80, 1)",
   updateFormFontColor: "#ffffff",
   formBoxShadow: "0px 4px 4px 0px rgba(255, 255, 255, 0.8)",
+  submitMessageBGColor: "#dde8e4",
+  submitMessageFontColor: "#325C60",
 };

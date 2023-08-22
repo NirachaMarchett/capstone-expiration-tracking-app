@@ -20,7 +20,6 @@ export default function App({ Component, pageProps }) {
     "favoriteRecipes",
     { defaultValue: [] }
   );
-
   const [openModal, setOpenModal] = useState(false);
 
   const handleAddItem = (newItem) => {
@@ -28,7 +27,6 @@ export default function App({ Component, pageProps }) {
       ...groceriesList,
       { ...newItem, id: uuidv4().slice(0, 8) },
     ]);
-    alert("Item successfully added to the list ✅");
   };
 
   const handleItemUpdate = (updatedDetail) => {
@@ -69,6 +67,15 @@ export default function App({ Component, pageProps }) {
   const handleCloseEditFrom = () => {
     setOpenModal(false);
   };
+
+  const handleSubmitMessage = () => {
+    setOpenModal(true);
+  };
+
+  const handleClosesubmitMessage = () => {
+    setOpenModal(false);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -87,6 +94,8 @@ export default function App({ Component, pageProps }) {
           onEdit={handleEditForm}
           openModal={openModal}
           closeModal={handleCloseEditFrom}
+          onOpenSubmitMessageModal={handleSubmitMessage}
+          closeSubmitMessageModal={handleClosesubmitMessage}
         />
       </ThemeProvider>
     </>

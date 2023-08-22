@@ -1,7 +1,6 @@
 import React from "react";
 import {
   StyledList,
-  StyledHeading,
   StyledOverviewSection,
   StyledRemainingCount,
   StyledUl,

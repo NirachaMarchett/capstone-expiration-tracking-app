@@ -8,13 +8,11 @@ export default function Modal({
   closeModal,
 }) {
   return (
-    <>
-      <UpdateForm
-        defaultValues={defaultValues}
-        onChange={onChange}
-        onDelete={onDelete}
-        closeModal={closeModal}
-      />
-    </>
+    <UpdateForm
+      defaultValues={defaultValues}
+      onChange={onChange}
+      onDelete={onDelete}
+      closeModal={closeModal}
+    />
   );
 }

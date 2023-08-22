@@ -10,7 +10,6 @@ import {
   StyledList,
   StyledRemainingDays,
 } from "./Item.styled";
-import UpdateForm from "../UpdateForm";
 import { styled } from "styled-components";
 import ArrowLeftIcon from "../../assets/arrow-left.svg";
 import EditButton from "../../assets/edit.svg";
