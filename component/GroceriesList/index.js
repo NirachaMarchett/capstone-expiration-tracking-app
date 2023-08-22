@@ -18,6 +18,10 @@ export default function GroceriesList({ filterValue, groceriesList }) {
             ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
               const daysRemaining = calculateDaysRemaining(expirationDate);
               const day = daysRemaining === 1 ? "day" : "days";
+
+              const isExpired = daysRemaining === 1;
+              const remainingDaysStyle = isExpired ? { color: "#c32e68" } : {};
+
               return (
                 <li key={id}>
                   <StyledListContainer href={`/${id}`}>
@@ -27,7 +31,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                       <p>Purchased Date: {purchasedDate}</p>
                       <p>Amount: {amount}</p>
                     </StyledDetailSection>
-                    <StyledRemainingDays>
+                    <StyledRemainingDays style={remainingDaysStyle}>
                       Expires in: {calculateDaysRemaining(expirationDate)} {day}
                     </StyledRemainingDays>
                     <ArrowRightIcon
@@ -83,6 +87,10 @@ export default function GroceriesList({ filterValue, groceriesList }) {
           ({ id, emoji, name, purchasedDate, expirationDate }) => {
             const daysRemaining = calculateDaysRemaining(expirationDate);
             const day = daysRemaining === 1 ? "day" : "days";
+
+            const isExpired = daysRemaining === 1;
+            const remainingDaysStyle = isExpired ? { color: "#c32e68" } : {};
+
             return (
               <li key={id}>
                 <StyledListContainer href={`/${id}`}>
@@ -94,7 +102,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                     <p>Expiration Date: {expirationDate}</p>
                   </StyledDetailSection>
 
-                  <StyledRemainingDays>
+                  <StyledRemainingDays style={remainingDaysStyle}>
                     Expires in: {calculateDaysRemaining(expirationDate)} {day}
                   </StyledRemainingDays>
                 </StyledListContainer>
