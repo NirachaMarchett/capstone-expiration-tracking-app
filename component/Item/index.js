@@ -13,8 +13,17 @@ import {
 import UpdateForm from "../UpdateForm";
 import { styled } from "styled-components";
 import ArrowLeftIcon from "../../assets/arrow-left.svg";
+import EditButton from "../../assets/edit.svg";
+import Modal from "../Modal";
 
-export default function Item({ onChange, grocerySelectedItem, onDelete }) {
+export default function Item({
+  onChange,
+  grocerySelectedItem,
+  onDelete,
+  onEdit,
+  openModal,
+  closeModal,
+}) {
   // Check if grocerySelectedItem is undefined
   if (!grocerySelectedItem) {
     return;
@@ -50,13 +59,19 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
             Expires in:
             {calculateDaysRemaining(grocerySelectedItem.expirationDate)} days
           </StyledRemainingDays>
+          <StyledEditButton type="button" onClick={() => onEdit()}>
+            <EditButton height={20} />
+          </StyledEditButton>
         </StyledContainer>
       </StyledList>
-      <UpdateForm
-        defaultValues={grocerySelectedItem}
-        onChange={onChange}
-        onDelete={onDelete}
-      />
+      {openModal && (
+        <Modal
+          defaultValues={grocerySelectedItem}
+          closeModal={closeModal}
+          onChange={onChange}
+          onDelete={onDelete}
+        />
+      )}
     </StyledBody>
   );
 }
@@ -65,4 +80,18 @@ const StyledBody = styled.div`
   overflow: auto;
   height: 100%;
   background-color: ${(props) => props.theme.body};
+`;
+
+const StyledEditButton = styled.button`
+  background: ${(props) => props.theme.body};
+  border: none;
+  border-radius: 50px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -4px;
+  top: -22px;
 `;

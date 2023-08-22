@@ -11,11 +11,18 @@ import {
   StyledLabel,
   StyledSelect,
   StyledSelectField,
+  StyledButtonSection,
 } from "./UpdateForm.styled";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import Xcross from "../../assets/x-cross.svg";
 
-export default function UpdateForm({ defaultValues, onChange, onDelete }) {
+export default function UpdateForm({
+  defaultValues,
+  onChange,
+  onDelete,
+  closeModal,
+}) {
   const router = useRouter();
 
   function handleSubmit(event) {
@@ -26,6 +33,7 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
 
     onChange(data);
     event.target.elements.name.focus();
+    closeModal();
   }
 
   const handleDelete = () => {
@@ -37,6 +45,9 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
     <StyledDiv>
       <form onSubmit={handleSubmit}>
         <StyledFormField>
+          <StyledCloseButton type="button" onClick={() => closeModal()}>
+            <Xcross height={25} fill="#C32E68" />
+          </StyledCloseButton>
           <StyledHeading>Update Item Detail</StyledHeading>
           <StyledHeading>
             <StyledEmojiInput
@@ -117,12 +128,12 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
               </StyledSelectField>
             </StyledInputField>
           </StyledInputSection>
-          <StyledDiv>
+          <StyledButtonSection>
             <StyledSaveButton type="submit">Save</StyledSaveButton>
             <StyledDeleteButton type="button" onClick={handleDelete}>
               Delete
             </StyledDeleteButton>
-          </StyledDiv>
+          </StyledButtonSection>
         </StyledFormField>
       </form>
     </StyledDiv>
@@ -133,11 +144,31 @@ export default function UpdateForm({ defaultValues, onChange, onDelete }) {
 }
 
 const StyledDiv = styled.div`
-  border: none;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin: 10px 20px 0px 20px;
+  position:fixed;
+  border: 2px solid ${(props) => props.theme.cardItemColor};
   text-decoration: none;
   display: flex;
   justify-content: space-around;
-  background-color: ${(props) => props.theme.body};
+  background-color: ${(props) => props.theme.updateFormBackgroundColor};
+  position: relative;
+  position absolute;
+  top: -295px;
+  border-radius: 15px;
+  box-shadow: ${(props) => props.theme.formBoxShadow};
+  z-index: 20;
+
+`;
+
+const StyledCloseButton = styled.button`
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
 `;

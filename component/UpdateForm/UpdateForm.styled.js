@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFormField = styled.div`
-  height: 550px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-item: center;
@@ -22,7 +22,7 @@ export const StyledEmojiInput = styled.input`
 
 export const StyledLabel = styled.label`
   font-size: 1rem;
-  color: ${(props) => props.theme.filterFont};
+  color: ${(props) => props.theme.updateFormFontColor};
 `;
 
 export const StyledInput = styled.input`
@@ -54,9 +54,9 @@ export const StyledInputSection = styled.div`
 
 export const StyledHeading = styled.h2`
   text-align: center;
-  margin: 0px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  color: ${(props) => props.theme.filterFont};
+  color: ${(props) => props.theme.updateFormFontColor};
 `;
 
 export const StyledSelectField = styled.div`
@@ -74,6 +74,18 @@ export const StyledSelectField = styled.div`
 export const StyledSelect = styled.select`
   border: none;
   background-color: white;
+  width: 260px;
+  border-radius: 5px;
+  padding: 5px;
+  color: #c32e68;
+  font-size: 1rem;
+`;
+
+export const StyledButtonSection = styled.div`
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: ${(props) => props.theme.updateFormBackgroundColor};
 `;
 
 export const StyledSaveButton = styled.button`

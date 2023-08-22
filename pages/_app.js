@@ -21,6 +21,8 @@ export default function App({ Component, pageProps }) {
     { defaultValue: [] }
   );
 
+  const [openModal, setOpenModal] = useState(false);
+
   const handleAddItem = (newItem) => {
     setGroceriesList([
       ...groceriesList,
@@ -60,6 +62,13 @@ export default function App({ Component, pageProps }) {
     setFavoriteRecipes((prev) => [...prev, recipe]);
   };
 
+  const handleEditForm = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseEditFrom = () => {
+    setOpenModal(false);
+  };
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -75,6 +84,9 @@ export default function App({ Component, pageProps }) {
           onToggle={handleToggle}
           onToggleFavorite={handleToggleFavorite}
           favoriteRecipes={favoriteRecipes}
+          onEdit={handleEditForm}
+          openModal={openModal}
+          closeModal={handleCloseEditFrom}
         />
       </ThemeProvider>
     </>

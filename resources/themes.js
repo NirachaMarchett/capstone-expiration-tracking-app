@@ -18,6 +18,9 @@ export const lightTheme = {
   cardFontColor: "#325C60",
   recipeContainerColor: "rgba(230, 240, 242, 1)",
   recipeSearchFormColor: "rgba(208, 170, 209, 1)",
+  updateFormBackgroundColor: "rgba(202, 233, 224, 1)",
+  updateFormFontColor: "#325C60",
+  formBoxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.5)",
 };
 
 //Dark Mode
@@ -40,4 +43,7 @@ export const darkTheme = {
   cardFontColor: "#f4f4f9",
   recipeContainerColor: "rgba(157, 210, 216, 0.1)",
   recipeSearchFormColor: "#9f879f",
+  updateFormBackgroundColor: "rgba(47, 69, 80, 1)",
+  updateFormFontColor: "#ffffff",
+  formBoxShadow: "0px 4px 4px 0px rgba(255, 255, 255, 0.8)",
 };
