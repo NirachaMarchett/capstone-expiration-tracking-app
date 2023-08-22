@@ -26,7 +26,7 @@ const PageContainer = styled.div`
 `;
 
 const StyledDiv = styled.div`
-  margin-top: 80px;
+  margin-top: 100px;
   width: 400px;
   border: 2px solid ${(props) => props.theme.submitMessageBGColor};
   padding: 10px;
@@ -36,8 +36,8 @@ const StyledDiv = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.submitMessageBGColor};
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85);
+  border-radius: 2px;
   z-index: 20;
 `;
 
