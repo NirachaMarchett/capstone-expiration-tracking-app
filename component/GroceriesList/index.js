@@ -84,7 +84,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     <StyledBody>
       <StyledList>
         {filteredGroceriesList.map(
-          ({ id, emoji, name, purchasedDate, expirationDate }) => {
+          ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
             const daysRemaining = calculateDaysRemaining(expirationDate);
             const day = daysRemaining === 1 ? "day" : "days";
 
@@ -99,7 +99,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                   <StyledDetailSection>
                     <p>Name: {name}</p>
                     <p>Purchased Date: {purchasedDate}</p>
-                    <p>Expiration Date: {expirationDate}</p>
+                    <p>Amount: {amount}</p>
                   </StyledDetailSection>
 
                   <StyledRemainingDays style={remainingDaysStyle}>

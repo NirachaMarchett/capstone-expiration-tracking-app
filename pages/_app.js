@@ -101,7 +101,3 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
-
-const StyledBody = styled.div`
-  background-color: ${(props) => props.theme.body};
-`;
