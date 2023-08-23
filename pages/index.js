@@ -1,6 +1,6 @@
 import ExpirationOverview from "@/component/ExpirationOverview";
 import FilterButton from "@/component/FilterButton";
-import SearchBar from "@/component/SearchBar";
+
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -32,8 +32,11 @@ export default function HomePage({ groceriesList }) {
 
   return (
     <StyledBody>
-      <ExpirationOverview groceriesList={filteredGroceriesList} />
-      <SearchBar onSearch={handleSearch} />
+      <ExpirationOverview
+        groceriesList={filteredGroceriesList}
+        handleSearch={handleSearch}
+      />
+      {/* <SearchBar onSearch={handleSearch} /> */}
       <FilterButton groceriesList={filteredGroceriesList} />
     </StyledBody>
   );

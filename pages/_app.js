@@ -6,7 +6,6 @@ import useLocalStorageState from "use-local-storage-state";
 import { v4 as uuidv4 } from "uuid";
 import Navigation from "@/component/Navigation";
 import { ThemeProvider } from "styled-components";
-import styled from "styled-components";
 import { lightTheme, darkTheme } from "./../resources/themes.js";
 import React from "react";
 
@@ -20,13 +19,13 @@ export default function App({ Component, pageProps }) {
     "favoriteRecipes",
     { defaultValue: [] }
   );
+  const [openModal, setOpenModal] = useState(false);
 
   const handleAddItem = (newItem) => {
     setGroceriesList([
       ...groceriesList,
       { ...newItem, id: uuidv4().slice(0, 8) },
     ]);
-    alert("Item successfully added to the list ✅");
   };
 
   const handleItemUpdate = (updatedDetail) => {
@@ -60,6 +59,22 @@ export default function App({ Component, pageProps }) {
     setFavoriteRecipes((prev) => [...prev, recipe]);
   };
 
+  const handleEditForm = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseEditFrom = () => {
+    setOpenModal(false);
+  };
+
+  const handleSubmitMessage = () => {
+    setOpenModal(true);
+  };
+
+  const handleClosesubmitMessage = () => {
+    setOpenModal(false);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -75,12 +90,13 @@ export default function App({ Component, pageProps }) {
           onToggle={handleToggle}
           onToggleFavorite={handleToggleFavorite}
           favoriteRecipes={favoriteRecipes}
+          onEdit={handleEditForm}
+          openModal={openModal}
+          closeModal={handleCloseEditFrom}
+          onOpenSubmitMessageModal={handleSubmitMessage}
+          closeSubmitMessageModal={handleClosesubmitMessage}
         />
       </ThemeProvider>
     </>
   );
 }
-
-const StyledBody = styled.div`
-  background-color: ${(props) => props.theme.body};
-`;

@@ -8,7 +8,7 @@ const app_key = "354397600a1db4ed480401dd1a84bc1e";
 
 export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
   const [recipes, setRescipes] = useState([]);
-  const [query, setQuery] = useState(" ");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -67,10 +67,13 @@ export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
 
 const StyledContainer = styled.div`
   overflow-x: hidden;
+  height: 100%;
+  height: 1200px;
+  background-color: ${(props) => props.theme.body};
 `;
 
 const StyledGrid = styled.div`
-margin-bottom: 110px;
+  margin-bottom:50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
@@ -83,10 +86,11 @@ margin-bottom: 110px;
 `;
 
 const StyledHeading = styled.h2`
-  margin: 0px 0px 0px 20px;
+  margin: 230px 0px 0px 20px;
   width: 100%;
+
   background-color: ${(props) => props.theme.body};
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
 `;
 
 const StyledMessage = styled.p`
@@ -95,5 +99,5 @@ const StyledMessage = styled.p`
   padding: 0.5rem;
   border-radius: 5px;
   width: 100%;
-  color: ${(props) => props.theme.fontColor};
+  color: #c32e68;
 `;

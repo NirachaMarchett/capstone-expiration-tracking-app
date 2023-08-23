@@ -14,7 +14,7 @@ export default function Search({ query, setQuery }) {
     <>
       <StyledFormField>
         <StyledLabel htmlFor="searchTerm">
-          Enter ingredients you’d like to use:
+          {/* Enter ingredients you’d like to use: */}
         </StyledLabel>
         <StyledDiv>
           <StyledInput

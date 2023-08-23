@@ -5,9 +5,11 @@ export const StyledNavList = styled.ul`
   list-style-type: none;
   width: 100%;
   margin: 0;
+  height: 80px;
+  border-radius: 30px 30px 0px 0px;
   display: flex;
   justify-content: space-around;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.navBackground};
   padding: 1rem;
   position: fixed;
   bottom: 0;
@@ -16,13 +18,14 @@ export const StyledNavList = styled.ul`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.navFont};
 `;
 
 export const StyledNavIcon = styled.span`
   font-size: 2em;
   display: flex;
   justify-content: center;
+  margin: 5px;
 `;
 
 export const StyledNavText = styled.p`

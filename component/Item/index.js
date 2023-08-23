@@ -10,10 +10,19 @@ import {
   StyledList,
   StyledRemainingDays,
 } from "./Item.styled";
-import UpdateForm from "../UpdateForm";
 import { styled } from "styled-components";
+import ArrowLeftIcon from "../../assets/arrow-left.svg";
+import EditButton from "../../assets/edit.svg";
+import Modal from "../Modal";
 
-export default function Item({ onChange, grocerySelectedItem, onDelete }) {
+export default function Item({
+  onChange,
+  grocerySelectedItem,
+  onDelete,
+  onEdit,
+  openModal,
+  closeModal,
+}) {
   // Check if grocerySelectedItem is undefined
   if (!grocerySelectedItem) {
     return;
@@ -21,7 +30,17 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
   return (
     <StyledBody>
       <StyledDiv>
-        <StyledButtonLink href="/">⬅️ Back</StyledButtonLink>
+        <StyledButtonLink href="/">
+          <ArrowLeftIcon
+            height={25}
+            fill="#C32E68"
+            style={{
+              position: "absolute",
+              bottom: "0px",
+              left: "0px",
+            }}
+          />
+        </StyledButtonLink>
       </StyledDiv>
       <StyledList>
         <StyledContainer>
@@ -39,13 +58,20 @@ export default function Item({ onChange, grocerySelectedItem, onDelete }) {
             Expires in:
             {calculateDaysRemaining(grocerySelectedItem.expirationDate)} days
           </StyledRemainingDays>
+          <StyledEditButton type="button" onClick={() => onEdit()}>
+            <EditButton height={20} />
+          </StyledEditButton>
         </StyledContainer>
       </StyledList>
-      <UpdateForm
-        defaultValues={grocerySelectedItem}
-        onChange={onChange}
-        onDelete={onDelete}
-      />
+      {openModal && (
+        <Modal
+          defaultValues={grocerySelectedItem}
+          closeModal={closeModal}
+          onChange={onChange}
+          onDelete={onDelete}
+        />
+      )}
+      {openModal && <Backdrop />}
     </StyledBody>
   );
 }
@@ -55,3 +81,28 @@ const StyledBody = styled.div`
   height: 100%;
   background-color: ${(props) => props.theme.body};
 `;
+
+const StyledEditButton = styled.button`
+  background: ${(props) => props.theme.body};
+  border: none;
+  border-radius: 50px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -4px;
+  top: -22px;
+`;
+
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  z-index: 10; 
+}`;

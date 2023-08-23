@@ -4,20 +4,21 @@ import Link from "next/link";
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 90px 20px;
+  margin: 0px 20px 100px 20px;
 `;
 
 export const StyledListContainer = styled(Link)`
   list-style-type: none;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.cardItemColor};
   border-radius: 15px;
-  border: 0px;
+  border: solid 2px ${(props) => props.theme.cardItemBorder};
   display: grid;
   margin-top: 25px;
   padding: 5px;
   position: relative;
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFontColor};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 
   }
 `;
@@ -26,7 +27,7 @@ export const StyledHeading = styled.h2`
   font-size: 3rem;
   margin: 30px 10px 40px 10px;
   background: white;
-  border: 2px solid #293241;
+  border: 2px solid #c8cec2;
   border-radius: 100px;
   height: 70px;
   width: 70px;

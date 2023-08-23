@@ -5,7 +5,7 @@ export const StyledLabel = styled.label`
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 30px;
+  height: 25px;
   transition: 0.4s;
 `;
 
@@ -22,23 +22,24 @@ export const StyledInput = styled.input`
 export const Slider = styled.span`
   position: absolute;
   cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   border-radius: 50px;
-  background-color: grey;
+  background-color: #f3f6f8;
   transition: 0.4;
 
   &:before {
     position: absolute;
     content: "";
-    height: 23px;
-    width: 23px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 2px;
+    background-color: rgba(127, 154, 165, 0.9);
     border-radius: 50%;
     transition: 0.4s;
   }

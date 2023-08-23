@@ -3,8 +3,10 @@ import { styled } from "styled-components";
 
 export const StyledButtonLink = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.filterFont};
   font-size: 1rem;
+  margin: 10px 10px 10px 10px;
+  position: relative;
 
   border: none;
   padding: 0.2rem;
@@ -16,28 +18,29 @@ export const StyledButtonLink = styled(Link)`
 `;
 
 export const StyledDiv = styled.div`
-  margin: 150px 20px 20px 20px;
+  margin: 120px 20px 20px 20px;
 `;
 
 export const StyledContainer = styled.div`
   list-style-type: none;
-  background-color: ${(props) => props.theme.backgroundColor};
-  height: 250px;
+  background-color: ${(props) => props.theme.cardSelectedItemColor};
+  border: solid 2px ${(props) => props.theme.cardItemBorder};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  height: 230px;
   border-radius: 15px;
-  border: 0px;
   display: grid;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   padding: 5px;
   position: relative;
   text-decoration: none;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.cardFontColor};
 `;
 
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
-  margin: 20px 20px 20px 20px;
+  margin: 0px 20px 20px 20px;
   background-color: ${(props) => props.theme.body};
 `;
 
@@ -53,6 +56,6 @@ export const StyledRemainingDays = styled.p`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 2%;
-  top: -12%;
+  right: 50px;
+  top: -30px;
 `;

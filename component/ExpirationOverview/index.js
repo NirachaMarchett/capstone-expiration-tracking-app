@@ -1,12 +1,12 @@
 import React from "react";
 import {
   StyledList,
-  StyledHeading,
   StyledOverviewSection,
   StyledRemainingCount,
   StyledUl,
   StyledDiv,
 } from "./ExpirationOverview.styled";
+import SearchBar from "../SearchBar";
 
 const filterByExpirationDate = (groceriesList, daysRemaining) => {
   const currentDate = new Date();
@@ -48,11 +48,12 @@ const GroceryCountByExpiration = ({ groceriesList }) => {
   );
 };
 
-export default function ExpirationOverview({ groceriesList }) {
+export default function ExpirationOverview({ groceriesList, handleSearch }) {
   return (
     <StyledOverviewSection>
-      <StyledHeading>Items expiring soon. Eat me!</StyledHeading>
+      {/* <StyledHeading>Items expiring soon. Eat me!</StyledHeading> */}
       <GroceryCountByExpiration groceriesList={groceriesList} />
+      <SearchBar onSearch={handleSearch} />
     </StyledOverviewSection>
   );
 }
