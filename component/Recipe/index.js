@@ -8,7 +8,6 @@ import {
   StyledParagraph,
   StyledFavoriteButton,
 } from "./Recipe.styled";
-import ArrowRightIcon from "../../assets/arrow-right.svg";
 
 export default function Recipe({ recipe, onToggleFavorite, isFavorite }) {
   return (

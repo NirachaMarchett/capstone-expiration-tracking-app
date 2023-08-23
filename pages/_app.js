@@ -6,7 +6,6 @@ import useLocalStorageState from "use-local-storage-state";
 import { v4 as uuidv4 } from "uuid";
 import Navigation from "@/component/Navigation";
 import { ThemeProvider } from "styled-components";
-import styled from "styled-components";
 import { lightTheme, darkTheme } from "./../resources/themes.js";
 import React from "react";
 

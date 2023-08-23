@@ -11,6 +11,12 @@ import ArrowRightIcon from "../../assets/arrow-right.svg";
 
 export default function GroceriesList({ filterValue, groceriesList }) {
   if (!filterValue || filterValue === -1) {
+    groceriesList.sort((a, b) => {
+      const daysRemainingA = calculateDaysRemaining(a.expirationDate);
+      const daysRemainingB = calculateDaysRemaining(b.expirationDate);
+      return daysRemainingA - daysRemainingB;
+    });
+
     return (
       <StyledBody>
         <StyledList>
@@ -52,6 +58,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       </StyledBody>
     );
   }
+
   const filteredGroceriesList = groceriesList.filter((item) => {
     const currentDate = new Date();
     const expirationDate = new Date(item.expirationDate);
