@@ -26,7 +26,7 @@ const PageContainer = styled.div`
 `;
 
 const StyledDiv = styled.div`
-  margin-top: 100px;
+  margin-top: -250px;
   width: 400px;
   border: 2px solid ${(props) => props.theme.submitMessageBGColor};
   padding: 10px;

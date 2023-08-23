@@ -1,5 +1,6 @@
 import Item from "@/component/Item";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 export default function ItemDetailsPage({
   onChange,
@@ -16,14 +17,16 @@ export default function ItemDetailsPage({
     return null;
   }
   return (
-    <Item
-      id={id}
-      onChange={onChange}
-      grocerySelectedItem={groceriesList.find((item) => item.id === id)}
-      onDelete={onDelete}
-      onEdit={onEdit}
-      openModal={openModal}
-      closeModal={closeModal}
-    />
+    <>
+      <Item
+        id={id}
+        onChange={onChange}
+        grocerySelectedItem={groceriesList.find((item) => item.id === id)}
+        onDelete={onDelete}
+        onEdit={onEdit}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+    </>
   );
 }

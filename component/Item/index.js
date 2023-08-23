@@ -10,7 +10,7 @@ import {
   StyledList,
   StyledRemainingDays,
 } from "./Item.styled";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import ArrowLeftIcon from "../../assets/arrow-left.svg";
 import EditButton from "../../assets/edit.svg";
 import Modal from "../Modal";

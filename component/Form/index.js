@@ -94,12 +94,15 @@ export default function AddGroceryItemForm({
 
 const StyledDiv = styled.div`
   border: none;
+  position: fixed;
   width: 100%;
   height: 100%;
   text-decoration: none;
   display: flex;
   justify-content: space-around;
   background-color: ${(props) => props.theme.body};
+  min-height: 100vh;
+  overflow-y: auto;
 `;
 const Backdrop = styled.div`
   position: fixed;
