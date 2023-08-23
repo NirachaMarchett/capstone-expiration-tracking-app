@@ -94,7 +94,6 @@ export default function AddGroceryItemForm({
 
 const StyledDiv = styled.div`
   border: none;
-  position: fixed;
   width: 100%;
   height: 100%;
   text-decoration: none;

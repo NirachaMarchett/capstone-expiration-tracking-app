@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFormField = styled.div`
-  margin: var(--header-height) 0px 0px 0px;
+  margin: var(--header-height) 0px 100px 0px;
   background-color: ${(props) => props.theme.formColor};
   border: solid 2px #eaeaeb;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
