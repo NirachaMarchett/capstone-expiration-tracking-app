@@ -22,6 +22,7 @@ export default function FilterButton({ groceriesList }) {
         </StyledParagraph>
         <StyledSelect value={filterValue} onChange={handleFilterChange}>
           <option value={-1}>All</option>
+          <option value={10}>Expired Item</option>
           <option value={9}>0 Remaining Day/Today</option>
           <option value={1}>1 Remaining Day</option>
           <option value={2}>2 Remaining Days</option>

@@ -27,6 +27,25 @@ export default function Item({
   if (!grocerySelectedItem) {
     return;
   }
+  const expirationDate = grocerySelectedItem.expirationDate;
+  const daysRemaining = calculateDaysRemaining(expirationDate);
+  const day = daysRemaining === 1 || daysRemaining === 0 ? "day" : "days";
+
+  const remainingDaysStyle =
+    daysRemaining < 0
+      ? { color: "#000045", background: "#F31102", border: "none" }
+      : {} && daysRemaining === 0
+      ? { color: "#c32e68", border: "solid 1px #c32e68" }
+      : {};
+
+  const ExpirationMessage =
+    daysRemaining < 0
+      ? `Expired: ${calculateDaysRemaining(expirationDate)} ${day}`
+      : `Expires in: ${calculateDaysRemaining(expirationDate)} ${day}` &&
+        daysRemaining === 0
+      ? "Expiring Today"
+      : `Expires in: ${calculateDaysRemaining(expirationDate)} ${day}`;
+
   return (
     <StyledBody>
       <StyledDiv>
@@ -48,15 +67,14 @@ export default function Item({
 
           <StyledDetailSection>
             <p>Name: {grocerySelectedItem.name}</p>
-            <p>Purchased Date: {grocerySelectedItem.purchasedDate}</p>
+            <p>Purchase Date: {grocerySelectedItem.purchasedDate}</p>
             <p>Expiration Date: {grocerySelectedItem.expirationDate}</p>
             <p>Amount: {grocerySelectedItem.amount}</p>
             <p>Category: {grocerySelectedItem.category}</p>
           </StyledDetailSection>
 
-          <StyledRemainingDays>
-            Expires in:
-            {calculateDaysRemaining(grocerySelectedItem.expirationDate)} days
+          <StyledRemainingDays style={remainingDaysStyle}>
+            {ExpirationMessage}
           </StyledRemainingDays>
           <StyledEditButton type="button" onClick={() => onEdit()}>
             <EditButton height={20} />

@@ -23,10 +23,26 @@ export default function GroceriesList({ filterValue, groceriesList }) {
           {groceriesList.map(
             ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
               const daysRemaining = calculateDaysRemaining(expirationDate);
-              const day = daysRemaining === 1 ? "day" : "days";
+              const day =
+                daysRemaining === 1 || daysRemaining === 0 ? "day" : "days";
 
-              const isExpired = daysRemaining === 1;
-              const remainingDaysStyle = isExpired ? { color: "#c32e68" } : {};
+              const remainingDaysStyle =
+                daysRemaining < 0
+                  ? { color: "#000045", background: "#F31102", border: "none" }
+                  : {} && daysRemaining === 0
+                  ? { color: "#c32e68", border: "solid 1px #c32e68" }
+                  : {};
+
+              const ExpirationMessage =
+                daysRemaining < 0
+                  ? `Expired: ${calculateDaysRemaining(expirationDate)} ${day}`
+                  : `Expires in: ${calculateDaysRemaining(
+                      expirationDate
+                    )} ${day}` && daysRemaining === 0
+                  ? "Expiring Today"
+                  : `Expires in: ${calculateDaysRemaining(
+                      expirationDate
+                    )} ${day}`;
 
               return (
                 <li key={id}>
@@ -34,11 +50,11 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                     <StyledHeading>{emoji}</StyledHeading>
                     <StyledDetailSection>
                       <p>Name: {name}</p>
-                      <p>Purchased Date: {purchasedDate}</p>
+                      <p>Purchase Date: {purchasedDate}</p>
                       <p>Amount: {amount}</p>
                     </StyledDetailSection>
                     <StyledRemainingDays style={remainingDaysStyle}>
-                      Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                      {ExpirationMessage}
                     </StyledRemainingDays>
                     <ArrowRightIcon
                       height={20}
@@ -75,6 +91,8 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       return remainingDays > 7;
     } else if (filterValue === 9) {
       return remainingDays === 0;
+    } else if (filterValue === 10) {
+      return remainingDays < 0;
     } else {
       return remainingDays === filterValue;
     }
@@ -93,10 +111,26 @@ export default function GroceriesList({ filterValue, groceriesList }) {
         {filteredGroceriesList.map(
           ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
             const daysRemaining = calculateDaysRemaining(expirationDate);
-            const day = daysRemaining === 1 ? "day" : "days";
+            const day =
+              daysRemaining === 1 || daysRemaining === 0 ? "day" : "days";
 
-            const isExpired = daysRemaining === 1;
-            const remainingDaysStyle = isExpired ? { color: "#c32e68" } : {};
+            const remainingDaysStyle =
+              daysRemaining < 0
+                ? { color: "#000045", background: "#F31102", border: "none" }
+                : {} && daysRemaining === 0
+                ? { color: "#c32e68", border: "solid 1px #c32e68" }
+                : {};
+
+            const ExpirationMessage =
+              daysRemaining < 0
+                ? `Expired: ${calculateDaysRemaining(expirationDate)} ${day}`
+                : `Expires in: ${calculateDaysRemaining(
+                    expirationDate
+                  )} ${day}` && daysRemaining === 0
+                ? "Expiring Today"
+                : `Expires in: ${calculateDaysRemaining(
+                    expirationDate
+                  )} ${day}`;
 
             return (
               <li key={id}>
@@ -105,12 +139,12 @@ export default function GroceriesList({ filterValue, groceriesList }) {
 
                   <StyledDetailSection>
                     <p>Name: {name}</p>
-                    <p>Purchased Date: {purchasedDate}</p>
+                    <p>Purchase Date: {purchasedDate}</p>
                     <p>Amount: {amount}</p>
                   </StyledDetailSection>
 
                   <StyledRemainingDays style={remainingDaysStyle}>
-                    Expires in: {calculateDaysRemaining(expirationDate)} {day}
+                    {ExpirationMessage}
                   </StyledRemainingDays>
                 </StyledListContainer>
               </li>
