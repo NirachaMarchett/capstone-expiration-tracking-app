@@ -4,9 +4,7 @@ export const StyledOverviewSection = styled.section`
   margin: var(--header-height) 0px 0px 0px;
   background-color: ${(props) => props.theme.backgroundColor};
   border-radius: 0px 0px 50px 50px;
-  display: grid;
   padding: 0.5rem;
-  gap: 5px;
   position: relative;
   height: 230px;
 `;
