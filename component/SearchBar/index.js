@@ -61,7 +61,3 @@ const StyledInput = styled.input`
   padding: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 `;
-
-// const StyledLabel = styled.label`
-//   color: ${(props) => props.theme.fontColor};
-// `;

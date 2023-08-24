@@ -58,6 +58,7 @@ export default function UpdateForm({
           </StyledCloseButton>
           <StyledHeading>Update Item Detail</StyledHeading>
           <StyledHeading>
+            <label htmlFor="emoji"></label>
             <StyledEmojiInput
               list="emojis"
               id="emoji"

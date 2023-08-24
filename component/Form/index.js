@@ -37,6 +37,7 @@ export default function AddGroceryItemForm({
           <StyledFormField>
             <StyledHeading>Add Emoji</StyledHeading>
             <StyledHeading>
+              <label htmlFor="emoji"></label>
               <StyledEmojiInput
                 list="emojis"
                 id="emoji"
