@@ -10,8 +10,8 @@ export default function Switch({ onToggle }) {
   };
   return (
     <SytledSwitch>
-      <StyledLabel>
-        <StyledInput type="checkbox" onChange={handleToggler} />
+      <StyledLabel id="switch">
+        <StyledInput type="checkbox" onChange={handleToggler} id="switch" />
         <Slider className="Slider" />
       </StyledLabel>
     </SytledSwitch>

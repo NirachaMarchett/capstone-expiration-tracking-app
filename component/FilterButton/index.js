@@ -20,7 +20,11 @@ export default function FilterButton({ groceriesList }) {
           You are tracking {groceriesList.length}{" "}
           {groceriesList.length === 1 ? "item" : "items"}
         </StyledParagraph>
-        <StyledSelect value={filterValue} onChange={handleFilterChange}>
+        <StyledSelect
+          value={filterValue}
+          onChange={handleFilterChange}
+          id="expirationFilter"
+        >
           <option value={-1}>All</option>
           <option value={10}>Expired Item</option>
           <option value={9}>0 Remaining Day/Today</option>

@@ -46,7 +46,15 @@ export default function UpdateForm({
       <form onSubmit={handleSubmit}>
         <StyledFormField>
           <StyledCloseButton type="button" onClick={() => closeModal()}>
-            <Xcross height={25} fill="#C32E68" />
+            <Xcross
+              height={25}
+              fill="#C32E68"
+              style={{
+                position: "absolute",
+                top: "0px",
+                left: "4px",
+              }}
+            />
           </StyledCloseButton>
           <StyledHeading>Update Item Detail</StyledHeading>
           <StyledHeading>
@@ -78,9 +86,9 @@ export default function UpdateForm({
             <StyledInputField>
               <StyledLabel htmlFor="purchaseDate">Purchase Date:</StyledLabel>
               <StyledInput
-                id="purchasedDate"
+                id="purchaseDate"
                 type="date"
-                name="purchasedDate"
+                name="purchaseDate"
                 defaultValue={defaultValues.purchasedDate}
                 required
               />

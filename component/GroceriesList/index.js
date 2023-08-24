@@ -28,7 +28,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
 
               const remainingDaysStyle =
                 daysRemaining < 0
-                  ? { color: "#000045", background: "#F31102", border: "none" }
+                  ? { color: "white", background: "#cf0000", border: "none" }
                   : {} && daysRemaining === 0
                   ? { color: "#c32e68", border: "solid 1px #c32e68" }
                   : {};
@@ -116,7 +116,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
 
             const remainingDaysStyle =
               daysRemaining < 0
-                ? { color: "#000045", background: "#F31102", border: "none" }
+                ? { color: "white", background: "#cf0000", border: "none" }
                 : {} && daysRemaining === 0
                 ? { color: "#c32e68", border: "solid 1px #c32e68" }
                 : {};

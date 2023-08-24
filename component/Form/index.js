@@ -60,9 +60,9 @@ export default function AddGroceryItemForm({
               <StyledInputField>
                 <StyledLabel htmlFor="purchaseDate">Purchase Date:</StyledLabel>
                 <StyledInput
-                  id="purchasedDate"
+                  id="purchaseDate"
                   type="date"
-                  name="purchasedDate"
+                  name="purchaseDate"
                   required
                 />
               </StyledInputField>

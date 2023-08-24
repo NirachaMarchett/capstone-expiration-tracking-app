@@ -19,7 +19,7 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
                   style={{
                     position: "absolute",
                     top: "2px",
-                    left: "5px",
+                    left: "4px",
                   }}
                 />
               </StyledSpan>
