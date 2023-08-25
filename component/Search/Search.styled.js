@@ -54,5 +54,5 @@ height: 40px;
 font-size: 1rem;
 
 &:hover {
-  background-color: white;
+  color: ${(props) => props.theme.searchButtonHoverFont};
 `;
