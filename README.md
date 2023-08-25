@@ -1,4 +1,4 @@
-# Capstone Project
+# Project
 
 This project was created from the neue fische `next` template.
 
