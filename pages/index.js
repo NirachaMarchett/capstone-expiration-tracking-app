@@ -35,7 +35,6 @@ export default function HomePage({ groceriesList }) {
         groceriesList={filteredGroceriesList}
         handleSearch={handleSearch}
       />
-      {/* <SearchBar onSearch={handleSearch} /> */}
       <FilterButton groceriesList={filteredGroceriesList} />
     </StyledBody>
   );
