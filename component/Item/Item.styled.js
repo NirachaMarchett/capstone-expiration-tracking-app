@@ -26,7 +26,7 @@ export const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.cardSelectedItemColor};
   border: solid 2px ${(props) => props.theme.cardItemBorder};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  height: 230px;
+  height: 250px;
   border-radius: 15px;
   display: grid;
   margin-top: 0px;
@@ -93,8 +93,7 @@ export const Backdrop = styled.div`
 
 export const StyledDetailSection = styled.section`
   position: absolute;
-  right: 10%;
-  top: 10%;
+  margin: 10px 15px 10px 120px;
 `;
 
 export const StyledHeading = styled.h2`

@@ -73,16 +73,25 @@ const StyledContainer = styled.div`
 `;
 
 const StyledGrid = styled.div`
-  margin-bottom:50px;
+  margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
   @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(6, 1fr);
+  @media (min-width: 810px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1480px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const StyledHeading = styled.h2`

@@ -52,6 +52,24 @@ const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
   margin: 20px 10px 100px 10px;
+
+  @media (max-width: 767px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 810px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1480px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const StyledHeading = styled.h2`

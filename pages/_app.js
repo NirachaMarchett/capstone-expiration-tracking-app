@@ -59,19 +59,11 @@ export default function App({ Component, pageProps }) {
     setFavoriteRecipes((prev) => [...prev, recipe]);
   };
 
-  const handleEditForm = () => {
+  const handleOpenModal = () => {
     setOpenModal(true);
   };
 
-  const handleCloseEditFrom = () => {
-    setOpenModal(false);
-  };
-
-  const handleSubmitMessage = () => {
-    setOpenModal(true);
-  };
-
-  const handleClosesubmitMessage = () => {
+  const handleCloseModal = () => {
     setOpenModal(false);
   };
 
@@ -90,11 +82,11 @@ export default function App({ Component, pageProps }) {
           onToggle={handleToggle}
           onToggleFavorite={handleToggleFavorite}
           favoriteRecipes={favoriteRecipes}
-          onEdit={handleEditForm}
+          onEdit={handleOpenModal}
           openModal={openModal}
-          closeModal={handleCloseEditFrom}
-          onOpenSubmitMessageModal={handleSubmitMessage}
-          closeSubmitMessageModal={handleClosesubmitMessage}
+          closeModal={handleCloseModal}
+          onOpenSubmitMessageModal={handleOpenModal}
+          closeSubmitMessageModal={handleCloseModal}
         />
       </ThemeProvider>
     </>
