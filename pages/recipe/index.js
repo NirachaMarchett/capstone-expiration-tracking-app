@@ -1,12 +1,7 @@
 import Search from "@/component/Search";
 import { useEffect, useState } from "react";
 import Recipe from "@/component/Recipe";
-import {
-  StyledContainer,
-  StyledHeading,
-  StyledGrid,
-  StyledMessage,
-} from "./recipe.styled";
+import styled from "styled-components";
 
 const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
@@ -69,3 +64,40 @@ export default function RecipePage({ favoriteRecipes, onToggleFavorite }) {
     </StyledContainer>
   );
 }
+
+const StyledContainer = styled.div`
+  overflow-x: hidden;
+  height: 100%;
+  height: 1200px;
+  background-color: ${(props) => props.theme.body};
+`;
+
+const StyledGrid = styled.div`
+  margin-bottom:50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6, 1fr);
+`;
+
+const StyledHeading = styled.h2`
+  margin: 230px 0px 0px 20px;
+  width: 100%;
+
+  background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.filterFont};
+`;
+
+const StyledMessage = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  color: #c32e68;
+`;
