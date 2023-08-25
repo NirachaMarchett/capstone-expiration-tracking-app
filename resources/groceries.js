@@ -5,7 +5,7 @@ export const groceries = [
     name: "apple",
     amount: 6,
     category: "fruit",
-    purchasedDate: "2023-08-24",
+    purchaseDate: "2023-08-24",
     expirationDate: "2023-08-26",
   },
   {
@@ -14,7 +14,7 @@ export const groceries = [
     name: "banana",
     amount: 3,
     category: "fruit",
-    purchasedDate: "2023-08-24",
+    purchaseDate: "2023-08-24",
     expirationDate: "2023-08-25",
   },
   {
@@ -23,7 +23,7 @@ export const groceries = [
     name: "avocado",
     amount: 4,
     category: "vegetable",
-    purchasedDate: "2023-08-24",
+    purchaseDate: "2023-08-24",
     expirationDate: "2023-08-26",
   },
   //   {
@@ -32,7 +32,7 @@ export const groceries = [
   //     name: "broccoli",
   //     amount: 1,
   //     category: "vegetable",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-11",
   //   },
   //   {
@@ -41,7 +41,7 @@ export const groceries = [
   //     name: "beef",
   //     amount: 1,
   //     category: "meat",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-04",
   //   },
   //   {
@@ -50,7 +50,7 @@ export const groceries = [
   //     name: "chicken wings",
   //     amount: 1,
   //     category: "meat",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-04",
   //   },
   //   {
@@ -59,7 +59,7 @@ export const groceries = [
   //     name: "donut",
   //     amount: 6,
   //     category: "pastry",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-05",
   //   },
   //   {
@@ -68,7 +68,7 @@ export const groceries = [
   //     name: "cucumber",
   //     amount: 1,
   //     category: "vegetable",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-05",
   //   },
   //   {
@@ -77,7 +77,7 @@ export const groceries = [
   //     name: "watermelon",
   //     amount: 1,
   //     category: "fruit",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-04",
   //   },
   //   {
@@ -86,7 +86,7 @@ export const groceries = [
   //     name: "egg",
   //     amount: 1,
   //     category: "protein food",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-05",
   //   },
   //   {
@@ -95,7 +95,7 @@ export const groceries = [
   //     name: "bacon",
   //     amount: 3,
   //     category: "meat",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-06",
   //   },
   //   {
@@ -104,7 +104,7 @@ export const groceries = [
   //     name: "praprika",
   //     amount: 4,
   //     category: "vegetable",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-08",
   //   },
   //   {
@@ -113,7 +113,7 @@ export const groceries = [
   //     name: "strawberries",
   //     amount: 1,
   //     category: "fruit",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-03",
   //   },
   //   {
@@ -122,7 +122,7 @@ export const groceries = [
   //     name: "tomato",
   //     amount: 6,
   //     category: "fruit",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-07",
   //   },
   //   {
@@ -131,7 +131,7 @@ export const groceries = [
   //     name: "sushi box",
   //     amount: 1,
   //     category: "food",
-  //     purchasedDate: "2023-07-31",
+  //     purchaseDate: "2023-07-31",
   //     expirationDate: "2023-08-03",
   //   },
 ];

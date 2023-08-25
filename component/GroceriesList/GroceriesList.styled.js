@@ -55,3 +55,17 @@ export const StyledDetailSection = styled.section`
   right: 10%;
   top: 10%;
 `;
+
+export const StyledMessage = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
+`;
+export const StyledBody = styled.div`
+  overflow: auto;
+  height: 100%;
+  background-color: ${(props) => props.theme.body};
+`;

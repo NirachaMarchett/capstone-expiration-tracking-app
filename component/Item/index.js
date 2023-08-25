@@ -1,16 +1,16 @@
+import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
 import {
   StyledDetailSection,
   StyledHeading,
-} from "../GroceriesList/GroceriesList.styled";
-import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining";
-import {
   StyledButtonLink,
   StyledContainer,
   StyledDiv,
   StyledList,
   StyledRemainingDays,
+  StyledBody,
+  StyledEditButton,
+  Backdrop,
 } from "./Item.styled";
-import styled from "styled-components";
 import ArrowLeftIcon from "../../assets/arrow-left.svg";
 import EditButton from "../../assets/edit.svg";
 import Modal from "../Modal";
@@ -67,7 +67,7 @@ export default function Item({
 
           <StyledDetailSection>
             <p>Name: {grocerySelectedItem.name}</p>
-            <p>Purchase Date: {grocerySelectedItem.purchasedDate}</p>
+            <p>Purchase Date: {grocerySelectedItem.purchaseDate}</p>
             <p>Expiration Date: {grocerySelectedItem.expirationDate}</p>
             <p>Amount: {grocerySelectedItem.amount}</p>
             <p>Category: {grocerySelectedItem.category}</p>
@@ -93,34 +93,3 @@ export default function Item({
     </StyledBody>
   );
 }
-
-const StyledBody = styled.div`
-  overflow: auto;
-  height: 100%;
-  background-color: ${(props) => props.theme.body};
-`;
-
-const StyledEditButton = styled.button`
-  background: ${(props) => props.theme.body};
-  border: none;
-  border-radius: 50px;
-  height: 45px;
-  width: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: -4px;
-  top: -22px;
-`;
-
-const Backdrop = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  backdrop-filter: blur(5px); 
-  z-index: 10; 
-}`;

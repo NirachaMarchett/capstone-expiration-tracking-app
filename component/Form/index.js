@@ -9,8 +9,9 @@ import {
   StyledInputField,
   StyledInputSection,
   StyledLabel,
+  StyledFormContainer,
+  Backdrop,
 } from "./Form.styled";
-import styled from "styled-components";
 import Modal from "../SuccessModal";
 
 export default function AddGroceryItemForm({
@@ -32,7 +33,7 @@ export default function AddGroceryItemForm({
   }
   return (
     <>
-      <StyledDiv>
+      <StyledFormContainer>
         <form onSubmit={handleSubmit}>
           <StyledFormField>
             <StyledHeading>Add Emoji</StyledHeading>
@@ -84,32 +85,9 @@ export default function AddGroceryItemForm({
             </StyleDiv>
           </StyledFormField>
         </form>
-      </StyledDiv>
+      </StyledFormContainer>
       {openModal && <Modal closeSubmitMessageModal={closeSubmitMessageModal} />}
       {openModal && <Backdrop />}
     </>
   );
 }
-
-const StyledDiv = styled.div`
-  border: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  background-color: ${(props) => props.theme.body};
-  min-height: 100vh;
-  overflow-y: auto;
-`;
-const Backdrop = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  backdrop-filter: blur(5px); 
-  z-index: 10; 
-}`;

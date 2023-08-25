@@ -44,3 +44,9 @@ export const Slider = styled.span`
     transition: 0.4s;
   }
 `;
+
+export const SytledSwitch = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 20px 0px 0px;
+`;

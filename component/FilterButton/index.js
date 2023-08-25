@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import GroceriesList from "../GroceriesList";
 import {
   StyledDiv,

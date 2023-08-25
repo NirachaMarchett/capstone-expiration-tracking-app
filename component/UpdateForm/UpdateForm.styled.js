@@ -116,3 +116,33 @@ export const StyledDeleteButton = styled.button`
     background-color: white;
   
 `;
+
+export const StyledFormContainer = styled.div`
+  margin: 10px 20px 0px 20px;
+  position:fixed;
+  border: 2px solid ${(props) => props.theme.cardItemColor};
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: ${(props) => props.theme.updateFormBackgroundColor};
+  position: relative;
+  position absolute;
+  top: -295px;
+  border-radius: 15px;
+  box-shadow: ${(props) => props.theme.formBoxShadow};
+  z-index: 20;
+
+`;
+
+export const StyledCloseButton = styled.button`
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
+`;

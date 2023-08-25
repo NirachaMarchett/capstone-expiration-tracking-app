@@ -1,6 +1,10 @@
 import React from "react";
-import { Slider, StyledInput, StyledLabel } from "./Switch.styled";
-import styled from "styled-components";
+import {
+  Slider,
+  StyledInput,
+  StyledLabel,
+  SytledSwitch,
+} from "./Switch.styled";
 
 export default function Switch({ onToggle }) {
   const handleToggler = () => {
@@ -17,9 +21,3 @@ export default function Switch({ onToggle }) {
     </SytledSwitch>
   );
 }
-
-const SytledSwitch = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin: 0px 20px 0px 0px;
-`;

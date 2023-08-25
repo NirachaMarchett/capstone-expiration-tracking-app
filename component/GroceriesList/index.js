@@ -1,10 +1,11 @@
-import styled from "styled-components";
 import {
   StyledDetailSection,
   StyledHeading,
   StyledList,
   StyledListContainer,
   StyledRemainingDays,
+  StyledMessage,
+  StyledBody,
 } from "./GroceriesList.styled.js";
 import { calculateDaysRemaining } from "@/resources/calculateDaysRemaining.js";
 import ArrowRightIcon from "../../assets/arrow-right.svg";
@@ -21,7 +22,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
       <StyledBody>
         <StyledList>
           {groceriesList.map(
-            ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
+            ({ id, emoji, name, purchaseDate, expirationDate, amount }) => {
               const daysRemaining = calculateDaysRemaining(expirationDate);
               const day =
                 daysRemaining === 1 || daysRemaining === 0 ? "day" : "days";
@@ -50,7 +51,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
                     <StyledHeading>{emoji}</StyledHeading>
                     <StyledDetailSection>
                       <p>Name: {name}</p>
-                      <p>Purchase Date: {purchasedDate}</p>
+                      <p>Purchase Date: {purchaseDate}</p>
                       <p>Amount: {amount}</p>
                     </StyledDetailSection>
                     <StyledRemainingDays style={remainingDaysStyle}>
@@ -109,7 +110,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     <StyledBody>
       <StyledList>
         {filteredGroceriesList.map(
-          ({ id, emoji, name, purchasedDate, expirationDate, amount }) => {
+          ({ id, emoji, name, purchaseDate, expirationDate, amount }) => {
             const daysRemaining = calculateDaysRemaining(expirationDate);
             const day =
               daysRemaining === 1 || daysRemaining === 0 ? "day" : "days";
@@ -139,7 +140,7 @@ export default function GroceriesList({ filterValue, groceriesList }) {
 
                   <StyledDetailSection>
                     <p>Name: {name}</p>
-                    <p>Purchase Date: {purchasedDate}</p>
+                    <p>Purchase Date: {purchaseDate}</p>
                     <p>Amount: {amount}</p>
                   </StyledDetailSection>
 
@@ -155,17 +156,3 @@ export default function GroceriesList({ filterValue, groceriesList }) {
     </StyledBody>
   );
 }
-
-const StyledMessage = styled.p`
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: ${(props) => props.theme.backgroundColor};
-  color: ${(props) => props.theme.fontColor};
-`;
-const StyledBody = styled.div`
-  overflow: auto;
-  height: 100%;
-  background-color: ${(props) => props.theme.body};
-`;

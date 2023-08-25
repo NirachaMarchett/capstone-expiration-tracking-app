@@ -1,6 +1,5 @@
 import ExpirationOverview from "@/component/ExpirationOverview";
 import FilterButton from "@/component/FilterButton";
-
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -47,6 +46,7 @@ const StyledBody = styled.div`
   height: 100%;
   background-color: ${(props) => props.theme.body};
 `;
+
 //Old solution
 // const handleSearch = (searchTerm) => {
 //   if (searchTerm.trim() === "") {
