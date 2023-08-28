@@ -90,6 +90,7 @@ const StyledListContainer = styled.li`
   padding: 10px;
   background-color: ${(props) => props.theme.recipeContainerColor};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  height: 150px;
 `;
 const StyledUnFavoriteButton = styled.button`
   width: 30px;
@@ -134,4 +135,6 @@ export const StyledAnchor = styled.a`
   background-color: ${(props) => props.theme.body};
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 5px;
 `;

@@ -9,7 +9,7 @@ export default function Header({ onToggle }) {
   const isRecipePage = activePath === "/recipe";
 
   return (
-    <StyledHeader isHomepage={isHomepage} isRecipePage={isRecipePage}>
+    <StyledHeader $isHomepage={isHomepage} $isRecipePage={isRecipePage}>
       <StyledHeading>⏳Expiry Track</StyledHeading>
       <StyledEmojis> 🥭🍑🍅🥩🍖🥑🍣🍩🍰</StyledEmojis>
       <Switch onToggle={onToggle} />
@@ -25,11 +25,11 @@ const StyledHeader = styled.header`
   top: 0px;
 
   ${(props) =>
-    props.isHomepage
+    props.$isHomepage
       ? css`
           background-color: ${props.theme.backgroundColor};
         `
-      : props.isRecipePage
+      : props.$isRecipePage
       ? css`
           background-color: ${props.theme.recipeSearchFormColor};
         `
