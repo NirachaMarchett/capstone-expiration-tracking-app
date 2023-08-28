@@ -1,6 +1,5 @@
 import Item from "@/component/Item";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 
 export default function ItemDetailsPage({
   onChange,

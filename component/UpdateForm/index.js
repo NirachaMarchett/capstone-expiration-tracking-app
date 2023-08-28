@@ -12,8 +12,9 @@ import {
   StyledSelect,
   StyledSelectField,
   StyledButtonSection,
+  StyledFormContainer,
+  StyledCloseButton,
 } from "./UpdateForm.styled";
-import styled from "styled-components";
 import { useRouter } from "next/router";
 import Xcross from "../../assets/x-cross.svg";
 
@@ -42,14 +43,23 @@ export default function UpdateForm({
   };
 
   return (
-    <StyledDiv>
+    <StyledFormContainer>
       <form onSubmit={handleSubmit}>
         <StyledFormField>
           <StyledCloseButton type="button" onClick={() => closeModal()}>
-            <Xcross height={25} fill="#C32E68" />
+            <Xcross
+              height={25}
+              fill="#C32E68"
+              style={{
+                position: "absolute",
+                top: "0px",
+                left: "4px",
+              }}
+            />
           </StyledCloseButton>
           <StyledHeading>Update Item Detail</StyledHeading>
           <StyledHeading>
+            <label htmlFor="emoji"></label>
             <StyledEmojiInput
               list="emojis"
               id="emoji"
@@ -78,10 +88,10 @@ export default function UpdateForm({
             <StyledInputField>
               <StyledLabel htmlFor="purchaseDate">Purchase Date:</StyledLabel>
               <StyledInput
-                id="purchasedDate"
+                id="purchaseDate"
                 type="date"
-                name="purchasedDate"
-                defaultValue={defaultValues.purchasedDate}
+                name="purchaseDate"
+                defaultValue={defaultValues.purchaseDate}
                 required
               />
             </StyledInputField>
@@ -136,39 +146,9 @@ export default function UpdateForm({
           </StyledButtonSection>
         </StyledFormField>
       </form>
-    </StyledDiv>
+    </StyledFormContainer>
   );
 }
 
 {
 }
-
-const StyledDiv = styled.div`
-  margin: 10px 20px 0px 20px;
-  position:fixed;
-  border: 2px solid ${(props) => props.theme.cardItemColor};
-  text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  background-color: ${(props) => props.theme.updateFormBackgroundColor};
-  position: relative;
-  position absolute;
-  top: -295px;
-  border-radius: 15px;
-  box-shadow: ${(props) => props.theme.formBoxShadow};
-  z-index: 20;
-
-`;
-
-const StyledCloseButton = styled.button`
-  position: absolute;
-  right: 0px;
-  top: -10px;
-  width: 30px;
-  height: 30px;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
-  border: 2px solid #ffffff;
-`;

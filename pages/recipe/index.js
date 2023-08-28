@@ -1,7 +1,7 @@
 import Search from "@/component/Search";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Recipe from "@/component/Recipe";
+import styled from "styled-components";
 
 const app_id = "7c34a514";
 const app_key = "354397600a1db4ed480401dd1a84bc1e";
@@ -73,20 +73,29 @@ const StyledContainer = styled.div`
 `;
 
 const StyledGrid = styled.div`
-  margin-bottom:50px;
+  margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
   @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(6, 1fr);
+  @media (min-width: 810px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1480px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const StyledHeading = styled.h2`
-  margin: 230px 0px 0px 20px;
+  margin: 200px 0px 0px 20px;
   width: 100%;
 
   background-color: ${(props) => props.theme.body};

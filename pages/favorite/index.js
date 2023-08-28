@@ -1,6 +1,6 @@
+import Xcross from "../../assets/x-cross.svg";
 import styled from "styled-components";
 import Image from "next/image";
-import Xcross from "../../assets/x-cross.svg";
 
 export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
   return (
@@ -18,7 +18,7 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
                   fill="#C32E68"
                   style={{
                     position: "absolute",
-                    top: "2px",
+                    top: "3px",
                     left: "5px",
                   }}
                 />
@@ -52,6 +52,24 @@ const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
   margin: 20px 10px 100px 10px;
+
+  @media (max-width: 767px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 810px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1480px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const StyledHeading = styled.h2`
@@ -72,6 +90,7 @@ const StyledListContainer = styled.li`
   padding: 10px;
   background-color: ${(props) => props.theme.recipeContainerColor};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  height: 150px;
 `;
 const StyledUnFavoriteButton = styled.button`
   width: 30px;
@@ -86,13 +105,13 @@ const StyledUnFavoriteButton = styled.button`
   right: 0px;
 `;
 
-const StyledSpan = styled.span`
+export const StyledSpan = styled.span`
   position: absolute;
   top: -2px;
   left: -1px;
 `;
 
-const StyledImage = styled(Image)`
+export const StyledImage = styled(Image)`
   border-radius: 50%;
   max-width: 80px;
   max-height: 80px;
@@ -101,12 +120,12 @@ const StyledImage = styled(Image)`
   left: 30px;
 `;
 
-const StyledName = styled.p`
+export const StyledName = styled.p`
   margin: 10px 10px 10px 150px;
   color: ${(props) => props.theme.cardFontColor};
 `;
 
-const StyledAnchor = styled.a`
+export const StyledAnchor = styled.a`
   margin: 10px 10px 10px 150px;
   text-decoration: none;
   color: ${(props) => props.theme.cardFontColor};
@@ -116,4 +135,6 @@ const StyledAnchor = styled.a`
   background-color: ${(props) => props.theme.body};
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 5px;
 `;

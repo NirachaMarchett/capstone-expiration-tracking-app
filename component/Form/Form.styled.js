@@ -81,3 +81,26 @@ export const StyledHeading = styled.h2`
   margin: 10px 0px 0px 0px;
   color: ${(props) => props.theme.headerFont};
 `;
+
+export const StyledFormContainer = styled.div`
+  border: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: ${(props) => props.theme.body};
+  min-height: 100vh;
+  overflow-y: auto;
+`;
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  z-index: 10; 
+}`;

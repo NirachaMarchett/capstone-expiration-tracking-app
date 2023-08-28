@@ -26,7 +26,7 @@ export const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.cardSelectedItemColor};
   border: solid 2px ${(props) => props.theme.cardItemBorder};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  height: 230px;
+  height: 250px;
   border-radius: 15px;
   display: grid;
   margin-top: 0px;
@@ -58,4 +58,51 @@ export const StyledRemainingDays = styled.p`
   position: absolute;
   right: 50px;
   top: -30px;
+`;
+
+export const StyledBody = styled.div`
+  overflow: auto;
+  height: 100%;
+  background-color: ${(props) => props.theme.body};
+`;
+
+export const StyledEditButton = styled.button`
+  background: ${(props) => props.theme.body};
+  border: none;
+  border-radius: 50px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -4px;
+  top: -22px;
+`;
+
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  z-index: 10; 
+}`;
+
+export const StyledDetailSection = styled.section`
+  position: absolute;
+  margin: 10px 15px 10px 120px;
+`;
+
+export const StyledHeading = styled.h2`
+  font-size: 3rem;
+  margin: 30px 10px 40px 10px;
+  background: white;
+  border: 2px solid #c8cec2;
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+  text-align: center;
 `;

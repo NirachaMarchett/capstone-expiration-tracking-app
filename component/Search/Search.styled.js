@@ -7,7 +7,7 @@ export const StyledFormField = styled.form`
   padding: 0.5rem;
   flex-direction: column;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: ${(props) => props.theme.recipeSearchFormColor};
   color: ${(props) => props.theme.fontColor};
   border-radius: 0px 0px 30px 30px;
@@ -31,7 +31,7 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   font-size: 1rem;
-  margin-top: 45px;
+  margin-top: 20px;
   width: 300px;
   height: 40px;
   padding: 10px;
@@ -43,7 +43,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-margin-top: 45px;
+margin-top: 20px;
 background-color: ${(props) => props.theme.searchBackground};
 color: ${(props) => props.theme.searchInput};
 border-radius: 30px;
@@ -54,5 +54,5 @@ height: 40px;
 font-size: 1rem;
 
 &:hover {
-  background-color: white;
+  color: ${(props) => props.theme.searchButtonHoverFont};
 `;

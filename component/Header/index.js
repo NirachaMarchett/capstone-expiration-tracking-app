@@ -1,9 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Switch from "../Switch";
+import { useRouter } from "next/router";
 
 export default function Header({ onToggle }) {
+  const router = useRouter();
+  const activePath = router.pathname;
+  const isHomepage = activePath === "/";
+  const isRecipePage = activePath === "/recipe";
+
   return (
-    <StyledHeader>
+    <StyledHeader $isHomepage={isHomepage} $isRecipePage={isRecipePage}>
       <StyledHeading>⏳Expiry Track</StyledHeading>
       <StyledEmojis> 🥭🍑🍅🥩🍖🥑🍣🍩🍰</StyledEmojis>
       <Switch onToggle={onToggle} />
@@ -18,7 +24,18 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0px;
 
-  background-color: ${(props) => props.theme.body};
+  ${(props) =>
+    props.$isHomepage
+      ? css`
+          background-color: ${props.theme.backgroundColor};
+        `
+      : props.$isRecipePage
+      ? css`
+          background-color: ${props.theme.recipeSearchFormColor};
+        `
+      : css`
+          background-color: ${props.theme.body};
+        `};
   z-index: 999;
 `;
 

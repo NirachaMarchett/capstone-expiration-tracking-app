@@ -5,6 +5,30 @@ export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0.5rem;
   margin: 0px 20px 100px 20px;
+
+  @media (max-width: 767px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 565px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 810px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1480px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 export const StyledListContainer = styled(Link)`
@@ -52,6 +76,19 @@ export const StyledRemainingDays = styled.p`
 
 export const StyledDetailSection = styled.section`
   position: absolute;
-  right: 10%;
-  top: 10%;
+  margin: 10px 5px 10px 120px;
+`;
+
+export const StyledMessage = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.fontColor};
+`;
+export const StyledBody = styled.div`
+  overflow: auto;
+  height: 100%;
+  background-color: ${(props) => props.theme.body};
 `;
