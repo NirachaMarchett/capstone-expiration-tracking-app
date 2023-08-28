@@ -18,8 +18,8 @@ export default function FavoritePage({ favoriteRecipes, onToggleFavorite }) {
                   fill="#C32E68"
                   style={{
                     position: "absolute",
-                    top: "2px",
-                    left: "4px",
+                    top: "3px",
+                    left: "5px",
                   }}
                 />
               </StyledSpan>
