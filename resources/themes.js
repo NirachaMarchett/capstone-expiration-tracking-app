@@ -36,7 +36,7 @@ export const darkTheme = {
   cardItemColor: "rgba(88, 111, 124, 0.20)",
   cardItemBorder: "none",
   cardSelectedItemColor: "rgba(47, 69, 80, 0.90)",
-  backgroundColor: "rgba(184, 219, 217, 0.90)",
+  backgroundColor: "rgba(184, 219, 217, 1)",
   filterFont: "#f4f4f9",
   navBackground: "rgba(41, 50, 65, 1)",
   navFont: "#f4f4f9",
