@@ -7,7 +7,7 @@ Expiry Track is an application used to track all your groceries items with featu
 
 #### Dark Mode
 
-![Dark Mode](https://github.com/NirachaMarchett/capstone-expiration-tracking-app/assets/135506311/13e45716-efc9-4c10-a15f-e3b1832e7028)
+![Dark Mode](https://github.com/NirachaMarchett/capstone-expiration-tracking-app/assets/135506311/cc1421d1-0454-44b1-98fc-3c9786e03a0e)
 
 ## Demo:
 
