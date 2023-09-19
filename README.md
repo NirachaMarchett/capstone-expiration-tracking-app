@@ -1,6 +1,6 @@
 # My Capstone Project: Expiry Track
 
-Expiry Track is an application used to track all your groceries items with feature to search for yummy recipes that help you make the most of the ingredients that are soon to expire. The app facilitate hassle-free grocery monitoring to prevent waste, all while savoring a delightful array of new and delicious recipes.
+Expiry Track is an application used to track all your groceries items with feature to search for yummy recipes that help you make the most of the ingredients that are soon to expire. The app facilitates hassle-free grocery monitoring to prevent waste, all while savoring a delightful array of new and delicious recipes.
 
 #### Dark Mode
 
