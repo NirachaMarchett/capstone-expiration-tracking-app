@@ -28,11 +28,4 @@ You can find the hosted version on Vercel: [Expiry Track Demo](https://capstone-
 - Node.js
 - Vercel
 
-## Project Setup
 
-- Clone this repository
-- You don't need an API key
-- Install all dependencies with `$ npm install`
-- Run app in dev mode with `$ npm run dev`
-- Server: [http://localhost:3000/](http://localhost:3000/)
-- Run tests via `$ npm run test`
