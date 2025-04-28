@@ -11,7 +11,7 @@ Expiry Track is an application used to track all your groceries items with featu
 
 ## Demo:
 
-You can find the hosted version on Vercel: [Expiry Track Demo](https://capstone-project-chi-rouge.vercel.app/)
+You can find the hosted version on Vercel: [Expiry Track Demo](https://capstone-expiration-tracking-app.vercel.app)
 
 ***Important:*** This demo is responsive.
 
